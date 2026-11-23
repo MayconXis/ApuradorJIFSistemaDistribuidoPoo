@@ -1,0 +1,151 @@
+LAST SEEN   TYPE      REASON                  OBJECT                                        MESSAGE
+43m         Normal    Scheduled               pod/worker-2                                  Successfully assigned apurador/worker-2 to apurador
+43m         Normal    Scheduled               pod/frontend-5fdf4f8447-qvm4j                 Successfully assigned apurador/frontend-5fdf4f8447-qvm4j to apurador
+43m         Normal    Scheduled               pod/worker-0                                  Successfully assigned apurador/worker-0 to apurador
+5m26s       Normal    Scheduled               pod/worker-2                                  Successfully assigned apurador/worker-2 to apurador
+44m         Normal    Scheduled               pod/rabbitmq-0                                Successfully assigned apurador/rabbitmq-0 to apurador
+43m         Normal    Scheduled               pod/worker-1                                  Successfully assigned apurador/worker-1 to apurador
+43m         Normal    Scheduled               pod/dispatcher-5d6c9d4c4b-ltntf               Successfully assigned apurador/dispatcher-5d6c9d4c4b-ltntf to apurador
+38m         Normal    Scheduled               pod/worker-1                                  Successfully assigned apurador/worker-1 to apurador
+44m         Normal    Scheduled               pod/postgres-0                                Successfully assigned apurador/postgres-0 to apurador
+2m16s       Normal    Scheduled               pod/dispatcher-5d6c9d4c4b-pgwt2               Successfully assigned apurador/dispatcher-5d6c9d4c4b-pgwt2 to apurador
+44m         Normal    WaitForFirstConsumer    persistentvolumeclaim/dados-postgres-0        waiting for first consumer to be created before binding
+44m         Normal    WaitForFirstConsumer    persistentvolumeclaim/dados-rabbitmq-0        waiting for first consumer to be created before binding
+44m         Normal    SuccessfulCreate        statefulset/postgres                          Create Claim dados-postgres-0 Pod postgres-0 in StatefulSet postgres success
+44m         Normal    SuccessfulCreate        statefulset/rabbitmq                          Create Claim dados-rabbitmq-0 Pod rabbitmq-0 in StatefulSet rabbitmq success
+44m         Normal    SuccessfulCreate        statefulset/rabbitmq                          Create Pod rabbitmq-0 in StatefulSet rabbitmq successful
+44m         Normal    SuccessfulCreate        statefulset/postgres                          Create Pod postgres-0 in StatefulSet postgres successful
+44m         Normal    ExternalProvisioning    persistentvolumeclaim/dados-postgres-0        Waiting for a volume to be created either by the external provisioner 'rancher.io/local-path' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.
+44m         Normal    Provisioning            persistentvolumeclaim/dados-postgres-0        External provisioner is provisioning volume for claim "apurador/dados-postgres-0"
+44m         Normal    Provisioning            persistentvolumeclaim/dados-rabbitmq-0        External provisioner is provisioning volume for claim "apurador/dados-rabbitmq-0"
+44m         Normal    ExternalProvisioning    persistentvolumeclaim/dados-rabbitmq-0        Waiting for a volume to be created either by the external provisioner 'rancher.io/local-path' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.
+44m         Normal    ProvisioningSucceeded   persistentvolumeclaim/dados-postgres-0        Successfully provisioned volume pvc-83e7527e-b247-4223-b8c6-832102fd3835
+44m         Normal    ProvisioningSucceeded   persistentvolumeclaim/dados-rabbitmq-0        Successfully provisioned volume pvc-492dcb15-e160-4115-8dc8-a2234a1eaf2e
+44m         Normal    Pulling                 pod/postgres-0                                Pulling image "postgres:16"
+44m         Normal    Pulling                 pod/rabbitmq-0                                Pulling image "rabbitmq:3.13-management"
+44m         Normal    Pulled                  pod/rabbitmq-0                                Successfully pulled image "rabbitmq:3.13-management" in 10.397s (10.397s including waiting). Image size: 111104793 bytes.
+44m         Warning   Unhealthy               pod/postgres-0                                Readiness probe failed: /var/run/postgresql:5432 - no response
+44m         Normal    Created                 pod/postgres-0                                Container created
+44m         Normal    Started                 pod/postgres-0                                Container started
+44m         Normal    Pulled                  pod/postgres-0                                Successfully pulled image "postgres:16" in 12.212s (12.212s including waiting). Image size: 164730155 bytes.
+43m         Normal    Pulled                  pod/rabbitmq-0                                Container image "rabbitmq:3.13-management" already present on machine and can be accessed by the pod
+43m         Normal    Created                 pod/rabbitmq-0                                Container created
+43m         Warning   Unhealthy               pod/rabbitmq-0                                Readiness probe failed: Error:...
+43m         Normal    Started                 pod/rabbitmq-0                                Container started
+43m         Normal    SuccessfulCreate        replicaset/dispatcher-5d6c9d4c4b              Created pod: dispatcher-5d6c9d4c4b-ltntf
+43m         Normal    ScalingReplicaSet       deployment/dispatcher                         Scaled up replica set dispatcher-5d6c9d4c4b from 0 to 1
+43m         Normal    Pulled                  pod/dispatcher-5d6c9d4c4b-ltntf               Container image "apurador/dispatcher:1.0.0" already present on machine and can be accessed by the pod
+43m         Normal    Created                 pod/dispatcher-5d6c9d4c4b-ltntf               Container created
+43m         Normal    Started                 pod/dispatcher-5d6c9d4c4b-ltntf               Container started
+43m         Warning   Unhealthy               pod/dispatcher-5d6c9d4c4b-ltntf               Startup probe failed: Get "http://10.42.0.14:8080/actuator/health/liveness": dial tcp 10.42.0.14:8080: connect: connection refused
+43m         Normal    ScalingReplicaSet       deployment/frontend                           Scaled up replica set frontend-5fdf4f8447 from 0 to 1
+43m         Normal    SuccessfulCreate        statefulset/worker                            Create Pod worker-0 in StatefulSet worker successful
+43m         Normal    SuccessfulCreate        replicaset/frontend-5fdf4f8447                Created pod: frontend-5fdf4f8447-qvm4j
+43m         Normal    Created                 pod/frontend-5fdf4f8447-qvm4j                 Container created
+43m         Normal    Started                 pod/worker-1                                  Container started
+43m         Normal    Started                 pod/worker-0                                  Container started
+43m         Normal    Created                 pod/worker-0                                  Container created
+43m         Warning   Unhealthy               pod/frontend-5fdf4f8447-qvm4j                 Readiness probe failed: Get "http://10.42.0.17:80/": dial tcp 10.42.0.17:80: connect: connection refused
+43m         Normal    Pulled                  pod/worker-1                                  Container image "apurador/worker:1.0.0" already present on machine and can be accessed by the pod
+43m         Normal    Created                 pod/worker-1                                  Container created
+43m         Normal    Created                 pod/worker-2                                  Container created
+43m         Normal    Started                 pod/frontend-5fdf4f8447-qvm4j                 Container started
+43m         Normal    Pulled                  pod/worker-2                                  Container image "apurador/worker:1.0.0" already present on machine and can be accessed by the pod
+43m         Normal    Pulled                  pod/frontend-5fdf4f8447-qvm4j                 Container image "apurador/frontend:1.0.0" already present on machine and can be accessed by the pod
+43m         Normal    Pulled                  pod/worker-0                                  Container image "apurador/worker:1.0.0" already present on machine and can be accessed by the pod
+43m         Normal    Started                 pod/worker-2                                  Container started
+43m         Warning   Unhealthy               pod/worker-0                                  Startup probe failed: Get "http://10.42.0.16:8081/actuator/health/liveness": dial tcp 10.42.0.16:8081: connect: connection refused
+43m         Warning   Unhealthy               pod/worker-2                                  Startup probe failed: Get "http://10.42.0.18:8081/actuator/health/liveness": dial tcp 10.42.0.18:8081: connect: connection refused
+43m         Warning   Unhealthy               pod/worker-1                                  Startup probe failed: Get "http://10.42.0.15:8081/actuator/health/liveness": dial tcp 10.42.0.15:8081: connect: connection refused
+43m         Warning   Unhealthy               pod/worker-0                                  Startup probe failed: HTTP probe failed with statuscode: 503
+38m         Normal    Killing                 pod/worker-1                                  Stopping container worker
+38m         Normal    SuccessfulCreate        statefulset/worker                            Create Pod worker-1 in StatefulSet worker successful
+38m         Normal    Started                 pod/worker-1                                  Container started
+38m         Normal    Created                 pod/worker-1                                  Container created
+38m         Normal    Pulled                  pod/worker-1                                  Container image "apurador/worker:1.0.0" already present on machine and can be accessed by the pod
+37m         Warning   Unhealthy               pod/worker-1                                  Startup probe failed: Get "http://10.42.0.24:8081/actuator/health/liveness": dial tcp 10.42.0.24:8081: connect: connection refused
+14m         Warning   Unhealthy               pod/worker-2                                  Readiness probe failed: Get "http://10.42.0.18:8081/actuator/health/readiness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+7m37s       Warning   Unhealthy               pod/worker-1                                  Readiness probe failed: Get "http://10.42.0.24:8081/actuator/health/readiness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+7m36s       Warning   Unhealthy               pod/postgres-0                                Readiness probe failed: command timed out: "pg_isready -U apurador -d apurador" timed out after 1s
+7m36s       Warning   Unhealthy               pod/worker-0                                  Readiness probe failed: Get "http://10.42.0.16:8081/actuator/health/readiness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+7m34s       Warning   Unhealthy               pod/dispatcher-5d6c9d4c4b-ltntf               Readiness probe failed: Get "http://10.42.0.14:8080/actuator/health/readiness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+7m34s       Warning   Unhealthy               pod/worker-2                                  Liveness probe failed: Get "http://10.42.0.18:8081/actuator/health/liveness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+7m34s       Warning   Unhealthy               pod/worker-0                                  Liveness probe failed: Get "http://10.42.0.16:8081/actuator/health/liveness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+7m34s       Warning   Unhealthy               pod/dispatcher-5d6c9d4c4b-ltntf               Liveness probe failed: Get "http://10.42.0.14:8080/actuator/health/liveness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+7m32s       Warning   Unhealthy               pod/rabbitmq-0                                Readiness probe failed: command timed out: "rabbitmq-diagnostics -q ping" timed out after 8s
+5m27s       Normal    FinalizerInited         podchaos/matar-worker                         Finalizer has been inited
+5m27s       Normal    Updated                 podchaos/matar-worker                         Successfully update desiredPhase of resource
+5m27s       Normal    Applied                 podchaos/matar-worker                         Successfully apply chaos for apurador/worker-2
+5m27s       Normal    Updated                 podchaos/matar-worker                         Successfully update records of resource
+5m27s       Normal    Updated                 podchaos/matar-worker                         Successfully update finalizer of resource
+5m27s       Normal    SuccessfulCreate        statefulset/worker                            Create Pod worker-2 in StatefulSet worker successful
+5m27s       Normal    Killing                 pod/worker-2                                  Stopping container worker
+5m26s       Normal    Started                 pod/worker-2                                  Container started
+5m26s       Normal    Created                 pod/worker-2                                  Container created
+5m26s       Normal    Pulled                  pod/worker-2                                  Container image "apurador/worker:1.0.0" already present on machine and can be accessed by the pod
+5m21s       Warning   Unhealthy               pod/worker-2                                  Startup probe failed: Get "http://10.42.0.25:8081/actuator/health/liveness": dial tcp 10.42.0.25:8081: connect: connection refused
+4m48s       Normal    Deleted                 podchaos/matar-worker                         Experiment has been deleted
+4m48s       Normal    Failed                  podchaos/matar-worker                         Failed to update conditions: podchaos.chaos-mesh.org "matar-worker" not found
+4m48s       Normal    Updated                 podchaos/matar-worker                         Successfully update finalizer of resource
+4m48s       Normal    FinalizerInited         podchaos/matar-worker                         Finalizer has been removed
+4m48s       Normal    Updated                 podchaos/matar-worker                         Successfully update records of resource
+4m48s       Normal    Recovered               podchaos/matar-worker                         Successfully recover chaos for apurador/worker-2
+4m48s       Normal    Updated                 podchaos/matar-worker                         Successfully update desiredPhase of resource
+4m44s       Normal    Updated                 networkchaos/atrasar-mensagens                Successfully update records of resource
+4m44s       Normal    Applied                 networkchaos/atrasar-mensagens                Successfully apply chaos for apurador/rabbitmq-0
+4m44s       Normal    FinalizerInited         networkchaos/atrasar-mensagens                Finalizer has been inited
+4m44s       Normal    Updated                 networkchaos/atrasar-mensagens                Successfully update finalizer of resource
+4m44s       Normal    Started                 networkchaos/atrasar-mensagens                Experiment has started
+4m44s       Normal    Updated                 networkchaos/atrasar-mensagens                Successfully update desiredPhase of resource
+4m43s       Normal    Updated                 networkchaos/atrasar-mensagens                Successfully update records of resource
+4m43s       Normal    Updated                 podnetworkchaos/worker-2                      Successfully update ObservedGeneration and FailedMessage of resource
+4m43s       Normal    Updated                 podnetworkchaos/worker-1                      Successfully update ObservedGeneration and FailedMessage of resource
+4m43s       Normal    Updated                 podnetworkchaos/worker-0                      Successfully update ObservedGeneration and FailedMessage of resource
+4m43s       Normal    Applied                 networkchaos/atrasar-mensagens                Successfully apply chaos for apurador/worker-1
+4m43s       Normal    Updated                 networkchaos/atrasar-mensagens                Successfully update records of resource
+4m43s       Normal    Applied                 networkchaos/atrasar-mensagens                Successfully apply chaos for apurador/worker-2
+4m43s       Normal    Updated                 networkchaos/atrasar-mensagens                Successfully update records of resource
+4m43s       Normal    Applied                 networkchaos/atrasar-mensagens                Successfully apply chaos for apurador/worker-0
+3m44s       Normal    Updated                 podnetworkchaos/worker-2                      Successfully update ObservedGeneration and FailedMessage of resource
+3m44s       Normal    Recovered               networkchaos/atrasar-mensagens                Successfully recover chaos for apurador/rabbitmq-0
+3m44s       Normal    Updated                 networkchaos/atrasar-mensagens                Successfully update desiredPhase of resource
+3m44s       Normal    Updated                 networkchaos/atrasar-mensagens                Successfully update records of resource
+3m44s       Normal    Recovered               networkchaos/atrasar-mensagens                Successfully recover chaos for apurador/worker-1
+3m44s       Normal    Updated                 podnetworkchaos/rabbitmq-0                    Successfully update ObservedGeneration and FailedMessage of resource
+3m44s       Normal    Updated                 networkchaos/atrasar-mensagens                Successfully update records of resource
+3m44s       Normal    Recovered               networkchaos/atrasar-mensagens                Successfully recover chaos for apurador/worker-2
+3m44s       Normal    Updated                 podnetworkchaos/worker-0                      Successfully update ObservedGeneration and FailedMessage of resource
+3m44s       Normal    Updated                 podnetworkchaos/worker-1                      Successfully update ObservedGeneration and FailedMessage of resource
+3m44s       Normal    Updated                 networkchaos/atrasar-mensagens                Successfully update records of resource
+3m44s       Normal    Recovered               networkchaos/atrasar-mensagens                Successfully recover chaos for apurador/worker-0
+3m44s       Normal    Updated                 networkchaos/atrasar-mensagens                Successfully update records of resource
+3m44s       Normal    TimeUp                  networkchaos/atrasar-mensagens                Time up according to the duration
+3m44s       Normal    Updated                 networkchaos/atrasar-mensagens                Successfully update records of resource
+3m42s       Normal    FinalizerInited         networkchaos/atrasar-mensagens                Finalizer has been removed
+3m42s       Normal    Updated                 networkchaos/atrasar-mensagens                Successfully update finalizer of resource
+3m39s       Normal    Started                 networkchaos/atrasar-heartbeat                Experiment has started
+3m39s       Normal    Updated                 networkchaos/atrasar-heartbeat                Successfully update desiredPhase of resource
+3m39s       Normal    Updated                 networkchaos/atrasar-heartbeat                Successfully update finalizer of resource
+3m39s       Normal    Applied                 networkchaos/atrasar-heartbeat                Successfully apply chaos for apurador/dispatcher-5d6c9d4c4b-ltntf
+3m39s       Normal    FinalizerInited         networkchaos/atrasar-heartbeat                Finalizer has been inited
+3m38s       Normal    Updated                 networkchaos/atrasar-heartbeat                Successfully update records of resource
+3m38s       Normal    Updated                 networkchaos/atrasar-heartbeat                Successfully update records of resource
+3m38s       Normal    Updated                 podnetworkchaos/worker-0                      Successfully update ObservedGeneration and FailedMessage of resource
+3m38s       Normal    Applied                 networkchaos/atrasar-heartbeat                Successfully apply chaos for apurador/worker-0
+2m39s       Normal    Updated                 podnetworkchaos/dispatcher-5d6c9d4c4b-ltntf   Successfully update ObservedGeneration and FailedMessage of resource
+2m39s       Normal    TimeUp                  networkchaos/atrasar-heartbeat                Time up according to the duration
+2m39s       Normal    Updated                 networkchaos/atrasar-heartbeat                Successfully update desiredPhase of resource
+2m39s       Normal    Updated                 networkchaos/atrasar-heartbeat                Successfully update records of resource
+2m39s       Normal    Recovered               networkchaos/atrasar-heartbeat                Successfully recover chaos for apurador/worker-0
+2m39s       Normal    Updated                 networkchaos/atrasar-heartbeat                Successfully update records of resource
+2m39s       Normal    Recovered               networkchaos/atrasar-heartbeat                Successfully recover chaos for apurador/dispatcher-5d6c9d4c4b-ltntf
+2m39s       Normal    Updated                 networkchaos/atrasar-heartbeat                Successfully update records of resource
+2m39s       Normal    Updated                 podnetworkchaos/worker-0                      Successfully update ObservedGeneration and FailedMessage of resource
+2m37s       Normal    Updated                 networkchaos/atrasar-heartbeat                Successfully update finalizer of resource
+2m37s       Normal    FinalizerInited         networkchaos/atrasar-heartbeat                Finalizer has been removed
+2m17s       Normal    Killing                 pod/dispatcher-5d6c9d4c4b-ltntf               Stopping container dispatcher
+2m16s       Normal    Pulled                  pod/dispatcher-5d6c9d4c4b-pgwt2               Container image "apurador/dispatcher:1.0.0" already present on machine and can be accessed by the pod
+2m16s       Normal    Created                 pod/dispatcher-5d6c9d4c4b-pgwt2               Container created
+2m16s       Normal    Started                 pod/dispatcher-5d6c9d4c4b-pgwt2               Container started
+2m16s       Normal    SuccessfulCreate        replicaset/dispatcher-5d6c9d4c4b              Created pod: dispatcher-5d6c9d4c4b-pgwt2
+2m13s       Warning   Unhealthy               pod/dispatcher-5d6c9d4c4b-pgwt2               Startup probe failed: Get "http://10.42.0.26:8080/actuator/health/liveness": dial tcp 10.42.0.26:8080: connect: connection refused

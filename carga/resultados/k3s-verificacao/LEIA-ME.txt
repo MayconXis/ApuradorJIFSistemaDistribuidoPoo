@@ -1,0 +1,9 @@
+Verificação feita depois da primeira medição no k3s (18/11/2026, comando: bash scripts/k3s-verificar.sh).
+
+- atraso-medicao.txt: milissegundos de conexão TCP de cada worker até o Dispatcher e o RabbitMQ, pelo nome do Service
+  e pelo IP do pod, sem atraso, com os manifestos do repositório (alvo: pods), com a variante que mira o IP do Service,
+  e de novo sem atraso. Mostra por que o TF-02 e o TF-02b da primeira medição não valem.
+- rajada-k3s-rep1.* e rajada-k3s-rep2.*: TC-01 sem falha, duas vezes seguidas.
+- recursos-durante-tc01.txt: kubectl top pods a cada 5 s durante essas duas rajadas.
+- rabbitmq-alarmes.txt: alarmes de recurso do RabbitMQ depois de cada repetição.
+- consistencia-depois.json: auditoria no fim.

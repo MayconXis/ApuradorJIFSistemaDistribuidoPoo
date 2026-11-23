@@ -1,0 +1,104 @@
+<section class="card" aria-label="Resultado da partida">
+  <div class="campos">
+    <div>
+      <label for="chave">Chave</label>
+      <select id="chave" [ngModel]="chaveId()" (ngModelChange)="chaveEscolhida.emit($event)">
+        @for (c of chaves(); track c.id) {
+          <option [value]="c.id">{{ c.nome }} · {{ c.modalidade }}</option>
+        }
+      </select>
+    </div>
+    <div>
+      <label for="partida">Partida</label>
+      <select id="partida" [(ngModel)]="partidaId">
+        @for (p of partidas(); track p.id) {
+          <option [value]="p.id">{{ p.mandante }} x {{ p.visitante }} ({{ p.estado }})</option>
+        }
+      </select>
+    </div>
+  </div>
+
+  @if (chaves().length === 0) {
+    <p class="vazio">Ainda não há chave cadastrada. Crie uma abaixo ou carregue o exemplo do empate triplo.</p>
+  }
+
+  @if (partidaAtual(); as p) {
+    <label class="opcao separada"><input type="checkbox" [(ngModel)]="wo" /> Partida decidida por WO</label>
+
+    @if (wo()) {
+      <fieldset class="ausencia">
+        <legend>Quem não compareceu?</legend>
+        <label class="opcao"><input type="radio" name="ausente" value="MANDANTE" [(ngModel)]="ausente" /> {{ p.mandante }}</label>
+        <label class="opcao"><input type="radio" name="ausente" value="VISITANTE" [(ngModel)]="ausente" /> {{ p.visitante }}</label>
+      </fieldset>
+    } @else if (!ehVolei()) {
+      <div class="placar" role="group" aria-label="Placar">
+        <label class="equipe mandante" for="placar-mandante">{{ p.mandante }}</label>
+        <input id="placar-mandante" class="pontos" type="number" min="0" inputmode="numeric" [(ngModel)]="placarMandante" />
+        <span class="vs" aria-hidden="true">×</span>
+        <input id="placar-visitante" class="pontos" type="number" min="0" inputmode="numeric" [(ngModel)]="placarVisitante" />
+        <label class="equipe visitante" for="placar-visitante">{{ p.visitante }}</label>
+      </div>
+
+      @if (modalidade() === 'FUTSAL') {
+        <details class="extra">
+          <summary>Cartões, usados no desempate</summary>
+          <div class="campos miudos">
+            <div><label for="am">Amarelos {{ p.mandante }}</label><input id="am" type="number" min="0" [(ngModel)]="amarelosMandante" /></div>
+            <div><label for="av">Amarelos {{ p.visitante }}</label><input id="av" type="number" min="0" [(ngModel)]="amarelosVisitante" /></div>
+            <div><label for="vm">Vermelhos {{ p.mandante }}</label><input id="vm" type="number" min="0" [(ngModel)]="vermelhosMandante" /></div>
+            <div><label for="vv">Vermelhos {{ p.visitante }}</label><input id="vv" type="number" min="0" [(ngModel)]="vermelhosVisitante" /></div>
+          </div>
+        </details>
+      }
+      @if (modalidade() === 'HANDEBOL') {
+        <details class="extra">
+          <summary>Sanções, usadas no desempate</summary>
+          <div class="campos miudos">
+            <div><label for="sm">Sanções {{ p.mandante }}</label><input id="sm" type="number" min="0" [(ngModel)]="sancoesMandante" /></div>
+            <div><label for="sv">Sanções {{ p.visitante }}</label><input id="sv" type="number" min="0" [(ngModel)]="sancoesVisitante" /></div>
+          </div>
+          <p class="nota">Em pontos, pela tabela do Art. 67 do regulamento.</p>
+        </details>
+      }
+    } @else {
+      <div class="placar sets" role="group" aria-label="Placar por set">
+        <span></span>
+        <span class="equipe mandante" aria-hidden="true">{{ p.mandante }}</span>
+        <span></span>
+        <span class="equipe visitante" aria-hidden="true">{{ p.visitante }}</span>
+        @for (s of sets(); track $index) {
+          <span class="set">{{ $index + 1 }}º set</span>
+          <input class="pontos" type="number" min="0" inputmode="numeric" [attr.aria-label]="($index + 1) + 'º set, ' + p.mandante"
+            [value]="s[0] ?? ''" (input)="mudarSet($index, 0, $any($event.target).value)" />
+          <span class="vs" aria-hidden="true">×</span>
+          <input class="pontos" type="number" min="0" inputmode="numeric" [attr.aria-label]="($index + 1) + 'º set, ' + p.visitante"
+            [value]="s[1] ?? ''" (input)="mudarSet($index, 1, $any($event.target).value)" />
+        }
+      </div>
+      <p class="nota">Melhor de 3 sets. Deixe o terceiro em branco se o jogo terminou em 2 a 0.</p>
+    }
+
+    <div class="acoes">
+      <button type="button" (click)="registrar()" [disabled]="enviando()">Registrar resultado</button>
+      @if (p.estado !== 'AGENDADA') {
+        <span class="nota">Esta partida já tem resultado. Um novo envio vale como retificação.</span>
+      }
+    </div>
+  }
+
+  @if (erro()) {
+    <app-alerta tipo="bad">{{ erro() }}</app-alerta>
+  }
+  @if (recibo(); as r) {
+    <app-alerta tipo="ok">
+      Resultado aceito e gravado. Evento {{ r.seq }}, enviado ao worker {{ r.worker ?? 'ainda não definido' }}.
+      @if (evento(); as e) {
+        Situação: <span class="tag" [class]="classeDoEstado(e.estado)">{{ e.estado }}</span>
+        @if (e.motivo) {
+          <span> {{ e.motivo }}</span>
+        }
+      }
+    </app-alerta>
+  }
+</section>

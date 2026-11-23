@@ -1,0 +1,385 @@
+{
+  "root_group": {
+    "name": "",
+    "path": "",
+    "id": "d41d8cd98f00b204e9800998ecf8427e",
+    "groups": [],
+    "checks": [
+        {
+          "name": "consulta respondida",
+          "path": "::consulta respondida",
+          "id": "27309db003f1cc410334d363c78401f9",
+          "passes": 7584,
+          "fails": 0
+        }
+      ]
+  },
+  "options": {
+    "summaryTimeUnit": "",
+    "noColor": false,
+    "summaryTrendStats": [
+      "avg",
+      "min",
+      "med",
+      "max",
+      "p(90)",
+      "p(95)"
+    ]
+  },
+  "state": {
+    "isStdOutTTY": false,
+    "isStdErrTTY": false,
+    "testRunDurationMs": 91397.909073
+  },
+  "metrics": {
+    "respostas_304": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 3758,
+        "rate": 41.11691435958853
+      }
+    },
+    "http_req_failed{tipo:consulta}": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "passes": 0,
+        "fails": 7584,
+        "rate": 0
+      },
+      "thresholds": {
+        "rate<0.01": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_connecting": {
+      "contains": "time",
+      "values": {
+        "avg": 0.008014269083717858,
+        "min": 0,
+        "med": 0,
+        "max": 9.222489,
+        "p(90)": 0,
+        "p(95)": 0
+      },
+      "type": "trend"
+    },
+    "checks": {
+      "values": {
+        "rate": 1,
+        "passes": 7584,
+        "fails": 0
+      },
+      "type": "rate",
+      "contains": "default"
+    },
+    "http_req_sending": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 0.034452724060645916,
+        "min": 0.004136,
+        "med": 0.016008,
+        "max": 5.913454,
+        "p(90)": 0.055690200000000016,
+        "p(95)": 0.1034781999999999
+      }
+    },
+    "http_req_duration{tipo:consulta}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "min": 0.745021,
+        "med": 2.4207515,
+        "max": 34.185276,
+        "p(90)": 4.7551004,
+        "p(95)": 5.934719949999995,
+        "avg": 2.9001876900052714
+      },
+      "thresholds": {
+        "p(95)<300": {
+          "ok": true
+        }
+      }
+    },
+    "http_reqs": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 7585,
+        "rate": 82.98876940326743
+      }
+    },
+    "http_req_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 2.421133,
+        "max": 34.185276,
+        "p(90)": 4.759581200000002,
+        "p(95)": 5.937763399999999,
+        "avg": 2.9035635727092917,
+        "min": 0.745021
+      }
+    },
+    "iteration_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 2003.7282633697246,
+        "min": 2001.007083,
+        "med": 2003.248974,
+        "max": 2034.574333,
+        "p(90)": 2005.69454,
+        "p(95)": 2006.97300825
+      }
+    },
+    "http_req_receiving": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 0.1337919087673039,
+        "min": 0.006447,
+        "med": 0.054133,
+        "max": 20.811476,
+        "p(90)": 0.2872686000000001,
+        "p(95)": 0.48637519999999934
+      }
+    },
+    "data_received": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "count": 4057604,
+        "rate": 44394.93245692492
+      }
+    },
+    "iterations": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 82.97782823393278,
+        "count": 7584
+      }
+    },
+    "http_req_duration{expected_response:true}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 2.9035635727092917,
+        "min": 0.745021,
+        "med": 2.421133,
+        "max": 34.185276,
+        "p(90)": 4.759581200000002,
+        "p(95)": 5.937763399999999
+      }
+    },
+    "http_req_failed": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 7585
+      }
+    },
+    "vus": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "value": 5,
+        "min": 5,
+        "max": 200
+      }
+    },
+    "http_req_blocked": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "min": 0.001658,
+        "med": 0.005215,
+        "max": 9.349064,
+        "p(90)": 0.0079386,
+        "p(95)": 0.018576199999999893,
+        "avg": 0.016952694133157517
+      }
+    },
+    "http_req_waiting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "min": 0.709925,
+        "med": 2.266869,
+        "max": 33.898047,
+        "p(90)": 4.451151000000002,
+        "p(95)": 5.6188775999999985,
+        "avg": 2.735318939881347
+      }
+    },
+    "respostas_com_corpo": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 3826,
+        "rate": 41.860913874344256
+      }
+    },
+    "http_req_tls_handshaking": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 0,
+        "min": 0,
+        "med": 0,
+        "max": 0,
+        "p(90)": 0,
+        "p(95)": 0
+      }
+    },
+    "vus_max": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "value": 200,
+        "min": 200,
+        "max": 200
+      }
+    },
+    "data_sent": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "count": 877140,
+        "rate": 9596.937270188791
+      }
+    }
+  },
+  "setup_data": {
+    "ids": [
+      "k6-base1-0",
+      "k6-base1-1",
+      "k6-base1-2",
+      "k6-base1-3",
+      "k6-base1-4",
+      "k6-base1-5",
+      "k6-base1-6",
+      "k6-base1-7",
+      "k6-base1-8",
+      "k6-base1-9",
+      "k6-base1-10",
+      "k6-base1-11",
+      "k6-base1-12",
+      "k6-base1-13",
+      "k6-base1-14",
+      "k6-base1-15",
+      "k6-base1-16",
+      "k6-base1-17",
+      "k6-base1-18",
+      "k6-base1-19",
+      "k6-base1-20",
+      "k6-base1-21",
+      "k6-base1-22",
+      "k6-base1-23",
+      "k6-base1-24",
+      "k6-base1-25",
+      "k6-base1-26",
+      "k6-base1-27",
+      "k6-base1-28",
+      "k6-base1-29",
+      "k6-tc01-0",
+      "k6-tc01-1",
+      "k6-tc01-2",
+      "k6-tc01-3",
+      "k6-tc01-4",
+      "k6-tc01-5",
+      "k6-tc01-6",
+      "k6-tc01-7",
+      "k6-tc01-8",
+      "k6-tc01-9",
+      "k6-tc01-10",
+      "k6-tc01-11",
+      "k6-tc01-12",
+      "k6-tc01-13",
+      "k6-tc01-14",
+      "k6-tc01-15",
+      "k6-tc01-16",
+      "k6-tc01-17",
+      "k6-tc01-18",
+      "k6-tc01-19",
+      "k6-tc01-20",
+      "k6-tc01-21",
+      "k6-tc01-22",
+      "k6-tc01-23",
+      "k6-tc01-24",
+      "k6-tc01-25",
+      "k6-tc01-26",
+      "k6-tc01-27",
+      "k6-tc01-28",
+      "k6-tc01-29"
+    ],
+    "versoes": {
+      "k6-base1-21": 26,
+      "k6-base1-8": 82,
+      "k6-tc01-16": 68,
+      "k6-tc01-18": 36,
+      "k6-tc01-21": 32,
+      "k6-tc01-3": 36,
+      "k6-base1-20": 90,
+      "k6-tc01-14": 118,
+      "k6-tc01-17": 114,
+      "k6-tc01-2": 125,
+      "k6-tc01-29": 111,
+      "k6-tc01-4": 71,
+      "k6-base1-4": 52,
+      "k6-base1-5": 91,
+      "k6-base1-10": 48,
+      "k6-base1-16": 56,
+      "k6-base1-23": 82,
+      "k6-base1-28": 47,
+      "k6-tc01-11": 110,
+      "k6-tc01-5": 119,
+      "k6-base1-14": 90,
+      "k6-base1-15": 30,
+      "k6-base1-26": 74,
+      "k6-base1-9": 27,
+      "k6-tc01-23": 108,
+      "k6-tc01-24": 32,
+      "k6-base1-11": 85,
+      "k6-base1-19": 59,
+      "k6-base1-3": 31,
+      "k6-tc01-1": 68,
+      "k6-tc01-12": 34,
+      "k6-tc01-15": 37,
+      "k6-base1-24": 23,
+      "k6-base1-29": 78,
+      "k6-tc01-10": 67,
+      "k6-tc01-6": 36,
+      "k6-tc01-9": 31,
+      "k6-base1-27": 28,
+      "k6-base1-22": 53,
+      "k6-tc01-7": 70,
+      "k6-base1-12": 31,
+      "k6-base1-25": 51,
+      "k6-tc01-28": 64,
+      "k6-tc01-26": 109,
+      "k6-base1-0": 30,
+      "k6-tc01-8": 119,
+      "k6-base1-13": 49,
+      "k6-base1-17": 90,
+      "k6-base1-2": 87,
+      "k6-tc01-20": 110,
+      "k6-tc01-22": 61,
+      "k6-tc01-25": 65,
+      "k6-tc01-27": 31,
+      "k6-base1-6": 28,
+      "k6-tc01-0": 30,
+      "k6-tc01-19": 66,
+      "k6-base1-1": 53,
+      "k6-tc01-13": 73,
+      "k6-base1-18": 31,
+      "k6-base1-7": 49
+    }
+  }
+}

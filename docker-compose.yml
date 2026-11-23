@@ -1,0 +1,88 @@
+# Sobe o sistema inteiro em uma máquina, sem k3s. Serve para desenvolver e para
+# ensaiar a demonstração. A implantação de referência é a do k3s (pasta k8s).
+#   docker compose up --build
+#   Interface: http://localhost:4200    RabbitMQ: http://localhost:15672 (guest/guest)
+
+x-java: &java
+  restart: unless-stopped
+  environment: &ambiente
+    DB_URL: jdbc:postgresql://postgres:5432/apurador
+    DB_USER: apurador
+    DB_PASSWORD: apurador
+    RABBIT_HOST: rabbitmq
+    DISPATCHER_URL: http://dispatcher:8080
+  depends_on:
+    postgres:
+      condition: service_healthy
+    rabbitmq:
+      condition: service_healthy
+
+x-worker: &worker
+  <<: *java
+  image: apurador/worker:1.0.0
+  build:
+    context: .
+    dockerfile: docker/Dockerfile.java
+    args:
+      MODULO: worker
+
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: apurador
+      POSTGRES_USER: apurador
+      POSTGRES_PASSWORD: apurador
+    volumes:
+      - ./persistencia/src/main/resources/db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - dados-postgres:/var/lib/postgresql/data
+    ports: ["5432:5432"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U apurador -d apurador"]
+      interval: 3s
+      retries: 20
+
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    ports: ["5672:5672", "15672:15672"]
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 5s
+      retries: 20
+
+  dispatcher:
+    <<: *java
+    image: apurador/dispatcher:1.0.0
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.java
+      args:
+        MODULO: dispatcher
+    ports: ["8080:8080"]
+
+  worker-0:
+    <<: *worker
+    environment:
+      <<: *ambiente
+      WORKER_ID: worker-0
+  worker-1:
+    <<: *worker
+    environment:
+      <<: *ambiente
+      WORKER_ID: worker-1
+  worker-2:
+    <<: *worker
+    environment:
+      <<: *ambiente
+      WORKER_ID: worker-2
+
+  frontend:
+    image: apurador/frontend:1.0.0
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.frontend
+    ports: ["4200:80"]
+    depends_on: [dispatcher]
+
+volumes:
+  dados-postgres:

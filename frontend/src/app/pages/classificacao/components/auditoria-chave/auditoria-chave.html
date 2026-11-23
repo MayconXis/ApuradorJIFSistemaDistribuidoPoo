@@ -1,0 +1,14 @@
+<section class="card">
+  <h2>Auditoria</h2>
+  <p class="nota">Recalcula a tabela a partir do histórico de partidas e compara com a que os workers gravaram.</p>
+  <div class="acoes">
+    <button type="button" class="sec" (click)="auditar.emit()">Auditar esta chave</button>
+  </div>
+  @if (auditoria(); as a) {
+    @if (a.consistente) {
+      <app-alerta tipo="ok">A tabela gravada é igual à recalculada do histórico.</app-alerta>
+    } @else {
+      <app-alerta tipo="bad">Divergência: a tabela gravada é diferente da recalculada do histórico.</app-alerta>
+    }
+  }
+</section>

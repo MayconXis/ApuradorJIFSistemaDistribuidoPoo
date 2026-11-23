@@ -1,0 +1,1149 @@
+{
+  "root_group": {
+    "name": "",
+    "path": "",
+    "id": "d41d8cd98f00b204e9800998ecf8427e",
+    "groups": [
+      {
+        "name": "setup",
+        "path": "::setup",
+        "id": "5c0f8025f7e0b6654089e5b00e950f1a",
+        "groups": [],
+        "checks": [
+            {
+              "name": "chave criada",
+              "path": "::setup::chave criada",
+              "id": "9b698caa163ed95c5f086b0eb36977ed",
+              "passes": 30,
+              "fails": 0
+            }
+          ]
+      },
+      {
+        "name": "teardown",
+        "path": "::teardown",
+        "id": "a8a9942382e8ffe2e56ef29e664b8229",
+        "groups": [],
+        "checks": [
+            {
+              "name": "nenhum evento pendente no fim",
+              "path": "::teardown::nenhum evento pendente no fim",
+              "id": "84c37a8a29f5643e0deb97dd1631fb3a",
+              "passes": 1,
+              "fails": 0
+            },
+            {
+              "name": "nenhum evento aplicado mais de uma vez",
+              "path": "::teardown::nenhum evento aplicado mais de uma vez",
+              "id": "77aff61f5b0dd23e6d3e664a76fb6e77",
+              "passes": 1,
+              "fails": 0
+            },
+            {
+              "id": "3412ddbc51db7d0b4a0bedbf1d98ccd6",
+              "passes": 1,
+              "fails": 0,
+              "name": "nenhuma chave com tabela divergente",
+              "path": "::teardown::nenhuma chave com tabela divergente"
+            }
+          ]
+      }
+    ],
+    "checks": [
+      {
+        "name": "resultado aceito (202)",
+        "path": "::resultado aceito (202)",
+        "id": "255c99da2f482882d8c0e2daa9fd01b5",
+        "passes": 2114,
+        "fails": 157
+      }
+    ]
+  },
+  "options": {
+    "noColor": false,
+    "summaryTrendStats": [
+      "avg",
+      "min",
+      "med",
+      "max",
+      "p(90)",
+      "p(95)"
+    ],
+    "summaryTimeUnit": ""
+  },
+  "state": {
+    "isStdOutTTY": false,
+    "isStdErrTTY": false,
+    "testRunDurationMs": 155652.535947
+  },
+  "metrics": {
+    "data_received": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "count": 1537528,
+        "rate": 9877.950209070359
+      }
+    },
+    "eventos_aceitos_novos": {
+      "values": {
+        "rate": 12.360865104408745,
+        "count": 1924
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "iterations": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 2271,
+        "rate": 14.590189528124876
+      }
+    },
+    "http_reqs": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 5263,
+        "rate": 33.81249118737174
+      }
+    },
+    "tempo_ate_esvaziar_ms": {
+      "values": {
+        "max": 225,
+        "p(90)": 225,
+        "p(95)": 225,
+        "avg": 225,
+        "min": 225,
+        "med": 225
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "http_req_waiting": {
+      "values": {
+        "avg": 1810.4401282128142,
+        "min": 0.885878,
+        "med": 3.958968,
+        "max": 60037.645557,
+        "p(90)": 11.136460000000001,
+        "p(95)": 42.24515999999983
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "dropped_iterations": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 130,
+        "rate": 0.8351935881357261
+      }
+    },
+    "http_req_failed": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "passes": 158,
+        "fails": 5105,
+        "rate": 0.03002090062701881
+      }
+    },
+    "reenvios_enviados": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 216,
+        "rate": 1.3877062695178217
+      }
+    },
+    "eventos_encontrados_no_banco": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1923,
+        "rate": 12.354440538346163
+      }
+    },
+    "http_req_sending": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(95)": 0.05232469999999998,
+        "avg": 0.03207491506745207,
+        "min": 0.002625,
+        "med": 0.016875,
+        "max": 38.557467,
+        "p(90)": 0.03690860000000001
+      }
+    },
+    "http_req_tls_handshaking": {
+      "contains": "time",
+      "values": {
+        "avg": 0,
+        "min": 0,
+        "med": 0,
+        "max": 0,
+        "p(90)": 0,
+        "p(95)": 0
+      },
+      "type": "trend"
+    },
+    "checks{fase:consistencia}": {
+      "thresholds": {
+        "rate==1": {
+          "ok": true
+        }
+      },
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 1,
+        "passes": 3,
+        "fails": 0
+      }
+    },
+    "reenvios_reconhecidos": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 190,
+        "rate": 1.2206675518906764
+      }
+    },
+    "http_req_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 1810.6414594123144,
+        "min": 0.929294,
+        "med": 4.125719,
+        "max": 60037.682098,
+        "p(90)": 11.3659108,
+        "p(95)": 45.47055269999997
+      }
+    },
+    "http_req_connecting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 0.011948631008930273,
+        "min": 0,
+        "med": 0,
+        "max": 5.930107,
+        "p(90)": 0,
+        "p(95)": 0
+      }
+    },
+    "http_req_blocked": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 0.003625,
+        "max": 22.394444,
+        "p(90)": 0.009875,
+        "p(95)": 0.02469639999999997,
+        "avg": 0.02263881512445357,
+        "min": 0.001042
+      }
+    },
+    "http_req_failed{tipo:registro}": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0.06913254073095552,
+        "passes": 157,
+        "fails": 2114
+      },
+      "thresholds": {
+        "rate<0.01": {
+          "ok": false
+        }
+      }
+    },
+    "http_req_duration{expected_response:true}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 9.540963593143973,
+        "min": 0.929294,
+        "med": 3.810217,
+        "max": 804.011305,
+        "p(90)": 9.972155200000001,
+        "p(95)": 14.204134999999974
+      }
+    },
+    "vus": {
+      "values": {
+        "max": 172,
+        "value": 0,
+        "min": 0
+      },
+      "type": "gauge",
+      "contains": "default"
+    },
+    "http_reqs{tipo:registro}": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 2271,
+        "rate": 14.590189528124876
+      },
+      "thresholds": {
+        "count>0": {
+          "ok": true
+        }
+      }
+    },
+    "checks": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0.9318576388888888,
+        "passes": 2147,
+        "fails": 157
+      }
+    },
+    "http_req_receiving": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 0.066334,
+        "max": 38.285552,
+        "p(90)": 0.23214180000000004,
+        "p(95)": 0.37414299999999995,
+        "avg": 0.16925628443853322,
+        "min": 0
+      }
+    },
+    "data_sent": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "count": 831848,
+        "rate": 5344.262430027134
+      }
+    },
+    "iteration_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 7.847485,
+        "max": 60038.180764,
+        "p(90)": 107.911596,
+        "p(95)": 60001.061580999994,
+        "avg": 4166.4544957877615,
+        "min": 3.718571
+      }
+    },
+    "vus_max": {
+      "contains": "default",
+      "values": {
+        "value": 176,
+        "min": 50,
+        "max": 176
+      },
+      "type": "gauge"
+    },
+    "eventos_pendentes_no_fim": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "http_req_duration{tipo:registro}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 4165.890936190221,
+        "min": 3.526947,
+        "med": 7.572402,
+        "max": 60037.682098,
+        "p(90)": 100.793867,
+        "p(95)": 60000.477491499994
+      },
+      "thresholds": {
+        "p(95)<500": {
+          "ok": false
+        }
+      }
+    }
+  },
+  "setup_data": {
+    "antes": {
+      "aplicados": 8466,
+      "aplicadosMaisDeUmaVez": 0,
+      "chaves": 126,
+      "chavesInconsistentes": 0,
+      "eventos": 8466,
+      "pendentes": 0,
+      "rejeitados": 0,
+      "superados": 0
+    },
+    "partidas": [
+      {
+        "id": "k6-k3s-tf03-0-J1",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-0-J2",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-0-J3",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-1-J1",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-1-J2",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-1-J3",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-1-J4",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-1-J5",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-1-J6",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-2-J1",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-2-J10",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-2-J2",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-2-J3",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-2-J4",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-2-J5",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-2-J6",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "modalidade": "VOLEIBOL",
+        "id": "k6-k3s-tf03-2-J7"
+      },
+      {
+        "id": "k6-k3s-tf03-2-J8",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-2-J9",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-3-J1",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-3-J2",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-3-J3",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-4-J1",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-4-J2",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-4-J3",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-4-J4",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-4-J5",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-4-J6",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-5-J1",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-5-J10",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-5-J2",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-5-J3",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-5-J4",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-5-J5",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-5-J6",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-5-J7",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-5-J8",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-5-J9",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-6-J1",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-6-J2",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-6-J3",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-7-J1",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-7-J2",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "modalidade": "HANDEBOL",
+        "id": "k6-k3s-tf03-7-J3"
+      },
+      {
+        "id": "k6-k3s-tf03-7-J4",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-7-J5",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-7-J6",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-8-J1",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-8-J10",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-8-J2",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-8-J3",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-8-J4",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-8-J5",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-8-J6",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-8-J7",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-8-J8",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-8-J9",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-9-J1",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "modalidade": "FUTSAL",
+        "id": "k6-k3s-tf03-9-J2"
+      },
+      {
+        "id": "k6-k3s-tf03-9-J3",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "modalidade": "HANDEBOL",
+        "id": "k6-k3s-tf03-10-J1"
+      },
+      {
+        "id": "k6-k3s-tf03-10-J2",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-10-J3",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-10-J4",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-10-J5",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "modalidade": "HANDEBOL",
+        "id": "k6-k3s-tf03-10-J6"
+      },
+      {
+        "modalidade": "VOLEIBOL",
+        "id": "k6-k3s-tf03-11-J1"
+      },
+      {
+        "id": "k6-k3s-tf03-11-J10",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-11-J2",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-11-J3",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-11-J4",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-11-J5",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-11-J6",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-11-J7",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "modalidade": "VOLEIBOL",
+        "id": "k6-k3s-tf03-11-J8"
+      },
+      {
+        "id": "k6-k3s-tf03-11-J9",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-12-J1",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "modalidade": "FUTSAL",
+        "id": "k6-k3s-tf03-12-J2"
+      },
+      {
+        "id": "k6-k3s-tf03-12-J3",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-13-J1",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-13-J2",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "modalidade": "HANDEBOL",
+        "id": "k6-k3s-tf03-13-J3"
+      },
+      {
+        "id": "k6-k3s-tf03-13-J4",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-13-J5",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-13-J6",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-14-J1",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-14-J10",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-14-J2",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-14-J3",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-14-J4",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-14-J5",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-14-J6",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-14-J7",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-14-J8",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "modalidade": "VOLEIBOL",
+        "id": "k6-k3s-tf03-14-J9"
+      },
+      {
+        "modalidade": "FUTSAL",
+        "id": "k6-k3s-tf03-15-J1"
+      },
+      {
+        "modalidade": "FUTSAL",
+        "id": "k6-k3s-tf03-15-J2"
+      },
+      {
+        "id": "k6-k3s-tf03-15-J3",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-16-J1",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-16-J2",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-16-J3",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "modalidade": "HANDEBOL",
+        "id": "k6-k3s-tf03-16-J4"
+      },
+      {
+        "id": "k6-k3s-tf03-16-J5",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-16-J6",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-17-J1",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-17-J10",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-17-J2",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-17-J3",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "modalidade": "VOLEIBOL",
+        "id": "k6-k3s-tf03-17-J4"
+      },
+      {
+        "id": "k6-k3s-tf03-17-J5",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-17-J6",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "modalidade": "VOLEIBOL",
+        "id": "k6-k3s-tf03-17-J7"
+      },
+      {
+        "id": "k6-k3s-tf03-17-J8",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-17-J9",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-18-J1",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-18-J2",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-18-J3",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-19-J1",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-19-J2",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-19-J3",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-19-J4",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "modalidade": "HANDEBOL",
+        "id": "k6-k3s-tf03-19-J5"
+      },
+      {
+        "id": "k6-k3s-tf03-19-J6",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-20-J1",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-20-J10",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "modalidade": "VOLEIBOL",
+        "id": "k6-k3s-tf03-20-J2"
+      },
+      {
+        "id": "k6-k3s-tf03-20-J3",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "modalidade": "VOLEIBOL",
+        "id": "k6-k3s-tf03-20-J4"
+      },
+      {
+        "id": "k6-k3s-tf03-20-J5",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-20-J6",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-20-J7",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-20-J8",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-20-J9",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-21-J1",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-21-J2",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-21-J3",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-22-J1",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "modalidade": "HANDEBOL",
+        "id": "k6-k3s-tf03-22-J2"
+      },
+      {
+        "id": "k6-k3s-tf03-22-J3",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-22-J4",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-22-J5",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-22-J6",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-23-J1",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "modalidade": "VOLEIBOL",
+        "id": "k6-k3s-tf03-23-J10"
+      },
+      {
+        "id": "k6-k3s-tf03-23-J2",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-23-J3",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-23-J4",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-23-J5",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-23-J6",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-23-J7",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-23-J8",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-23-J9",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-24-J1",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "modalidade": "FUTSAL",
+        "id": "k6-k3s-tf03-24-J2"
+      },
+      {
+        "id": "k6-k3s-tf03-24-J3",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-25-J1",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-25-J2",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-25-J3",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-25-J4",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-25-J5",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-25-J6",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-26-J1",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-26-J10",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-26-J2",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-26-J3",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-26-J4",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-26-J5",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-26-J6",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-26-J7",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-26-J8",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-26-J9",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-27-J1",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-27-J2",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-27-J3",
+        "modalidade": "FUTSAL"
+      },
+      {
+        "id": "k6-k3s-tf03-28-J1",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "modalidade": "HANDEBOL",
+        "id": "k6-k3s-tf03-28-J2"
+      },
+      {
+        "id": "k6-k3s-tf03-28-J3",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "modalidade": "HANDEBOL",
+        "id": "k6-k3s-tf03-28-J4"
+      },
+      {
+        "id": "k6-k3s-tf03-28-J5",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-28-J6",
+        "modalidade": "HANDEBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-29-J1",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-29-J10",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-29-J2",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "modalidade": "VOLEIBOL",
+        "id": "k6-k3s-tf03-29-J3"
+      },
+      {
+        "id": "k6-k3s-tf03-29-J4",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-29-J5",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-29-J6",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-29-J7",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-29-J8",
+        "modalidade": "VOLEIBOL"
+      },
+      {
+        "id": "k6-k3s-tf03-29-J9",
+        "modalidade": "VOLEIBOL"
+      }
+    ]
+  }
+}

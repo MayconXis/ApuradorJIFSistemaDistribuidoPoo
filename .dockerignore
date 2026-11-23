@@ -1,0 +1,13 @@
+**/target
+**/node_modules
+**/dist
+**/.angular
+_k3s
+.git
+.idea
+.vscode
+**/.DS_Store
+docs
+carga
+chaos
+k8s

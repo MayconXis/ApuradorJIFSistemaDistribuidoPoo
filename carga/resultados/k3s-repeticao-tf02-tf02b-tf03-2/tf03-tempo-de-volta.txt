@@ -1,0 +1,4 @@
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+pod "dispatcher-5d6c9d4c4b-hgsrs" force deleted from apurador namespace
+Pod novo do Gateway pronto depois de 10077 ms
+Gateway respondendo de novo depois de 10365 ms

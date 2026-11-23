@@ -1,0 +1,4 @@
+ms de conexão TCP até rabbitmq:5672 (pelo Service), a partir de cada worker, com o atraso aplicado
+worker-0:  356 262 268
+worker-1:  343 238 308
+worker-2:  395 400 225

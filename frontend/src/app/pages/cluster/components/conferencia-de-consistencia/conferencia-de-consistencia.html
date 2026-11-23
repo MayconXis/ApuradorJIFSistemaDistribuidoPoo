@@ -1,0 +1,19 @@
+<section class="card">
+  <div class="cabecalho-secao">
+    <div>
+      <h2>Conferência de consistência</h2>
+      <p class="nota">Conta os eventos por situação e audita todas as chaves contra o histórico.</p>
+    </div>
+    <button type="button" class="sec" (click)="conferir()">Conferir agora</button>
+  </div>
+  @if (consistencia(); as k) {
+    <div class="numeros conferencia">
+      <div><span class="numero">{{ k.eventos }}</span><span class="numero-rotulo">eventos recebidos</span></div>
+      <div><span class="numero">{{ k.pendentes }}</span><span class="numero-rotulo">pendentes</span></div>
+      <div><span class="numero">{{ k.aplicados }}</span><span class="numero-rotulo">aplicados</span></div>
+      <div><span class="numero">{{ k.aplicadosMaisDeUmaVez }}</span><span class="numero-rotulo">aplicados mais de uma vez</span></div>
+      <div><span class="numero">{{ k.chavesInconsistentes }}<small> de {{ k.chaves }}</small></span><span class="numero-rotulo">chaves com divergência</span></div>
+    </div>
+    <p class="nota">Rejeitados: {{ k.rejeitados }}. Superados por retificação mais nova: {{ k.superados }}.</p>
+  }
+</section>

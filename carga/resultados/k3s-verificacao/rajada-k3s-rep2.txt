@@ -1,0 +1,12 @@
+TC-01 rajada de resultados
+rodada: k3s-rep2  base: http://192.168.252.2  taxa: 40/s  duração: 60s  chaves: 30
+registros enviados: 2400
+eventos novos aceitos (202): 2176
+eventos encontrados no banco: 2176
+perdidos (aceitos e não encontrados): 0
+conferências sem resposta, mesmo com 3 novas tentativas (entram em perdidos): 0
+pendentes no fim: 0
+reenvios enviados: 250, reconhecidos como repetidos: 224
+latência do registro p95: 8.8 ms
+tempo até a fila esvaziar depois da rajada: 116 ms
+checks de consistência: 100%

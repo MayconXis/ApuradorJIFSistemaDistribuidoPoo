@@ -1,0 +1,84 @@
+IP do pod do dispatcher: 10.42.0.26   IP do Service dispatcher: 10.43.10.81
+IP do pod do rabbitmq:   10.42.0.13   IP do Service rabbitmq:   10.43.165.178
+Formato: rótulo; worker; alvo; ms de conexão TCP (3 amostras). 'erro' = não conectou em 6 s.
+
+1-sem-atraso; worker-0; dispatcher-service; ms: 26 8 5
+1-sem-atraso; worker-0; dispatcher-ip; ms: 6 5 5
+1-sem-atraso; worker-0; rabbitmq-service; ms: 7 6 5
+1-sem-atraso; worker-0; rabbitmq-ip; ms: 6 5 5
+1-sem-atraso; worker-1; dispatcher-service; ms: 7 5 5
+1-sem-atraso; worker-1; dispatcher-ip; ms: 5 4 7
+1-sem-atraso; worker-1; rabbitmq-service; ms: 10 5 8
+1-sem-atraso; worker-1; rabbitmq-ip; ms: 5 6 14
+1-sem-atraso; worker-2; dispatcher-service; ms: 7 6 5
+1-sem-atraso; worker-2; dispatcher-ip; ms: 5 5 5
+1-sem-atraso; worker-2; rabbitmq-service; ms: 5 6 6
+1-sem-atraso; worker-2; rabbitmq-ip; ms: 5 5 5
+1-sem-atraso; silêncio máximo do heartbeat (ms): worker-0=954 ['VIVO'], worker-1=960 ['VIVO'], worker-2=971 ['VIVO']
+--- TF-02 como está no repositório (alvo: pods do rabbitmq)
+2-tf02-yaml-atual; worker-0; dispatcher-service; ms: 11 8 5
+2-tf02-yaml-atual; worker-0; dispatcher-ip; ms: 8 7 8
+2-tf02-yaml-atual; worker-0; rabbitmq-service; ms: 6 6 7
+2-tf02-yaml-atual; worker-0; rabbitmq-ip; ms: 221 292 280
+2-tf02-yaml-atual; worker-1; dispatcher-service; ms: 7 5 6
+2-tf02-yaml-atual; worker-1; dispatcher-ip; ms: 5 5 5
+2-tf02-yaml-atual; worker-1; rabbitmq-service; ms: 7 5 5
+2-tf02-yaml-atual; worker-1; rabbitmq-ip; ms: 339 269 390
+2-tf02-yaml-atual; worker-2; dispatcher-service; ms: 8 6 9
+2-tf02-yaml-atual; worker-2; dispatcher-ip; ms: 5 13 5
+2-tf02-yaml-atual; worker-2; rabbitmq-service; ms: 6 6 5
+2-tf02-yaml-atual; worker-2; rabbitmq-ip; ms: 367 237 366
+--- TF-02b como está no repositório (alvo: pods do dispatcher)
+3-tf02b-yaml-atual; worker-0; dispatcher-service; ms: 6 5 6
+3-tf02b-yaml-atual; worker-0; dispatcher-ip; ms: 5 8 5
+3-tf02b-yaml-atual; worker-0; rabbitmq-service; ms: 6 5 5
+3-tf02b-yaml-atual; worker-0; rabbitmq-ip; ms: 5 5 5
+3-tf02b-yaml-atual; worker-1; dispatcher-service; ms: 5 5 8
+3-tf02b-yaml-atual; worker-1; dispatcher-ip; ms: 6 5 5
+3-tf02b-yaml-atual; worker-1; rabbitmq-service; ms: 5 15 5
+3-tf02b-yaml-atual; worker-1; rabbitmq-ip; ms: 4 5 5
+3-tf02b-yaml-atual; worker-2; dispatcher-service; ms: 6 5 5
+3-tf02b-yaml-atual; worker-2; dispatcher-ip; ms: 2666 2850 2924
+3-tf02b-yaml-atual; worker-2; rabbitmq-service; ms: 8 7 6
+3-tf02b-yaml-atual; worker-2; rabbitmq-ip; ms: 5 5 5
+3-tf02b-yaml-atual; silêncio máximo do heartbeat (ms): worker-0=987 ['VIVO'], worker-1=965 ['VIVO'], worker-2=991 ['VIVO']
+--- variante do TF-02 mirando o IP do Service do rabbitmq (externalTargets)
+4-tf02-variante-service; worker-0; dispatcher-service; ms: 6 9 5
+4-tf02-variante-service; worker-0; dispatcher-ip; ms: 5 5 5
+4-tf02-variante-service; worker-0; rabbitmq-service; ms: 252 275 386
+4-tf02-variante-service; worker-0; rabbitmq-ip; ms: 5 5 6
+4-tf02-variante-service; worker-1; dispatcher-service; ms: 5 5 5
+4-tf02-variante-service; worker-1; dispatcher-ip; ms: 5 5 5
+4-tf02-variante-service; worker-1; rabbitmq-service; ms: 264 269 271
+4-tf02-variante-service; worker-1; rabbitmq-ip; ms: 5 4 5
+4-tf02-variante-service; worker-2; dispatcher-service; ms: 5 6 6
+4-tf02-variante-service; worker-2; dispatcher-ip; ms: 5 4 5
+4-tf02-variante-service; worker-2; rabbitmq-service; ms: 334 327 396
+4-tf02-variante-service; worker-2; rabbitmq-ip; ms: 5 5 5
+--- variante do TF-02b mirando o IP do Service do dispatcher (externalTargets)
+5-tf02b-variante-service; worker-0; dispatcher-service; ms: 6 10 5
+5-tf02b-variante-service; worker-0; dispatcher-ip; ms: 6 12 6
+5-tf02b-variante-service; worker-0; rabbitmq-service; ms: 5 5 5
+5-tf02b-variante-service; worker-0; rabbitmq-ip; ms: 5 5 6
+5-tf02b-variante-service; worker-1; dispatcher-service; ms: 6 10 6
+5-tf02b-variante-service; worker-1; dispatcher-ip; ms: 12 7 5
+5-tf02b-variante-service; worker-1; rabbitmq-service; ms: 5 5 5
+5-tf02b-variante-service; worker-1; rabbitmq-ip; ms: 5 5 5
+5-tf02b-variante-service; worker-2; dispatcher-service; ms: 2311 1673 2025
+5-tf02b-variante-service; worker-2; dispatcher-ip; ms: 6 5 5
+5-tf02b-variante-service; worker-2; rabbitmq-service; ms: 6 7 7
+5-tf02b-variante-service; worker-2; rabbitmq-ip; ms: 5 5 5
+5-tf02b-variante-service; silêncio máximo do heartbeat (ms): worker-0=982 ['VIVO'], worker-1=971 ['VIVO'], worker-2=25478 ['MORTO']
+--- de novo sem atraso, para conferir que tudo voltou ao normal
+6-depois-sem-atraso; worker-0; dispatcher-service; ms: 5 6 5
+6-depois-sem-atraso; worker-0; dispatcher-ip; ms: 5 6 5
+6-depois-sem-atraso; worker-0; rabbitmq-service; ms: 6 11 6
+6-depois-sem-atraso; worker-0; rabbitmq-ip; ms: 8 5 5
+6-depois-sem-atraso; worker-1; dispatcher-service; ms: 5 5 6
+6-depois-sem-atraso; worker-1; dispatcher-ip; ms: 5 7 5
+6-depois-sem-atraso; worker-1; rabbitmq-service; ms: 5 5 5
+6-depois-sem-atraso; worker-1; rabbitmq-ip; ms: 5 5 5
+6-depois-sem-atraso; worker-2; dispatcher-service; ms: 5 5 5
+6-depois-sem-atraso; worker-2; dispatcher-ip; ms: 6 5 5
+6-depois-sem-atraso; worker-2; rabbitmq-service; ms: 5 6 5
+6-depois-sem-atraso; worker-2; rabbitmq-ip; ms: 5 6 5

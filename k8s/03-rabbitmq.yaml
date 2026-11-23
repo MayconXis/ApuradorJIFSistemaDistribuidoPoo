@@ -1,0 +1,66 @@
+# RabbitMQ com um nó. As filas são do tipo quórum, que é o tipo replicado.
+# Com um nó só, a fila quórum não tem réplica: é uma limitação do laboratório (ver README).
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq
+  namespace: apurador
+spec:
+  selector:
+    app: rabbitmq
+  ports:
+    - name: amqp
+      port: 5672
+    - name: painel
+      port: 15672
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: rabbitmq
+  namespace: apurador
+spec:
+  serviceName: rabbitmq
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rabbitmq
+  template:
+    metadata:
+      labels:
+        app: rabbitmq
+    spec:
+      containers:
+        - name: rabbitmq
+          image: rabbitmq:3.13-management
+          env:
+            - name: RABBITMQ_DEFAULT_USER
+              valueFrom:
+                secretKeyRef: { name: apurador-segredos, key: RABBIT_USER }
+            - name: RABBITMQ_DEFAULT_PASS
+              valueFrom:
+                secretKeyRef: { name: apurador-segredos, key: RABBIT_PASSWORD }
+          ports:
+            - containerPort: 5672
+            - containerPort: 15672
+          readinessProbe:
+            exec:
+              command: ["rabbitmq-diagnostics", "-q", "ping"]
+            periodSeconds: 10
+            timeoutSeconds: 8
+          # O RabbitMQ para de aceitar publicações quando usa 40% da memória que ele detecta
+          # (vm_memory_high_watermark). Com 768Mi isso dá cerca de 300 MiB, folga curta para uma rajada.
+          resources:
+            requests: { cpu: 100m, memory: 384Mi }
+            limits: { memory: 1536Mi }
+          volumeMounts:
+            - name: dados
+              mountPath: /var/lib/rabbitmq
+  volumeClaimTemplates:
+    - metadata:
+        name: dados
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 1Gi

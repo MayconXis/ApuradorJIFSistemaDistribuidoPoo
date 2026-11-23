@@ -1,0 +1,189 @@
+@startuml
+!include estilo.iuml
+title Classes do core (domínio de POO, Java puro)
+skinparam classAttributeIconSize 0
+hide empty members
+
+package "core.sumula" {
+  class Equipe <<final>> {
+    - nome : String
+    + getNome() : String
+  }
+  enum Lado {
+    MANDANTE
+    VISITANTE
+    + oposto() : Lado
+  }
+  class Placar <<final, imutável>> {
+    - mandante : int
+    - visitante : int
+    - parciais : int[][]
+    + {static} emSets(parciais : int[][]) : Placar
+    + de(lado) : int
+    + contra(lado) : int
+    + vencedor() : Lado
+    + getParciais() : int[][]
+  }
+  class Disciplina <<final, imutável>> {
+    - amarelos : int[]
+    - vermelhos : int[]
+    - sancoes : int[]
+    + amarelos(lado) : int
+    + vermelhos(lado) : int
+    + sancoes(lado) : int
+  }
+  class Partida <<final, imutável>> {
+    - id : String
+    - wo : boolean
+    - ausente : Lado
+    + {static} jogada(...) : Partida
+    + {static} porWO(...) : Partida
+    + ladoDe(equipe) : Lado
+    + comPlacar(placar) : Partida
+  }
+}
+
+package "core.modalidade" {
+  abstract class Modalidade {
+    - nome : String
+    # Modalidade(nome : String)
+    + {abstract} pontosPara(placar, lado) : int
+    + {abstract} criterios() : List<CriterioDesempate>
+    + {abstract} placarDeWO(ausente, jogos) : Placar
+    + validar(placar) : void
+  }
+  abstract class ModalidadeDeGols {
+    + pontosPara(placar, lado) : int
+    + placarDeWO(ausente, jogos) : Placar
+  }
+  class Futsal {
+    + criterios() : List<CriterioDesempate>
+  }
+  class Handebol {
+    + criterios() : List<CriterioDesempate>
+  }
+  class Voleibol {
+    + pontosPara(placar, lado) : int
+    + placarDeWO(ausente, jogos) : Placar
+    + validar(placar) : void
+    + criterios() : List<CriterioDesempate>
+  }
+  class CatalogoDeModalidades {
+    - modalidades : Map<String, Modalidade>
+    + registrar(m : Modalidade) : void
+    + buscar(nome : String) : Modalidade
+  }
+}
+
+package "core.desempate" {
+  interface CriterioDesempate {
+    + nome() : String
+    + aplicavelA(qtd : int) : boolean
+    + restritoAosEmpatados() : boolean
+    + comparar(a, b, jogos) : int
+  }
+  abstract class CriterioBase {
+    - nome : String
+    - minimo : int
+    - maximo : int
+    - restrito : boolean
+    # CriterioBase(nome, minimo, maximo, restrito)
+  }
+  abstract class CriterioDeAverage {
+    # {abstract} pro(equipe, jogos) : int
+    # {abstract} contra(equipe, jogos) : int
+    + comparar(a, b, jogos) : int
+  }
+  class ConfrontoDireto
+  class MaisVitorias
+  class MaiorSaldo
+  class MaisMarcados
+  class MenosSofridos
+  class MenosCartoesVermelhos
+  class MenosCartoesAmarelos
+  class MenosSancoes
+  class GolAverage
+  class SetsAverage
+  class PontosAverage
+  class Sorteio
+  class Estatisticas <<utilitária>> {
+    + {static} vitorias(equipe, jogos) : int
+    + {static} marcados(equipe, jogos) : int
+    + {static} sofridos(equipe, jogos) : int
+    + {static} pontos(equipe, jogos, modalidade) : int
+  }
+}
+
+package "core.tabela" {
+  class Campanha {
+    - pontos : int
+    - jogos : int
+    - vitorias : int
+    - empates : int
+    - derrotas : int
+    ~ registrar(pontos, resultado) : void
+    + getPontos() : int
+  }
+  class Chave {
+    - nome : String
+    - campanhas : Map<Equipe, Campanha>
+    - partidas : List<Partida>
+    + registrar(partida : Partida) : void
+    + registrar(id, vencedor, ausente) : void
+    + partidasEfetivas() : List<Partida>
+    + campanhaDe(equipe) : Campanha
+  }
+  class Posicao <<final, imutável>> {
+    - colocacao : int
+    - pontos : int
+    - criterioDecisivo : String
+    - pendenteDeSorteio : boolean
+  }
+  class Classificador {
+    + classificar(chave, modalidade) : List<Posicao>
+    # recomecaQuandoOEmpateDiminui() : boolean
+    - desempatar(grupo, jogos, ...) : void
+  }
+}
+
+Modalidade <|-- ModalidadeDeGols
+Modalidade <|-- Voleibol
+ModalidadeDeGols <|-- Futsal
+ModalidadeDeGols <|-- Handebol
+Modalidade ..> CriterioDesempate : monta a lista\nem ordem
+CatalogoDeModalidades o-- "várias" Modalidade
+
+CriterioDesempate <|.. CriterioBase
+CriterioDesempate <|.. Sorteio
+CriterioBase <|-- ConfrontoDireto
+CriterioBase <|-- MaisVitorias
+CriterioBase <|-- MaiorSaldo
+CriterioBase <|-- MaisMarcados
+CriterioBase <|-- MenosSofridos
+CriterioBase <|-- MenosCartoesVermelhos
+CriterioBase <|-- MenosCartoesAmarelos
+CriterioBase <|-- MenosSancoes
+CriterioBase <|-- CriterioDeAverage
+CriterioDeAverage <|-- GolAverage
+CriterioDeAverage <|-- SetsAverage
+CriterioDeAverage <|-- PontosAverage
+CriterioBase ..> Estatisticas : usa
+
+Chave --> "1" Modalidade
+Chave *-- "1 por Equipe" Campanha
+Chave o-- "várias" Partida
+Campanha --> "1" Equipe
+Partida --> "2" Equipe
+Partida *-- "0..1" Placar
+Partida *-- "1" Disciplina
+Partida ..> Lado
+Classificador ..> Chave : classifica
+Classificador ..> CriterioDesempate : usa só\na interface
+Classificador ..> Posicao : cria
+Posicao --> "1" Equipe
+
+note bottom of Classificador
+  SUP-01: a leitura do empate reduzido
+  fica só em recomecaQuandoOEmpateDiminui().
+end note
+@enduml

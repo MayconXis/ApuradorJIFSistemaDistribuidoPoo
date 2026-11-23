@@ -1,0 +1,530 @@
+Saída real do build com Maven no Mac do grupo (scripts/compilar-no-mac.sh), 17/11/2026.
+Copiada de ApuradorJifEntrega/_logs/build-mac.log e ambiente-mac.txt.
+
+== Apurador JIF: build no Mac ==
+Tue 17 Nov 2026 11:28:06 -03
+
+== 1. JDK ==
+Procurando um JDK 21 ou mais novo...
+Nenhum JDK 21 encontrado. Baixando o Temurin 21 (aarch64) para a pasta _maven-offline/jdk.
+Nada é instalado no sistema.
+##O#-  #                                                                                                                ##O=#    #                                                                                                              #=#=- #    #                                                                                                            -#O=#   #    #                                                                                                                                                                                                                              0.0%#                                                                                                                   1.5%##                                                                                                                  2.0%#####                                                                                                               5.2%########                                                                                                            7.6%###########                                                                                                        10.5%################                                                                                                   14.5%#################                                                                                                  15.9%#######################                                                                                            20.4%########################                                                                                           21.3%#############################                                                                                      25.7%##############################                                                                                     27.0%##################################                                                                                 30.6%####################################                                                                               32.2%########################################                                                                           35.8%##########################################                                                                         37.9%##############################################                                                                     40.8%###################################################                                                                45.8%#####################################################                                                              47.3%##########################################################                                                         52.0%#############################################################                                                      54.0%################################################################                                                   57.4%###################################################################                                                59.4%#######################################################################                                            63.0%##########################################################################                                         65.6%#############################################################################                                      68.3%#################################################################################                                  72.1%###################################################################################                                74.0%#######################################################################################                            77.1%#########################################################################################                          79.6%############################################################################################                       82.0%################################################################################################                   85.1%###################################################################################################                87.6%#####################################################################################################              90.2%########################################################################################################           92.7%###########################################################################################################        95.2%##############################################################################################################     97.7%################################################################################################################# 100.0%
+JAVA_HOME=/Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/jdk/jdk-21.0.13+9/Contents/Home
+openjdk version "21.0.13" 2026-10-20 LTS
+OpenJDK Runtime Environment Temurin-21.0.13+9 (build 21.0.13+9-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.13+9 (build 21.0.13+9-LTS, mixed mode, sharing)
+
+== 2. Maven 3.9.9 ==
+Baixando https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.tar.gz
+Apache Maven 3.9.9 (8e8579a9e76f7d015ee5ec7bfcdc97d260186937)
+Maven home: /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/apache-maven-3.9.9
+Java version: 21.0.13, vendor: Eclipse Adoptium, runtime: /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/jdk/jdk-21.0.13+9/Contents/Home
+Default locale: en_BR, platform encoding: UTF-8
+OS name: "mac os x", version: "27.2.1", arch: "aarch64", family: "mac"
+
+== 3. Bibliotecas (projeto de aquecimento) ==
+Aquecimento terminou com código 0
+
+== 4. Build do Apurador JIF ==
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Apurador JIF                                                       [pom]
+[INFO] Apurador JIF: core                                                 [jar]
+[INFO] Apurador JIF: cluster                                              [jar]
+[INFO] Apurador JIF: persistência                                         [jar]
+[INFO] Apurador JIF: dispatcher                                           [jar]
+[INFO] Apurador JIF: worker                                               [jar]
+[INFO] 
+[INFO] ------------------< br.edu.ifg.apurador:apurador-jif >------------------
+[INFO] Building Apurador JIF 1.0.0                                        [1/6]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ apurador-jif ---
+[INFO] 
+[INFO] ----------------------< br.edu.ifg.apurador:core >----------------------
+[INFO] Building Apurador JIF: core 1.0.0                                  [2/6]
+[INFO]   from core/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ core ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ core ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/core/src/main/resources
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/core/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ core ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 32 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ core ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/core/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ core ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 8 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ core ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TU-02 Futsal: pontuação, WO e desempate entre duas equipes
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 s -- in TU-02 Futsal: pontuação, WO e desempate entre duas equipes
+[INFO] Running TU-01 Empate triplo no futsal (RF-05, RF-06, RF-07, SUP-01)
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in TU-01 Empate triplo no futsal (RF-05, RF-06, RF-07, SUP-01)
+[INFO] Running TU-06 Imutabilidade e encapsulamento
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in TU-06 Imutabilidade e encapsulamento
+[INFO] Running TU-03 Voleibol: pontos por sets, WO, validação e averages
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in TU-03 Voleibol: pontos por sets, WO, validação e averages
+[INFO] Running TU-04 Handebol: lista de 2, lista de 3 ou mais e sanções
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in TU-04 Handebol: lista de 2, lista de 3 ou mais e sanções
+[INFO] Running TU-07 Nova modalidade sem alterar o Classificador, e core sem Spring
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in TU-07 Nova modalidade sem alterar o Classificador, e core sem Spring
+[INFO] Running TU-05 Classificador: critério decisivo, sorteio pendente e determinismo
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in TU-05 Classificador: critério decisivo, sorteio pendente e determinismo
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 37, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ core ---
+[INFO] Building jar: /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/core/target/core-1.0.0.jar
+[INFO] 
+[INFO] --------------------< br.edu.ifg.apurador:cluster >---------------------
+[INFO] Building Apurador JIF: cluster 1.0.0                               [3/6]
+[INFO]   from cluster/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ cluster ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ cluster ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/cluster/src/main/resources
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/cluster/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ cluster ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 30 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ cluster ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/cluster/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ cluster ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 8 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ cluster ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TA-04 Tolerância a falhas: reprocessamento idempotente e em ordem
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s -- in TA-04 Tolerância a falhas: reprocessamento idempotente e em ordem
+[INFO] Running TA-02 Tolerância a falhas: detector por heartbeat com tempo limite
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in TA-02 Tolerância a falhas: detector por heartbeat com tempo limite
+[INFO] Running TA-03 Dispatcher: despacho, reatribuição na queda e varredura de pendentes
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s -- in TA-03 Dispatcher: despacho, reatribuição na queda e varredura de pendentes
+[INFO] Running TI-01 Integração simulada: rajada com queda de worker (RNF-01, RNF-02, RNF-03, RNF-04, RNF-05)
+[TI-01] envios ao Gateway: 84 (eventos distintos: 80, envios repetidos: 4)
+[TI-01] aplicados: 80 | perdidos: 0 | aplicados mais de uma vez: 0
+[TI-01] mensagens repetidas ou atrasadas ignoradas pelos workers: 33
+[TI-01] chaves do worker-1 na queda: 5 | tarefas presas na fila dele: 2
+[TI-01] da queda à reatribuição: 5400 ms de tempo SIMULADO (tempo limite de 5000 ms mais o intervalo de verificação)
+[TI-01] maior carga vista em um worker: 8 chaves, com 2 workers vivos (teto de 8) | teto no fim, com 3 workers: 5
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in TI-01 Integração simulada: rajada com queda de worker (RNF-01, RNF-02, RNF-03, RNF-04, RNF-05)
+[INFO] Running TA-01 Balanceamento: hash consistente com carga limitada
+[TA-01] 1 ponto(s) por worker: maior carga = 1274 de 3000 (média 1000)
+[TA-01] 64 ponto(s) por worker: maior carga = 1136 de 3000 (média 1000)
+[TA-01] entrada do worker-3: 17 de 60 chaves mudaram de dono, carga do novo = 17, teto = 19
+[TA-01] saída do worker-1: 8 de 30 chaves mudaram de dono (as 8 que eram dele)
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.178 s -- in TA-01 Balanceamento: hash consistente com carga limitada
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 41, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ cluster ---
+[INFO] Building jar: /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/cluster/target/cluster-1.0.0.jar
+[INFO] 
+[INFO] ------------------< br.edu.ifg.apurador:persistencia >------------------
+[INFO] Building Apurador JIF: persistência 1.0.0                          [4/6]
+[INFO]   from persistencia/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ persistencia ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ persistencia ---
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ persistencia ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 14 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ persistencia ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/persistencia/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ persistencia ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ persistencia ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ persistencia ---
+[INFO] Building jar: /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/persistencia/target/persistencia-1.0.0.jar
+[INFO] 
+[INFO] -------------------< br.edu.ifg.apurador:dispatcher >-------------------
+[INFO] Building Apurador JIF: dispatcher 1.0.0                            [5/6]
+[INFO]   from dispatcher/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ dispatcher ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ dispatcher ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ dispatcher ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 11 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ dispatcher ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/dispatcher/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ dispatcher ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ dispatcher ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ dispatcher ---
+[INFO] Building jar: /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/dispatcher/target/dispatcher-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot:3.5.6:repackage (repackage) @ dispatcher ---
+[INFO] Attaching repackaged archive /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/dispatcher/target/dispatcher-1.0.0-exec.jar with classifier exec
+[INFO] 
+[INFO] ---------------------< br.edu.ifg.apurador:worker >---------------------
+[INFO] Building Apurador JIF: worker 1.0.0                                [6/6]
+[INFO]   from worker/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ worker ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ worker ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ worker ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 4 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ worker ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/worker/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ worker ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ worker ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ worker ---
+[INFO] Building jar: /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/worker/target/worker-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot:3.5.6:repackage (repackage) @ worker ---
+[INFO] Attaching repackaged archive /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/worker/target/worker-1.0.0-exec.jar with classifier exec
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Apurador JIF 1.0.0:
+[INFO] 
+[INFO] Apurador JIF ....................................... SUCCESS [  0.061 s]
+[INFO] Apurador JIF: core ................................. SUCCESS [  1.685 s]
+[INFO] Apurador JIF: cluster .............................. SUCCESS [  1.023 s]
+[INFO] Apurador JIF: persistência ......................... SUCCESS [  0.327 s]
+[INFO] Apurador JIF: dispatcher ........................... SUCCESS [  0.751 s]
+[INFO] Apurador JIF: worker ............................... SUCCESS [  0.320 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.369 s
+[INFO] Finished at: 2026-11-17T11:29:07-03:00
+[INFO] ------------------------------------------------------------------------
+Build terminou com código 0
+
+== 4b. Módulo de integração (TI-02): só compila, sem rodar ==
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Apurador JIF                                                       [pom]
+[INFO] Apurador JIF: core                                                 [jar]
+[INFO] Apurador JIF: cluster                                              [jar]
+[INFO] Apurador JIF: persistência                                         [jar]
+[INFO] Apurador JIF: dispatcher                                           [jar]
+[INFO] Apurador JIF: worker                                               [jar]
+[INFO] Apurador JIF: testes de integração                                 [jar]
+[INFO] 
+[INFO] ------------------< br.edu.ifg.apurador:apurador-jif >------------------
+[INFO] Building Apurador JIF 1.0.0                                        [1/7]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ apurador-jif ---
+[INFO] Installing /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/pom.xml to /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/m2/br/edu/ifg/apurador/apurador-jif/1.0.0/apurador-jif-1.0.0.pom
+[INFO] 
+[INFO] ----------------------< br.edu.ifg.apurador:core >----------------------
+[INFO] Building Apurador JIF: core 1.0.0                                  [2/7]
+[INFO]   from core/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ core ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/core/src/main/resources
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/core/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ core ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/core/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ core ---
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ core ---
+[INFO] Installing /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/core/pom.xml to /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/m2/br/edu/ifg/apurador/core/1.0.0/core-1.0.0.pom
+[INFO] Installing /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/core/target/core-1.0.0.jar to /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/m2/br/edu/ifg/apurador/core/1.0.0/core-1.0.0.jar
+[INFO] 
+[INFO] --------------------< br.edu.ifg.apurador:cluster >---------------------
+[INFO] Building Apurador JIF: cluster 1.0.0                               [3/7]
+[INFO]   from cluster/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ cluster ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/cluster/src/main/resources
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/cluster/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ cluster ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ cluster ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/cluster/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ cluster ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ cluster ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ cluster ---
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ cluster ---
+[INFO] Installing /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/cluster/pom.xml to /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/m2/br/edu/ifg/apurador/cluster/1.0.0/cluster-1.0.0.pom
+[INFO] Installing /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/cluster/target/cluster-1.0.0.jar to /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/m2/br/edu/ifg/apurador/cluster/1.0.0/cluster-1.0.0.jar
+[INFO] 
+[INFO] ------------------< br.edu.ifg.apurador:persistencia >------------------
+[INFO] Building Apurador JIF: persistência 1.0.0                          [4/7]
+[INFO]   from persistencia/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ persistencia ---
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ persistencia ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ persistencia ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/persistencia/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ persistencia ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ persistencia ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ persistencia ---
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ persistencia ---
+[INFO] Installing /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/persistencia/pom.xml to /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/m2/br/edu/ifg/apurador/persistencia/1.0.0/persistencia-1.0.0.pom
+[INFO] Installing /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/persistencia/target/persistencia-1.0.0.jar to /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/m2/br/edu/ifg/apurador/persistencia/1.0.0/persistencia-1.0.0.jar
+[INFO] 
+[INFO] -------------------< br.edu.ifg.apurador:dispatcher >-------------------
+[INFO] Building Apurador JIF: dispatcher 1.0.0                            [5/7]
+[INFO]   from dispatcher/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ dispatcher ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ dispatcher ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ dispatcher ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/dispatcher/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ dispatcher ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ dispatcher ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ dispatcher ---
+[INFO] 
+[INFO] --- spring-boot:3.5.6:repackage (repackage) @ dispatcher ---
+[INFO] Attaching repackaged archive /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/dispatcher/target/dispatcher-1.0.0-exec.jar with classifier exec
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ dispatcher ---
+[INFO] Installing /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/dispatcher/pom.xml to /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/m2/br/edu/ifg/apurador/dispatcher/1.0.0/dispatcher-1.0.0.pom
+[INFO] Installing /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/dispatcher/target/dispatcher-1.0.0.jar to /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/m2/br/edu/ifg/apurador/dispatcher/1.0.0/dispatcher-1.0.0.jar
+[INFO] Installing /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/dispatcher/target/dispatcher-1.0.0-exec.jar to /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/m2/br/edu/ifg/apurador/dispatcher/1.0.0/dispatcher-1.0.0-exec.jar
+[INFO] 
+[INFO] ---------------------< br.edu.ifg.apurador:worker >---------------------
+[INFO] Building Apurador JIF: worker 1.0.0                                [6/7]
+[INFO]   from worker/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ worker ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ worker ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ worker ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/worker/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ worker ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ worker ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ worker ---
+[INFO] 
+[INFO] --- spring-boot:3.5.6:repackage (repackage) @ worker ---
+[INFO] Attaching repackaged archive /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/worker/target/worker-1.0.0-exec.jar with classifier exec
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ worker ---
+[INFO] Installing /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/worker/pom.xml to /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/m2/br/edu/ifg/apurador/worker/1.0.0/worker-1.0.0.pom
+[INFO] Installing /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/worker/target/worker-1.0.0.jar to /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/m2/br/edu/ifg/apurador/worker/1.0.0/worker-1.0.0.jar
+[INFO] Installing /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/worker/target/worker-1.0.0-exec.jar to /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/m2/br/edu/ifg/apurador/worker/1.0.0/worker-1.0.0-exec.jar
+[INFO] 
+[INFO] -------------------< br.edu.ifg.apurador:integracao >-------------------
+[INFO] Building Apurador JIF: testes de integração 1.0.0                  [7/7]
+[INFO]   from integracao/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ integracao ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/integracao/src/main/resources
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/integracao/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ integracao ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ integracao ---
+[INFO] skip non existing resourceDirectory /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/integracao/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ integracao ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 2 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ integracao ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ integracao ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/integracao/target/integracao-1.0.0.jar
+[INFO] 
+[INFO] --- failsafe:3.5.4:integration-test (default) @ integracao ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- failsafe:3.5.4:verify (default) @ integracao ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ integracao ---
+[INFO] Installing /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/integracao/pom.xml to /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/m2/br/edu/ifg/apurador/integracao/1.0.0/integracao-1.0.0.pom
+[INFO] Installing /Users/maycondouglas/Documents/ApuradorJifEntrega/apurador-jif/integracao/target/integracao-1.0.0.jar to /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/m2/br/edu/ifg/apurador/integracao/1.0.0/integracao-1.0.0.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Apurador JIF 1.0.0:
+[INFO] 
+[INFO] Apurador JIF ....................................... SUCCESS [  0.081 s]
+[INFO] Apurador JIF: core ................................. SUCCESS [  0.354 s]
+[INFO] Apurador JIF: cluster .............................. SUCCESS [  0.028 s]
+[INFO] Apurador JIF: persistência ......................... SUCCESS [  0.113 s]
+[INFO] Apurador JIF: dispatcher ........................... SUCCESS [  0.392 s]
+[INFO] Apurador JIF: worker ............................... SUCCESS [  0.238 s]
+[INFO] Apurador JIF: testes de integração ................. SUCCESS [  0.929 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.319 s
+[INFO] Finished at: 2026-11-17T11:29:10-03:00
+[INFO] ------------------------------------------------------------------------
+Compilação do TI-02 terminou com código 0
+
+== 5. Pacote para build sem rede ==
+maven-offline.tar: 338 MB
+-rw-r--r--  1 maycondouglas  staff  346486272 17 Nov 11:29 maven-offline.tar
+
+== 6. Ambiente ==
+data: Tue 17 Nov 2026 11:29:13 -03
+ProductName:		macOS
+ProductVersion:		27.2.1
+BuildVersion:		26B131
+arquitetura: arm64
+memoria_bytes: 17179869184
+nucleos: 10
+JAVA_HOME: /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/jdk/jdk-21.0.13+9/Contents/Home
+docker: /Users/maycondouglas/.docker/bin/docker
+kubectl: /Users/maycondouglas/.docker/bin/kubectl
+k3d: nao instalado
+k3s: nao instalado
+k6: nao instalado
+helm: nao instalado
+node: /usr/local/bin/node
+npm: /usr/local/bin/npm
+brew: /opt/homebrew/bin/brew
+colima: nao instalado
+minikube: nao instalado
+kind: nao instalado
+multipass: nao instalado
+docker servidor: 
+Docker Compose version v5.4.0
+
+PRONTO: o projeto compilou e os testes passaram.
+Pode voltar ao Claude e avisar que rodou.
+
+== ambiente-mac.txt ==
+data: Tue 17 Nov 2026 11:29:13 -03
+ProductName:		macOS
+ProductVersion:		27.2.1
+BuildVersion:		26B131
+arquitetura: arm64
+memoria_bytes: 17179869184
+nucleos: 10
+JAVA_HOME: /Users/maycondouglas/Documents/ApuradorJifEntrega/_maven-offline/jdk/jdk-21.0.13+9/Contents/Home
+docker: /Users/maycondouglas/.docker/bin/docker
+kubectl: /Users/maycondouglas/.docker/bin/kubectl
+k3d: nao instalado
+k3s: nao instalado
+k6: nao instalado
+helm: nao instalado
+node: /usr/local/bin/node
+npm: /usr/local/bin/npm
+brew: /opt/homebrew/bin/brew
+colima: nao instalado
+minikube: nao instalado
+kind: nao instalado
+multipass: nao instalado
+docker servidor: 
+Docker Compose version v5.4.0

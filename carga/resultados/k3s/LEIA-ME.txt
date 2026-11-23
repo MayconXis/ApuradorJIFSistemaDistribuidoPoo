@@ -1,0 +1,30 @@
+Medição no k3s: primeira execução completa (18/11/2026, 17:43 a 17:52, horário de Brasília).
+Ambiente em ambiente.txt e anfitriao.txt: VM Multipass de 4 CPUs e 8 GB (Ubuntu 24.04, k3s) num MacBook Air,
+com o k6 rodando dentro da VM e dividindo a CPU com o cluster.
+
+VALE SEM RESSALVA
+- consultas-1795034788171.* e consultas-k3s-tc02.log: TC-02 (200 usuários virtuais consultando).
+- rajada-k3s-tf01.* e observador-tf01.txt: TF-01 (PodChaos mata o worker-2 aos 25 s da rajada).
+- consistencia-final.json: auditoria acumulada no fim desta execução.
+
+VALE, MAS O p95 NÃO SE REPETIU
+- rajada-k3s-tc01.*: TC-01 sem falha. Zero perdidos, mas p95 de 6138 ms e 301 iterações descartadas pelo k6.
+  Nas duas repetições (k3s-verificacao/) o p95 foi de 9,5 ms e 8,8 ms. A causa da primeira não foi identificada.
+
+NÃO VALE COMO TESTE DE ATRASO
+- rajada-k3s-tf02.*, rajada-k3s-tf02b.*, observador-tf02*.txt, tf02*-networkchaos-describe.txt.
+  O NetworkChaos mirava o IP dos pods, mas os workers falam com o RabbitMQ e com o Dispatcher pelo IP do Service,
+  e o atraso não pega nesse caminho (k3s-verificacao/atraso-medicao.txt: 5 a 7 ms pelo Service e 221 a 390 ms
+  pelo IP do pod). O "describe" do Chaos Mesh mostra "Injected" mesmo assim: ele só diz que a regra foi instalada.
+
+VALE COM RESSALVA
+- rajada-k3s-tf03.*: o "perdidos: 1" é erro de medição do k6 (uma conferência expirou durante a queda do Gateway e foi
+  contada como evento perdido). O banco subiu exatamente os 1924 eventos aceitos.
+- tf03-tempo-de-volta.txt ("voltou em 243 ms") não vale: leitura mais provável, não confirmada, é que um processo
+  antigo ainda respondia. O script foi reescrito para esperar um pod novo ficar pronto.
+
+ONDE ESTÃO AS MEDIÇÕES VÁLIDAS DE TF-02, TF-02b E TF-03
+- k3s-repeticao-tf02-tf02b-tf03-2/ (identificadores de evento novos, atraso mirando o IP do Service).
+- k3s-repeticao-tf02-tf02b-tf03/ (primeira repetição): só valem a prova do atraso e a observação do detector.
+  As rajadas dela reaproveitaram identificadores desta pasta. Leia o LEIA-ME dela.
+- k3s-verificacao/: prova de que o atraso só chega ao Service se o alvo for o IP do Service, e duas repetições do TC-01.

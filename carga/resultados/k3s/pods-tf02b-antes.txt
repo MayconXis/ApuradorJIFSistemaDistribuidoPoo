@@ -1,0 +1,8 @@
+NAME                          READY   STATUS    RESTARTS      AGE    IP           NODE       NOMINATED NODE   READINESS GATES
+dispatcher-5d6c9d4c4b-ltntf   1/1     Running   0             40m    10.42.0.14   apurador   <none>           <none>
+frontend-5fdf4f8447-qvm4j     1/1     Running   0             40m    10.42.0.17   apurador   <none>           <none>
+postgres-0                    1/1     Running   0             40m    10.42.0.12   apurador   <none>           <none>
+rabbitmq-0                    1/1     Running   1 (40m ago)   40m    10.42.0.13   apurador   <none>           <none>
+worker-0                      1/1     Running   0             40m    10.42.0.16   apurador   <none>           <none>
+worker-1                      1/1     Running   0             34m    10.42.0.24   apurador   <none>           <none>
+worker-2                      1/1     Running   0             105s   10.42.0.25   apurador   <none>           <none>

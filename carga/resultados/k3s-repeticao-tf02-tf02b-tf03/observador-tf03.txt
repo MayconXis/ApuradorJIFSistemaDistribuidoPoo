@@ -1,0 +1,17 @@
+instante; worker; evento; detalhe
+1795037984.986; -; gateway sem resposta; HTTP Error 502: Bad Gateway
+1795037985.190; -; gateway sem resposta; HTTP Error 502: Bad Gateway
+1795037985.392; -; gateway sem resposta; timed out
+1795037987.594; -; gateway sem resposta; timed out
+1795037989.797; -; gateway sem resposta; timed out
+1795037992.000; -; gateway sem resposta; timed out
+1795037994.202; -; gateway sem resposta; timed out
+1795038018.470; -; gateway sem resposta; timed out
+1795038058.021; -; gateway sem resposta; timed out
+1795038072.127; -; gateway sem resposta; timed out
+1795038082.857; -; gateway sem resposta; timed out
+1795038087.558; -; gateway sem resposta; timed out
+1795038090.184; -; gateway sem resposta; timed out
+1795038092.393; -; gateway sem resposta; timed out
+1795038095.214; -; gateway sem resposta; timed out
+1795038098.070; -; gateway sem resposta; timed out

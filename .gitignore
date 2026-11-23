@@ -1,0 +1,19 @@
+# Saída de build do Maven
+target/
+
+# Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# Arquivos temporários dos scripts do k3s (imagens exportadas)
+_k3s/
+
+# Resultados brutos de uma execução em andamento (os resultados entregues ficam em carga/resultados/)
+carga/resultados/*.tmp
+
+# IDE e sistema
+.idea/
+.vscode/
+*.iml
+.DS_Store

@@ -1,0 +1,58 @@
+# Workers. StatefulSet para que cada pod tenha um nome estável (worker-0, worker-1,
+# worker-2). Esse nome é o identificador do worker no anel e o nome da fila dele.
+apiVersion: v1
+kind: Service
+metadata:
+  name: worker
+  namespace: apurador
+spec:
+  clusterIP: None
+  selector:
+    app: worker
+  ports:
+    - port: 8081
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: worker
+  namespace: apurador
+spec:
+  serviceName: worker
+  replicas: 3
+  podManagementPolicy: Parallel
+  selector:
+    matchLabels:
+      app: worker
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+        - name: worker
+          image: apurador/worker:1.0.0
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - configMapRef: { name: apurador-config }
+            - secretRef: { name: apurador-segredos }
+          env:
+            - name: WORKER_ID
+              valueFrom:
+                fieldRef: { fieldPath: metadata.name }
+          ports:
+            - containerPort: 8081
+          startupProbe:
+            httpGet: { path: /actuator/health/liveness, port: 8081 }
+            periodSeconds: 3
+            failureThreshold: 40
+          livenessProbe:
+            httpGet: { path: /actuator/health/liveness, port: 8081 }
+            periodSeconds: 10
+          readinessProbe:
+            httpGet: { path: /actuator/health/readiness, port: 8081 }
+            periodSeconds: 5
+          resources:
+            requests: { cpu: 200m, memory: 320Mi }
+            limits: { memory: 640Mi }

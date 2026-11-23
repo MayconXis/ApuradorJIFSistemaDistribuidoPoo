@@ -1,0 +1,78 @@
+Name:         atrasar-heartbeat
+Namespace:    apurador
+Labels:       <none>
+Annotations:  <none>
+API Version:  chaos-mesh.org/v1alpha1
+Kind:         NetworkChaos
+Metadata:
+  Creation Timestamp:  2026-11-18T20:48:42Z
+  Finalizers:
+    chaos-mesh/records
+  Generation:        7
+  Resource Version:  3646
+  UID:               ade80210-3f4f-4d48-a06c-8e9ba04acf7e
+Spec:
+  Action:  delay
+  Delay:
+    Correlation:  0
+    Jitter:       1000ms
+    Latency:      2500ms
+  Direction:      to
+  Duration:       60s
+  Mode:           one
+  Selector:
+    Label Selectors:
+      App:  worker
+    Namespaces:
+      apurador
+  Target:
+    Mode:  all
+    Selector:
+      Label Selectors:
+        App:  dispatcher
+      Namespaces:
+        apurador
+Status:
+  Conditions:
+    Status:  True
+    Type:    Selected
+    Status:  True
+    Type:    AllInjected
+    Status:  False
+    Type:    AllRecovered
+    Status:  False
+    Type:    Paused
+  Experiment:
+    Container Records:
+      Events:
+        Operation:      Apply
+        Timestamp:      2026-11-18T20:48:43Z
+        Type:           Succeeded
+      Id:               apurador/worker-0
+      Injected Count:   1
+      Phase:            Injected
+      Recovered Count:  0
+      Selector Key:     .
+      Events:
+        Operation:      Apply
+        Timestamp:      2026-11-18T20:48:42Z
+        Type:           Succeeded
+      Id:               apurador/dispatcher-5d6c9d4c4b-ltntf
+      Injected Count:   1
+      Phase:            Injected
+      Recovered Count:  0
+      Selector Key:     .Target
+    Desired Phase:      Run
+  Instances:
+    apurador/worker-0:  3
+Events:
+  Type    Reason           Age   From            Message
+  ----    ------           ----  ----            -------
+  Normal  FinalizerInited  6s    initFinalizers  Finalizer has been inited
+  Normal  Updated          6s    initFinalizers  Successfully update finalizer of resource
+  Normal  Started          6s    desiredphase    Experiment has started
+  Normal  Updated          6s    desiredphase    Successfully update desiredPhase of resource
+  Normal  Applied          6s    records         Successfully apply chaos for apurador/dispatcher-5d6c9d4c4b-ltntf
+  Normal  Updated          5s    records         Successfully update records of resource
+  Normal  Applied          5s    records         Successfully apply chaos for apurador/worker-0
+  Normal  Updated          5s    records         Successfully update records of resource

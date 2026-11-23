@@ -1,0 +1,12 @@
+@let c = cluster();
+<section class="card" aria-label="Resumo do anel">
+  <div class="numeros">
+    <div><span class="numero">{{ vivos() }}</span><span class="numero-rotulo">workers ativos</span></div>
+    <div><span class="numero">{{ c.totalDeChaves }}</span><span class="numero-rotulo">chaves no anel</span></div>
+    <div><span class="numero">{{ c.teto }}</span><span class="numero-rotulo">teto de carga por worker</span></div>
+  </div>
+  <p class="nota">
+    {{ c.pontosPorWorker }} pontos virtuais por worker, folga de {{ c.folga | porcentagem }} sobre a média.
+    Worker sem heartbeat por {{ c.tempoLimiteMs | segundos }} é declarado morto.
+  </p>
+</section>

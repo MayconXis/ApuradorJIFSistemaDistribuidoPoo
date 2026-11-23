@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="Apurador JIF" version="24.7.17" type="device">
+  <diagram id="d-estadosdapartida" name="Estados da partida">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c2" value="Diagrama de estados: Partida (modelo da equipe)" style="text;html=1;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#0B3B2C;" vertex="1" parent="1">
+          <mxGeometry x="20" y="10" width="900" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="" style="ellipse;html=1;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="230" y="70" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="Agendada" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontSize=12;fillColor=#D5E8D4;strokeColor=#0E7A54;" vertex="1" parent="1">
+          <mxGeometry x="180" y="150" width="130" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" value="Em andamento" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontSize=12;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="230" width="140" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" value="Homologada" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontSize=12;fillColor=#D5E8D4;strokeColor=#0E7A54;" vertex="1" parent="1">
+          <mxGeometry x="180" y="340" width="130" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" value="Contestada" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontSize=12;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="450" width="130" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" value="Recalculada" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontSize=12;fillColor=#D5E8D4;strokeColor=#0E7A54;" vertex="1" parent="1">
+          <mxGeometry x="180" y="560" width="130" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="232" y="680" width="26" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="chave cadastrada&lt;br&gt;(rodízio simples)" style="endArrow=open;endSize=10;html=1;fontSize=11;" edge="1" parent="1" source="c3" target="c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="resultado ou WO&lt;br&gt;registrado e aplicado" style="endArrow=open;endSize=10;html=1;fontSize=11;" edge="1" parent="1" source="c4" target="c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="início do jogo" style="endArrow=open;endSize=10;html=1;fontSize=11;" edge="1" parent="1" source="c4" target="c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="resultado registrado&lt;br&gt;e aplicado" style="endArrow=open;endSize=10;html=1;fontSize=11;" edge="1" parent="1" source="c5" target="c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="protesto registrado&lt;br&gt;(até 2 h, Art. 135)" style="endArrow=open;endSize=10;html=1;fontSize=11;exitX=1;exitY=0.2;entryX=0.6;entryY=0;" edge="1" parent="1" source="c6" target="c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="protesto negado" style="endArrow=open;endSize=10;html=1;fontSize=11;exitX=0;exitY=0.8;entryX=0.75;entryY=1;" edge="1" parent="1" source="c7" target="c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="protesto aceito,&lt;br&gt;resultado retificado" style="endArrow=open;endSize=10;html=1;fontSize=11;" edge="1" parent="1" source="c7" target="c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" value="retificação&lt;br&gt;registrada" style="endArrow=open;endSize=10;html=1;fontSize=11;" edge="1" parent="1" source="c6" target="c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" value="" style="endArrow=open;endSize=10;html=1;fontSize=11;" edge="1" parent="1" source="c8" target="c9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c19" value="Verde: estados do MVP (no código: AGENDADA, HOMOLOGADA e RETIFICADA).&lt;br&gt;Tracejado: estados fora do MVP." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=12;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=6;fontSize=11;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
+          <mxGeometry x="600" y="120" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c20" value="O regulamento não define estados de partida nem o efeito de um protesto aceito. Só fala em homologação de inscrições (Art. 14, II). Tudo aqui é modelo da equipe (SUP-07 e SUP-08)." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=12;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=6;fontSize=11;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
+          <mxGeometry x="600" y="540" width="260" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,6 @@
+TC-02 consultas simultâneas
+base: http://192.168.252.2  usuários virtuais no pico: 200
+consultas: 7565  (com corpo: 3798, 304: 3766)
+latência p50: 2.5 ms
+latência p95: 8.0 ms
+falhas: 0.00%

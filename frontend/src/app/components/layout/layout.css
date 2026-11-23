@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+main:focus { outline: none; }
+.miolo { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.pular { position: absolute; left: -9999px; top: 8px; z-index: 20; }
+.pular:focus { left: 8px; }
+.topo { background: var(--superficie); border-bottom: 3px solid var(--marca); }
+.topo-linha { display: flex; align-items: stretch; justify-content: space-between; gap: 24px; min-height: 64px; }
+.marca { display: flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; }
+.marca img { display: block; width: 32px; height: 32px; }
+.marca b { display: block; font-family: var(--titulo); font-size: 25px; font-weight: 700; line-height: 1; color: var(--verde); }
+.marca small { display: block; margin-top: 3px; font-size: 13px; line-height: 1.2; color: var(--apagado); }
+.menu { display: flex; gap: 4px; }
+.menu a {
+  display: flex; align-items: center; margin-bottom: -3px; padding: 0 14px;
+  border-bottom: 3px solid transparent; font-size: 15px; font-weight: 600; color: var(--tinta); text-decoration: none;
+  white-space: nowrap; transition: color 0.2s, border-color 0.2s;
+}
+.menu a:hover { color: var(--verde); border-bottom-color: var(--linha-forte); }
+.menu a.on { color: var(--verde); border-bottom-color: var(--verde); }
+main.miolo { flex: 1 0 auto; width: 100%; padding-top: 32px; padding-bottom: 48px; }
+.rodape { border-top: 1px solid var(--linha); background: var(--superficie); }
+.rodape-linha { display: flex; align-items: center; gap: 18px; padding-top: 18px; padding-bottom: 22px; }
+.rodape img { flex: none; display: block; width: auto; height: 60px; }
+.rodape p { margin: 0; max-width: 78ch; font-size: 13.5px; color: var(--apagado); }
+.rodape p span { display: block; margin-top: 2px; }
+
+@media (max-width: 760px) {
+  .miolo { padding: 0 16px; }
+  .topo-linha { flex-direction: column; align-items: stretch; gap: 0; }
+  .marca { padding: 12px 0 8px; }
+  .menu { margin: 0 -8px; overflow-x: auto; }
+  .menu a { padding: 10px 8px 9px; }
+  .rodape-linha { align-items: flex-start; }
+  .rodape img { height: 48px; }
+}

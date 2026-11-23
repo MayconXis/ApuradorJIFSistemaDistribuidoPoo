@@ -1,0 +1,18 @@
+# O k3s já vem com o Traefik como controlador de Ingress.
+# A interface fica em http://<ip-do-nó>/ e a API em http://<ip-do-nó>/api (via nginx do frontend).
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: apurador
+  namespace: apurador
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 80

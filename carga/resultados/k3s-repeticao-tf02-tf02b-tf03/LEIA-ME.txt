@@ -1,0 +1,15 @@
+Primeira repetição de TF-02, TF-02b e TF-03 (18/11/2026).
+
+O QUE VALE
+- tf02-prova-do-atraso.txt e tf02b-prova-do-atraso.txt: o atraso do Chaos Mesh chegou ao tráfego pelo Service
+  (RabbitMQ: 225 a 400 ms, contra 5 a 7 ms sem atraso; heartbeat do worker-1: 2259 a 3501 ms).
+- observador-tf02.txt e observador-tf02b.txt: o que o detector de falhas viu (TF-02: nenhum worker saiu de VIVO;
+  TF-02b: worker-1 SUSPEITO, depois MORTO, com 63 chaves reatribuídas, e voltou ao fim do atraso).
+
+O QUE NÃO VALE
+- As rajadas (rajada-k3s-tf02/tf02b/tf03.*) usaram os MESMOS identificadores de evento da primeira medição
+  (carga/resultados/k3s/), porque o nome da rodada era igual. Quase todos os eventos já existiam no banco e voltaram
+  como repetidos: o banco subiu só +191, +205 e +181 eventos, de 2400 envios por rodada. Por isso os números de
+  "perdidos", "p95" e "tempo até esvaziar" desta pasta NÃO provam o comportamento sob falha.
+- Corrigido em carga/rajada-resultados.js (ID_EXTRA) e em scripts/vm/medir-no-k3s.sh. A repetição válida está na
+  pasta k3s-repeticao-tf02-tf02b-tf03-2.

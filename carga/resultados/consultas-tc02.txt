@@ -1,0 +1,6 @@
+TC-02 consultas simultâneas
+base: http://localhost:8080  usuários virtuais no pico: 200
+consultas: 7585  (com corpo: 3826, 304: 3758)
+latência p50: 2.4 ms
+latência p95: 5.9 ms
+falhas: 0.00%

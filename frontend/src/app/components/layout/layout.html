@@ -1,0 +1,33 @@
+<button type="button" class="pular" (click)="principal.focus()">Ir para o conteúdo</button>
+
+<header class="topo">
+  <div class="miolo topo-linha">
+    <a class="marca" routerLink="/registrar">
+      <img src="favicon.png" width="32" height="32" alt="" />
+      <span>
+        <b>Apurador JIF</b>
+        <small>IFG Câmpus Inhumas</small>
+      </span>
+    </a>
+    <nav class="menu" aria-label="Telas do sistema">
+      <a routerLink="/registrar" routerLinkActive="on" ariaCurrentWhenActive="page">Registrar</a>
+      <a routerLink="/classificacao" routerLinkActive="on" ariaCurrentWhenActive="page">Classificação</a>
+      <a routerLink="/cluster" routerLinkActive="on" ariaCurrentWhenActive="page">Cluster</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo" class="miolo" tabindex="-1" #principal>
+  <router-outlet />
+</main>
+
+<footer class="rodape">
+  <div class="miolo rodape-linha">
+    <img src="logo-ifg-inhumas.png" width="42" height="60" alt="Instituto Federal de Goiás, Câmpus Inhumas" />
+    <p>
+      Projeto acadêmico de Programação Orientada a Objetos e Sistemas Distribuídos, Engenharia de Software.
+      Maycon Douglas da Silva, Felype de Moura Lino e Silva e Maria Eduarda Mendonça Fernandes.
+      <span>Não é um sistema oficial do JIF nem do IFG. Os dados de demonstração são fictícios.</span>
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,11 @@
+Data: 2026-11-18T18:10:00-03:00
+VM: Linux 6.8.0-147-generic aarch64, 4 CPUs, 7919 MB
+Chaos Mesh: [{"name":"chaos-mesh","namespace":"chaos-mesh","revision":"1","updated":"2026-11-18 17:09:08.115521855 -0300 -03","status":"deployed","chart":"chaos-mesh-2.8.8","app_version":"2.8.8"}]
+NAME                          READY   STATUS    RESTARTS      AGE   IP           NODE       NOMINATED NODE   READINESS GATES
+dispatcher-5d6c9d4c4b-pgwt2   1/1     Running   0             19m   10.42.0.26   apurador   <none>           <none>
+frontend-5fdf4f8447-qvm4j     1/1     Running   0             61m   10.42.0.17   apurador   <none>           <none>
+postgres-0                    1/1     Running   0             62m   10.42.0.12   apurador   <none>           <none>
+rabbitmq-0                    1/1     Running   1 (61m ago)   62m   10.42.0.13   apurador   <none>           <none>
+worker-0                      1/1     Running   0             61m   10.42.0.16   apurador   <none>           <none>
+worker-1                      1/1     Running   0             55m   10.42.0.24   apurador   <none>           <none>
+worker-2                      1/1     Running   0             23m   10.42.0.25   apurador   <none>           <none>

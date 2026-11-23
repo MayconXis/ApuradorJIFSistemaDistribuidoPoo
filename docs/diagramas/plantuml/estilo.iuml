@@ -1,0 +1,79 @@
+skinparam shadowing false
+skinparam defaultFontName Liberation Sans
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+skinparam ArrowColor #0B3B2C
+skinparam ArrowFontColor #10231C
+skinparam ArrowFontSize 11
+skinparam roundCorner 8
+skinparam titleFontSize 18
+skinparam titleFontColor #0B3B2C
+skinparam noteBackgroundColor #FFF0C7
+skinparam noteBorderColor #F2A900
+skinparam noteFontSize 11
+skinparam class {
+  BackgroundColor #EDF3F0
+  BorderColor #0B3B2C
+  ArrowColor #0B3B2C
+  FontColor #10231C
+  AttributeFontSize 11
+  StereotypeFontSize 10
+}
+skinparam package {
+  BackgroundColor #FFFFFF
+  BorderColor #5B6762
+  FontColor #0B3B2C
+}
+skinparam usecase {
+  BackgroundColor #EDF3F0
+  BorderColor #0B3B2C
+  FontColor #10231C
+}
+skinparam actor {
+  BackgroundColor #F2A900
+  BorderColor #0B3B2C
+  FontColor #10231C
+}
+skinparam rectangle {
+  BackgroundColor #EDF3F0
+  BorderColor #0B3B2C
+  FontColor #10231C
+}
+skinparam component {
+  BackgroundColor #EDF3F0
+  BorderColor #0B3B2C
+  FontColor #10231C
+  StereotypeFontSize 10
+}
+skinparam node {
+  BackgroundColor #FFFFFF
+  BorderColor #0B3B2C
+  FontColor #0B3B2C
+}
+skinparam database {
+  BackgroundColor #FFF0C7
+  BorderColor #0B3B2C
+}
+skinparam queue {
+  BackgroundColor #FFF0C7
+  BorderColor #0B3B2C
+}
+skinparam sequence {
+  ParticipantBackgroundColor #EDF3F0
+  ParticipantBorderColor #0B3B2C
+  LifeLineBorderColor #5B6762
+  ActorBackgroundColor #F2A900
+  ActorBorderColor #0B3B2C
+  GroupBackgroundColor #EDF3F0
+  GroupBorderColor #5B6762
+  DividerBackgroundColor #FFF0C7
+  BoxBackgroundColor #FAFCFB
+  BoxBorderColor #C5D1CB
+}
+skinparam state {
+  BackgroundColor #EDF3F0
+  BorderColor #0B3B2C
+  FontColor #10231C
+  StartColor #0B3B2C
+  EndColor #0B3B2C
+}

@@ -1,0 +1,142 @@
+@startuml
+!include estilo.iuml
+title Hierarquia dos requisitos e rastreabilidade para os componentes
+left to right direction
+skinparam rectangle {
+  BackgroundColor<<objetivo>> #0B3B2C
+  FontColor<<objetivo>> #FFFFFF
+  BackgroundColor<<grupo>> #FFF0C7
+  BackgroundColor<<componente>> #FFFFFF
+  BorderColor<<componente>> #F2A900
+}
+
+rectangle "Apurar a chave certo,\nmesmo sob carga e falha" <<objetivo>> as OBJ
+
+rectangle "Apuração (POO)" <<grupo>> as G1
+rectangle "Registro e consulta" <<grupo>> as G2
+rectangle "Distribuição (SD)" <<grupo>> as G3
+rectangle "Operação e qualidade" <<grupo>> as G4
+
+rectangle "RF-05 Pontuar e ordenar" as RF05
+rectangle "RF-06 Desempatar na ordem\ndo regulamento" as RF06
+rectangle "RF-07 Critério decisivo" as RF07
+rectangle "RF-08 Sorteio pendente" as RF08
+rectangle "RNF-10 Nova modalidade sem\nmudar o Classificador" as RNF10
+rectangle "RNF-11 Core testável\nsem infraestrutura" as RNF11
+
+rectangle "RF-01 Cadastrar chave" as RF01
+rectangle "RF-02 Registrar resultado" as RF02
+rectangle "RF-03 Validar pela modalidade" as RF03
+rectangle "RF-04 Registrar WO" as RF04
+rectangle "RF-09 Consultar classificação" as RF09
+rectangle "RF-10 Retificar e recalcular" as RF10
+rectangle "RF-11 Andamento do evento" as RF11
+rectangle "RF-13 Listar chaves e partidas" as RF13
+
+rectangle "RNF-01 Disponibilidade" as RNF01
+rectangle "RNF-02 Durabilidade" as RNF02
+rectangle "RNF-03 Idempotência" as RNF03
+rectangle "RNF-04 Ordem por chave" as RNF04
+rectangle "RNF-05 Teto de carga" as RNF05
+rectangle "RNF-06 Heartbeat" as RNF06
+rectangle "RNF-07 Movimento mínimo" as RNF07
+rectangle "RNF-14 Recuperação do Gateway" as RNF14
+
+rectangle "RF-12 Painel do cluster" as RF12
+rectangle "RF-14 DLQ" as RF14
+rectangle "RF-15 Auditoria" as RF15
+rectangle "RNF-08 Observabilidade" as RNF08
+rectangle "RNF-09 Implantação reproduzível" as RNF09
+rectangle "RNF-12 Latência" as RNF12
+rectangle "RNF-13 Restrições de tecnologia" as RNF13
+
+rectangle "CORE\nmódulo core" <<componente>> as CORE
+rectangle "ANEL\ncluster.anel" <<componente>> as ANEL
+rectangle "DET\ncluster.falhas" <<componente>> as DET
+rectangle "COORD\ncluster.despacho" <<componente>> as COORD
+rectangle "APLIC\ncluster.apuracao" <<componente>> as APLIC
+rectangle "PERS\nmódulo persistencia" <<componente>> as PERS
+rectangle "GW\nmódulo dispatcher" <<componente>> as GW
+rectangle "WK\nmódulo worker" <<componente>> as WK
+rectangle "FE\nmódulo frontend" <<componente>> as FE
+rectangle "K8S\nmanifestos" <<componente>> as K8S
+
+OBJ --> G1
+OBJ --> G2
+OBJ --> G3
+OBJ --> G4
+
+G1 --> RF05
+G1 --> RF06
+G1 --> RF07
+G1 --> RF08
+G1 --> RNF10
+G1 --> RNF11
+G2 --> RF01
+G2 --> RF02
+G2 --> RF03
+G2 --> RF04
+G2 --> RF09
+G2 --> RF10
+G2 --> RF11
+G2 --> RF13
+G3 --> RNF01
+G3 --> RNF02
+G3 --> RNF03
+G3 --> RNF04
+G3 --> RNF05
+G3 --> RNF06
+G3 --> RNF07
+G3 --> RNF14
+G4 --> RF12
+G4 --> RF14
+G4 --> RF15
+G4 --> RNF08
+G4 --> RNF09
+G4 --> RNF12
+G4 --> RNF13
+
+RF05 ..> CORE
+RF06 ..> CORE
+RF07 ..> CORE
+RF08 ..> CORE
+RNF10 ..> CORE
+RNF11 ..> CORE
+RF03 ..> CORE
+RF04 ..> CORE
+RF01 ..> GW
+RF02 ..> GW
+RF09 ..> GW
+RF11 ..> GW
+RF13 ..> GW
+RF02 ..> FE
+RF09 ..> FE
+RF10 ..> APLIC
+RNF01 ..> DET
+RNF01 ..> COORD
+RNF02 ..> PERS
+RNF02 ..> GW
+RNF03 ..> APLIC
+RNF04 ..> ANEL
+RNF04 ..> APLIC
+RNF05 ..> ANEL
+RNF06 ..> DET
+RNF06 ..> WK
+RNF07 ..> ANEL
+RNF14 ..> COORD
+RF12 ..> FE
+RF12 ..> COORD
+RF14 ..> WK
+RF15 ..> GW
+RNF08 ..> GW
+RNF08 ..> WK
+RNF09 ..> K8S
+RNF12 ..> GW
+RNF13 ..> K8S
+
+legend bottom
+  Seta cheia: decomposição do requisito.
+  Seta tracejada: componente que satisfaz o requisito.
+  A matriz completa, com os testes, está em matriz-rastreabilidade.md.
+endlegend
+@enduml

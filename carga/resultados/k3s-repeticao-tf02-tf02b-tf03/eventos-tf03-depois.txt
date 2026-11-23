@@ -1,0 +1,235 @@
+LAST SEEN   TYPE      REASON             OBJECT                                        MESSAGE
+118s        Normal    Scheduled          pod/dispatcher-5d6c9d4c4b-hgsrs               Successfully assigned apurador/dispatcher-5d6c9d4c4b-hgsrs to apurador
+51m         Normal    Scheduled          pod/dispatcher-5d6c9d4c4b-pgwt2               Successfully assigned apurador/dispatcher-5d6c9d4c4b-pgwt2 to apurador
+54m         Normal    Scheduled          pod/worker-2                                  Successfully assigned apurador/worker-2 to apurador
+56m         Warning   Unhealthy          pod/worker-1                                  Readiness probe failed: Get "http://10.42.0.24:8081/actuator/health/readiness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+56m         Warning   Unhealthy          pod/worker-0                                  Liveness probe failed: Get "http://10.42.0.16:8081/actuator/health/liveness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+56m         Warning   Unhealthy          pod/dispatcher-5d6c9d4c4b-ltntf               Liveness probe failed: Get "http://10.42.0.14:8080/actuator/health/liveness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+56m         Warning   Unhealthy          pod/dispatcher-5d6c9d4c4b-ltntf               Readiness probe failed: Get "http://10.42.0.14:8080/actuator/health/readiness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+56m         Warning   Unhealthy          pod/worker-2                                  Liveness probe failed: Get "http://10.42.0.18:8081/actuator/health/liveness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+56m         Warning   Unhealthy          pod/rabbitmq-0                                Readiness probe failed: command timed out: "rabbitmq-diagnostics -q ping" timed out after 8s
+54m         Normal    Killing            pod/worker-2                                  Stopping container worker
+54m         Normal    Updated            podchaos/matar-worker                         Successfully update records of resource
+54m         Normal    Applied            podchaos/matar-worker                         Successfully apply chaos for apurador/worker-2
+54m         Normal    Updated            podchaos/matar-worker                         Successfully update desiredPhase of resource
+54m         Normal    Updated            podchaos/matar-worker                         Successfully update finalizer of resource
+54m         Normal    FinalizerInited    podchaos/matar-worker                         Finalizer has been inited
+54m         Normal    SuccessfulCreate   statefulset/worker                            Create Pod worker-2 in StatefulSet worker successful
+54m         Normal    Started            pod/worker-2                                  Container started
+54m         Normal    Created            pod/worker-2                                  Container created
+54m         Normal    Pulled             pod/worker-2                                  Container image "apurador/worker:1.0.0" already present on machine and can be accessed by the pod
+54m         Warning   Unhealthy          pod/worker-2                                  Startup probe failed: Get "http://10.42.0.25:8081/actuator/health/liveness": dial tcp 10.42.0.25:8081: connect: connection refused
+54m         Normal    Deleted            podchaos/matar-worker                         Experiment has been deleted
+54m         Normal    Failed             podchaos/matar-worker                         Failed to update conditions: podchaos.chaos-mesh.org "matar-worker" not found
+54m         Normal    Updated            podchaos/matar-worker                         Successfully update desiredPhase of resource
+54m         Normal    Recovered          podchaos/matar-worker                         Successfully recover chaos for apurador/worker-2
+54m         Normal    Updated            podchaos/matar-worker                         Successfully update records of resource
+54m         Normal    FinalizerInited    podchaos/matar-worker                         Finalizer has been removed
+54m         Normal    Updated            podchaos/matar-worker                         Successfully update finalizer of resource
+54m         Normal    Started            networkchaos/atrasar-mensagens                Experiment has started
+54m         Normal    FinalizerInited    networkchaos/atrasar-mensagens                Finalizer has been inited
+54m         Normal    Applied            networkchaos/atrasar-mensagens                Successfully apply chaos for apurador/rabbitmq-0
+54m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update desiredPhase of resource
+54m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+54m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update finalizer of resource
+54m         Normal    Updated            podnetworkchaos/worker-0                      Successfully update ObservedGeneration and FailedMessage of resource
+54m         Normal    Updated            podnetworkchaos/worker-1                      Successfully update ObservedGeneration and FailedMessage of resource
+54m         Normal    Applied            networkchaos/atrasar-mensagens                Successfully apply chaos for apurador/worker-1
+54m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+54m         Normal    Applied            networkchaos/atrasar-mensagens                Successfully apply chaos for apurador/worker-2
+54m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+54m         Normal    Applied            networkchaos/atrasar-mensagens                Successfully apply chaos for apurador/worker-0
+54m         Normal    Updated            podnetworkchaos/worker-2                      Successfully update ObservedGeneration and FailedMessage of resource
+54m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+53m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+53m         Normal    Recovered          networkchaos/atrasar-mensagens                Successfully recover chaos for apurador/worker-0
+53m         Normal    Updated            podnetworkchaos/worker-0                      Successfully update ObservedGeneration and FailedMessage of resource
+53m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+53m         Normal    Recovered          networkchaos/atrasar-mensagens                Successfully recover chaos for apurador/rabbitmq-0
+53m         Normal    Updated            podnetworkchaos/rabbitmq-0                    Successfully update ObservedGeneration and FailedMessage of resource
+53m         Normal    Updated            podnetworkchaos/worker-1                      Successfully update ObservedGeneration and FailedMessage of resource
+53m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+53m         Normal    Recovered          networkchaos/atrasar-mensagens                Successfully recover chaos for apurador/worker-2
+53m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+53m         Normal    Recovered          networkchaos/atrasar-mensagens                Successfully recover chaos for apurador/worker-1
+53m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+53m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update desiredPhase of resource
+53m         Normal    TimeUp             networkchaos/atrasar-mensagens                Time up according to the duration
+53m         Normal    Updated            podnetworkchaos/worker-2                      Successfully update ObservedGeneration and FailedMessage of resource
+53m         Normal    FinalizerInited    networkchaos/atrasar-mensagens                Finalizer has been removed
+53m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update finalizer of resource
+53m         Normal    Applied            networkchaos/atrasar-heartbeat                Successfully apply chaos for apurador/dispatcher-5d6c9d4c4b-ltntf
+53m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update desiredPhase of resource
+53m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update finalizer of resource
+53m         Normal    FinalizerInited    networkchaos/atrasar-heartbeat                Finalizer has been inited
+53m         Normal    Started            networkchaos/atrasar-heartbeat                Experiment has started
+53m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update records of resource
+53m         Normal    Applied            networkchaos/atrasar-heartbeat                Successfully apply chaos for apurador/worker-0
+53m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update records of resource
+53m         Normal    Updated            podnetworkchaos/worker-0                      Successfully update ObservedGeneration and FailedMessage of resource
+52m         Normal    Recovered          networkchaos/atrasar-heartbeat                Successfully recover chaos for apurador/dispatcher-5d6c9d4c4b-ltntf
+52m         Normal    Recovered          networkchaos/atrasar-heartbeat                Successfully recover chaos for apurador/worker-0
+52m         Normal    Updated            podnetworkchaos/dispatcher-5d6c9d4c4b-ltntf   Successfully update ObservedGeneration and FailedMessage of resource
+52m         Normal    TimeUp             networkchaos/atrasar-heartbeat                Time up according to the duration
+52m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update records of resource
+52m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update records of resource
+52m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update desiredPhase of resource
+52m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update records of resource
+52m         Normal    Updated            podnetworkchaos/worker-0                      Successfully update ObservedGeneration and FailedMessage of resource
+51m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update finalizer of resource
+51m         Normal    FinalizerInited    networkchaos/atrasar-heartbeat                Finalizer has been removed
+51m         Normal    Killing            pod/dispatcher-5d6c9d4c4b-ltntf               Stopping container dispatcher
+51m         Normal    SuccessfulCreate   replicaset/dispatcher-5d6c9d4c4b              Created pod: dispatcher-5d6c9d4c4b-pgwt2
+51m         Normal    Pulled             pod/dispatcher-5d6c9d4c4b-pgwt2               Container image "apurador/dispatcher:1.0.0" already present on machine and can be accessed by the pod
+51m         Normal    Created            pod/dispatcher-5d6c9d4c4b-pgwt2               Container created
+51m         Normal    Started            pod/dispatcher-5d6c9d4c4b-pgwt2               Container started
+51m         Warning   Unhealthy          pod/dispatcher-5d6c9d4c4b-pgwt2               Startup probe failed: Get "http://10.42.0.26:8080/actuator/health/liveness": dial tcp 10.42.0.26:8080: connect: connection refused
+31m         Normal    FinalizerInited    networkchaos/atrasar-mensagens                Finalizer has been inited
+31m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update finalizer of resource
+31m         Normal    Started            networkchaos/atrasar-mensagens                Experiment has started
+31m         Normal    Applied            networkchaos/atrasar-mensagens                Successfully apply chaos for apurador/worker-0
+31m         Normal    Applied            networkchaos/atrasar-mensagens                Successfully apply chaos for apurador/worker-1
+31m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update desiredPhase of resource
+31m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+31m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+31m         Normal    Applied            networkchaos/atrasar-mensagens                Successfully apply chaos for apurador/worker-2
+31m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+31m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+31m         Normal    Updated            podnetworkchaos/worker-0                      Successfully update ObservedGeneration and FailedMessage of resource
+31m         Normal    Applied            networkchaos/atrasar-mensagens                Successfully apply chaos for apurador/rabbitmq-0
+31m         Normal    Updated            podnetworkchaos/worker-2                      Successfully update ObservedGeneration and FailedMessage of resource
+31m         Normal    Updated            podnetworkchaos/worker-1                      Successfully update ObservedGeneration and FailedMessage of resource
+31m         Normal    Deleted            networkchaos/atrasar-mensagens                Experiment has been deleted
+31m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update desiredPhase of resource
+31m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+31m         Normal    Updated            podnetworkchaos/worker-0                      Successfully update ObservedGeneration and FailedMessage of resource
+31m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+31m         Normal    Recovered          networkchaos/atrasar-mensagens                Successfully recover chaos for apurador/worker-1
+31m         Normal    Updated            podnetworkchaos/worker-1                      Successfully update ObservedGeneration and FailedMessage of resource
+31m         Normal    Failed             networkchaos/atrasar-mensagens                Failed to update conditions: networkchaos.chaos-mesh.org "atrasar-mensagens" not found
+31m         Normal    Recovered          networkchaos/atrasar-mensagens                Successfully recover chaos for apurador/rabbitmq-0
+31m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+31m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update finalizer of resource
+31m         Normal    FinalizerInited    networkchaos/atrasar-mensagens                Finalizer has been removed
+31m         Normal    Recovered          networkchaos/atrasar-mensagens                Successfully recover chaos for apurador/worker-2
+31m         Normal    Updated            podnetworkchaos/worker-2                      Successfully update ObservedGeneration and FailedMessage of resource
+31m         Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+31m         Normal    Recovered          networkchaos/atrasar-mensagens                Successfully recover chaos for apurador/worker-0
+31m         Normal    Updated            podnetworkchaos/worker-2                      Successfully update ObservedGeneration and FailedMessage of resource
+31m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update records of resource
+31m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update desiredPhase of resource
+31m         Normal    Applied            networkchaos/atrasar-heartbeat                Successfully apply chaos for apurador/dispatcher-5d6c9d4c4b-pgwt2
+31m         Normal    Started            networkchaos/atrasar-heartbeat                Experiment has started
+31m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update finalizer of resource
+31m         Normal    FinalizerInited    networkchaos/atrasar-heartbeat                Finalizer has been inited
+31m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update records of resource
+31m         Normal    Applied            networkchaos/atrasar-heartbeat                Successfully apply chaos for apurador/worker-2
+30m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update records of resource
+30m         Normal    Updated            podnetworkchaos/worker-2                      Successfully update ObservedGeneration and FailedMessage of resource
+30m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update finalizer of resource
+30m         Normal    FinalizerInited    networkchaos/atrasar-heartbeat                Finalizer has been removed
+30m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update records of resource
+30m         Normal    Recovered          networkchaos/atrasar-heartbeat                Successfully recover chaos for apurador/dispatcher-5d6c9d4c4b-pgwt2
+30m         Normal    Deleted            networkchaos/atrasar-heartbeat                Experiment has been deleted
+30m         Normal    Recovered          networkchaos/atrasar-heartbeat                Successfully recover chaos for apurador/worker-2
+30m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update records of resource
+30m         Normal    Updated            podnetworkchaos/dispatcher-5d6c9d4c4b-pgwt2   Successfully update ObservedGeneration and FailedMessage of resource
+30m         Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update desiredPhase of resource
+30m         Normal    Updated            networkchaos/verificar-rabbit-clusterip       Successfully update records of resource
+30m         Normal    FinalizerInited    networkchaos/verificar-rabbit-clusterip       Finalizer has been inited
+30m         Normal    Updated            podnetworkchaos/worker-2                      Successfully update ObservedGeneration and FailedMessage of resource
+30m         Normal    Updated            podnetworkchaos/worker-1                      Successfully update ObservedGeneration and FailedMessage of resource
+30m         Normal    Updated            podnetworkchaos/worker-0                      Successfully update ObservedGeneration and FailedMessage of resource
+30m         Normal    Updated            networkchaos/verificar-rabbit-clusterip       Successfully update records of resource
+30m         Normal    Applied            networkchaos/verificar-rabbit-clusterip       Successfully apply chaos for apurador/worker-0
+30m         Normal    Updated            networkchaos/verificar-rabbit-clusterip       Successfully update records of resource
+30m         Normal    Applied            networkchaos/verificar-rabbit-clusterip       Successfully apply chaos for apurador/worker-2
+30m         Normal    Applied            networkchaos/verificar-rabbit-clusterip       Successfully apply chaos for apurador/worker-1
+30m         Normal    Updated            networkchaos/verificar-rabbit-clusterip       Successfully update records of resource
+30m         Normal    Updated            networkchaos/verificar-rabbit-clusterip       Successfully update desiredPhase of resource
+30m         Normal    Started            networkchaos/verificar-rabbit-clusterip       Experiment has started
+30m         Normal    Updated            networkchaos/verificar-rabbit-clusterip       Successfully update finalizer of resource
+30m         Normal    Updated            podnetworkchaos/worker-1                      Successfully update ObservedGeneration and FailedMessage of resource
+30m         Normal    Updated            networkchaos/verificar-rabbit-clusterip       Successfully update records of resource
+30m         Normal    Failed             networkchaos/verificar-rabbit-clusterip       Failed to update conditions: networkchaos.chaos-mesh.org "verificar-rabbit-clusterip" not found
+30m         Normal    Deleted            networkchaos/verificar-rabbit-clusterip       Experiment has been deleted
+30m         Normal    Updated            networkchaos/verificar-rabbit-clusterip       Successfully update desiredPhase of resource
+30m         Normal    Updated            podnetworkchaos/worker-2                      Successfully update ObservedGeneration and FailedMessage of resource
+30m         Normal    Updated            networkchaos/verificar-rabbit-clusterip       Successfully update records of resource
+30m         Normal    Recovered          networkchaos/verificar-rabbit-clusterip       Successfully recover chaos for apurador/worker-1
+30m         Normal    Updated            podnetworkchaos/worker-0                      Successfully update ObservedGeneration and FailedMessage of resource
+30m         Normal    Recovered          networkchaos/verificar-rabbit-clusterip       Successfully recover chaos for apurador/worker-2
+30m         Normal    Updated            networkchaos/verificar-rabbit-clusterip       Successfully update finalizer of resource
+30m         Normal    FinalizerInited    networkchaos/verificar-rabbit-clusterip       Finalizer has been removed
+30m         Normal    Updated            networkchaos/verificar-rabbit-clusterip       Successfully update records of resource
+30m         Normal    Recovered          networkchaos/verificar-rabbit-clusterip       Successfully recover chaos for apurador/worker-0
+30m         Normal    Updated            networkchaos/verificar-rabbit-clusterip       Successfully update records of resource
+30m         Normal    Updated            networkchaos/verificar-heartbeat-clusterip    Successfully update records of resource
+30m         Normal    Applied            networkchaos/verificar-heartbeat-clusterip    Successfully apply chaos for apurador/worker-2
+30m         Normal    Updated            networkchaos/verificar-heartbeat-clusterip    Successfully update records of resource
+30m         Normal    Updated            networkchaos/verificar-heartbeat-clusterip    Successfully update desiredPhase of resource
+30m         Normal    Updated            podnetworkchaos/worker-2                      Successfully update ObservedGeneration and FailedMessage of resource
+30m         Normal    Started            networkchaos/verificar-heartbeat-clusterip    Experiment has started
+30m         Normal    Updated            networkchaos/verificar-heartbeat-clusterip    Successfully update finalizer of resource
+30m         Normal    FinalizerInited    networkchaos/verificar-heartbeat-clusterip    Finalizer has been inited
+29m         Normal    Updated            networkchaos/verificar-heartbeat-clusterip    Successfully update records of resource
+29m         Normal    Deleted            networkchaos/verificar-heartbeat-clusterip    Experiment has been deleted
+29m         Normal    Updated            networkchaos/verificar-heartbeat-clusterip    Successfully update desiredPhase of resource
+29m         Normal    Recovered          networkchaos/verificar-heartbeat-clusterip    Successfully recover chaos for apurador/worker-2
+29m         Normal    Updated            networkchaos/verificar-heartbeat-clusterip    Successfully update records of resource
+29m         Normal    FinalizerInited    networkchaos/verificar-heartbeat-clusterip    Finalizer has been removed
+29m         Normal    Updated            podnetworkchaos/worker-2                      Successfully update ObservedGeneration and FailedMessage of resource
+29m         Normal    Failed             networkchaos/verificar-heartbeat-clusterip    Failed to update conditions: networkchaos.chaos-mesh.org "verificar-heartbeat-clusterip" not found
+29m         Normal    Updated            networkchaos/verificar-heartbeat-clusterip    Successfully update finalizer of resource
+4m31s       Normal    Updated            networkchaos/atrasar-mensagens                Successfully update desiredPhase of resource
+4m31s       Normal    Started            networkchaos/atrasar-mensagens                Experiment has started
+4m31s       Normal    Updated            networkchaos/atrasar-mensagens                Successfully update finalizer of resource
+4m31s       Normal    Updated            podnetworkchaos/worker-0                      Successfully update ObservedGeneration and FailedMessage of resource
+4m31s       Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+4m31s       Normal    Applied            networkchaos/atrasar-mensagens                Successfully apply chaos for apurador/worker-1
+4m31s       Normal    Updated            podnetworkchaos/worker-1                      Successfully update ObservedGeneration and FailedMessage of resource
+4m31s       Normal    FinalizerInited    networkchaos/atrasar-mensagens                Finalizer has been inited
+4m31s       Normal    Updated            podnetworkchaos/worker-2                      Successfully update ObservedGeneration and FailedMessage of resource
+4m31s       Normal    Applied            networkchaos/atrasar-mensagens                Successfully apply chaos for apurador/worker-0
+4m31s       Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+4m31s       Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+4m31s       Normal    Applied            networkchaos/atrasar-mensagens                Successfully apply chaos for apurador/worker-2
+4m31s       Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+3m31s       Normal    TimeUp             networkchaos/atrasar-mensagens                Time up according to the duration
+3m31s       Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+3m31s       Normal    Updated            podnetworkchaos/worker-2                      Successfully update ObservedGeneration and FailedMessage of resource
+3m31s       Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+3m31s       Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+3m31s       Normal    Recovered          networkchaos/atrasar-mensagens                Successfully recover chaos for apurador/worker-1
+3m31s       Normal    Updated            podnetworkchaos/worker-0                      Successfully update ObservedGeneration and FailedMessage of resource
+3m31s       Normal    Updated            podnetworkchaos/worker-1                      Successfully update ObservedGeneration and FailedMessage of resource
+3m31s       Normal    Recovered          networkchaos/atrasar-mensagens                Successfully recover chaos for apurador/worker-0
+3m31s       Normal    Updated            networkchaos/atrasar-mensagens                Successfully update desiredPhase of resource
+3m31s       Normal    Updated            networkchaos/atrasar-mensagens                Successfully update records of resource
+3m31s       Normal    Recovered          networkchaos/atrasar-mensagens                Successfully recover chaos for apurador/worker-2
+3m25s       Normal    FinalizerInited    networkchaos/atrasar-mensagens                Finalizer has been removed
+3m24s       Normal    Updated            networkchaos/atrasar-mensagens                Successfully update finalizer of resource
+3m20s       Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update desiredPhase of resource
+3m20s       Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update finalizer of resource
+3m20s       Normal    Updated            podnetworkchaos/worker-1                      Successfully update ObservedGeneration and FailedMessage of resource
+3m20s       Normal    FinalizerInited    networkchaos/atrasar-heartbeat                Finalizer has been inited
+3m20s       Normal    Started            networkchaos/atrasar-heartbeat                Experiment has started
+3m20s       Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update records of resource
+3m20s       Normal    Applied            networkchaos/atrasar-heartbeat                Successfully apply chaos for apurador/worker-1
+3m20s       Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update records of resource
+2m20s       Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update records of resource
+2m20s       Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update desiredPhase of resource
+2m20s       Normal    TimeUp             networkchaos/atrasar-heartbeat                Time up according to the duration
+2m20s       Normal    Recovered          networkchaos/atrasar-heartbeat                Successfully recover chaos for apurador/worker-1
+2m20s       Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update records of resource
+2m20s       Normal    FinalizerInited    networkchaos/atrasar-heartbeat                Finalizer has been removed
+2m20s       Normal    Updated            podnetworkchaos/worker-1                      Successfully update ObservedGeneration and FailedMessage of resource
+2m20s       Normal    Updated            networkchaos/atrasar-heartbeat                Successfully update finalizer of resource
+119s        Normal    SuccessfulCreate   replicaset/dispatcher-5d6c9d4c4b              Created pod: dispatcher-5d6c9d4c4b-hgsrs
+119s        Normal    Killing            pod/dispatcher-5d6c9d4c4b-pgwt2               Stopping container dispatcher
+118s        Normal    Pulled             pod/dispatcher-5d6c9d4c4b-hgsrs               Container image "apurador/dispatcher:1.0.0" already present on machine and can be accessed by the pod
+118s        Normal    Created            pod/dispatcher-5d6c9d4c4b-hgsrs               Container created
+118s        Normal    Started            pod/dispatcher-5d6c9d4c4b-hgsrs               Container started
+112s        Warning   Unhealthy          pod/dispatcher-5d6c9d4c4b-hgsrs               Startup probe failed: Get "http://10.42.0.27:8080/actuator/health/liveness": dial tcp 10.42.0.27:8080: connect: connection refused
+102s        Warning   Unhealthy          pod/postgres-0                                Readiness probe failed: command timed out: "pg_isready -U apurador -d apurador" timed out after 1s
+83s         Warning   Unhealthy          pod/worker-0                                  Readiness probe failed: Get "http://10.42.0.16:8081/actuator/health/readiness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)

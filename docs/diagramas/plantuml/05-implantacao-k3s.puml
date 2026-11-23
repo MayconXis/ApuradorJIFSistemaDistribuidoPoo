@@ -1,0 +1,59 @@
+@startuml
+!include estilo.iuml
+title Implantação no k3s
+skinparam rectangle {
+  BackgroundColor<<ns>> #FAFCFB
+  BorderColor<<ns>> #5B6762
+}
+
+node "Máquina do grupo" {
+  node "k3s (1 nó ou mais)" as K3S {
+    rectangle "namespace apurador" <<ns>> {
+      component "Ingress (Traefik)\n/" as ING
+      component "Service frontend" as SFE
+      component "Deployment frontend\n1 réplica, nginx + Angular" as DFE
+      component "Service dispatcher" as SGW
+      component "Deployment dispatcher\n1 réplica, estratégia Recreate\nprobes: Actuator" as DGW
+      component "StatefulSet worker\n3 réplicas: worker-0, 1 e 2\nprobes: Actuator" as SWK
+      component "Service rabbitmq" as SMQ
+      component "StatefulSet rabbitmq\n1 nó (3 nós, opcional)" as DMQ
+      component "Service postgres" as SDB
+      database "StatefulSet postgres\n1 réplica, volume local-path" as DDB
+      component "ConfigMap e Secret" as CFG
+    }
+    rectangle "namespace chaos-mesh" <<ns>> {
+      component "Chaos Mesh\nPodChaos e NetworkChaos" as CM
+    }
+  }
+}
+
+actor "Navegador" as NAV
+actor "k6" as K6
+actor "kubectl" as KC
+
+NAV --> ING : HTTP
+K6 --> ING : HTTP
+ING --> SFE
+SFE --> DFE
+DFE --> SGW : /api (proxy do nginx)
+SGW --> DGW
+DGW --> SMQ : AMQP 5672
+DGW --> SDB : JDBC 5432
+SWK --> SMQ : AMQP 5672
+SWK --> SDB : JDBC 5432
+SWK --> SGW : heartbeat HTTP
+SMQ --> DMQ
+SDB --> DDB
+CM ..> SWK : mata pod,\natrasa rede
+KC ..> K3S : aplica manifestos
+
+note right of DGW
+  Uma réplica só: o anel fica em memória.
+  Ponto único de falha assumido.
+end note
+note right of SWK
+  StatefulSet dá nome estável ao worker.
+  O nome do pod é o id no anel
+  e o nome da fila.
+end note
+@enduml

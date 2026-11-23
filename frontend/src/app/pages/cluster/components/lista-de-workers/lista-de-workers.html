@@ -1,0 +1,29 @@
+@let c = cluster();
+<section class="card">
+  <h2>Workers</h2>
+  @if (c.workers.length === 0) {
+    <p class="vazio">Nenhum worker enviou heartbeat ainda. Eles aparecem aqui assim que sobem.</p>
+  } @else {
+    <table>
+      <tr><th>Worker</th><th>Heartbeat</th><th class="n">Último sinal</th><th>Carga</th><th class="chaves">Chaves</th></tr>
+      @for (w of c.workers; track w.id) {
+        <tr>
+          <td><b>{{ w.id }}</b></td>
+          <td><span class="tag" [class]="classeDoEstado(w.estado)">{{ w.estado }}</span></td>
+          <td class="n">há {{ w.silencioMs | segundos }}</td>
+          <td>
+            <span class="carga">
+              <span class="barra" aria-hidden="true"><i [style.width.%]="c.teto ? (w.carga / c.teto) * 100 : 0"></i></span>
+              {{ w.carga }} de {{ c.teto }}
+            </span>
+          </td>
+          <td class="chaves">
+            @for (chave of w.chaves; track chave) {
+              <span class="chip">{{ chave }}</span>
+            }
+          </td>
+        </tr>
+      }
+    </table>
+  }
+</section>

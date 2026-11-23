@@ -1,0 +1,11 @@
+TC-01 rajada de resultados
+rodada: tf01  base: http://localhost:8080  taxa: 40/s  duração: 60s  chaves: 30
+registros enviados: 2401
+eventos novos aceitos (202): 2174
+eventos encontrados no banco: 2174
+perdidos (aceitos e não encontrados): 0
+pendentes no fim: 0
+reenvios enviados: 255, reconhecidos como repetidos: 227
+latência do registro p95: 36.4 ms
+tempo até a fila esvaziar depois da rajada: 69 ms
+checks de consistência: 100%

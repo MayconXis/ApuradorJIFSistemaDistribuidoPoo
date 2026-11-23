@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="Apurador JIF" version="24.7.17" type="device">
+  <diagram id="d-componentes" name="Componentes">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c2" value="Diagrama de componentes: Apurador JIF" style="text;html=1;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#0B3B2C;" vertex="1" parent="1">
+          <mxGeometry x="20" y="10" width="900" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="&amp;lt;&amp;lt;executable&amp;gt;&amp;gt;&lt;br&gt;frontend&lt;br&gt;(Angular, servido por nginx)" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=11;fillColor=#D5E8D4;strokeColor=#0E7A54;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="&amp;lt;&amp;lt;executable&amp;gt;&amp;gt;&lt;br&gt;dispatcher.jar&lt;br&gt;(Gateway e Dispatcher)" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=11;fillColor=#D5E8D4;strokeColor=#0E7A54;" vertex="1" parent="1">
+          <mxGeometry x="320" y="120" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" value="&amp;lt;&amp;lt;executable&amp;gt;&amp;gt;&lt;br&gt;RabbitMQ&lt;br&gt;(filas por worker, DLQ)" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=11;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="320" y="290" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" value="&amp;lt;&amp;lt;executable&amp;gt;&amp;gt;&lt;br&gt;worker.jar" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=11;fillColor=#D5E8D4;strokeColor=#0E7A54;" vertex="1" parent="1">
+          <mxGeometry x="320" y="460" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" value="&amp;lt;&amp;lt;library&amp;gt;&amp;gt;&lt;br&gt;cluster.jar&lt;br&gt;(anel, falhas, despacho, apuração)" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=11;fillColor=#D5E8D4;strokeColor=#0E7A54;" vertex="1" parent="1">
+          <mxGeometry x="610" y="120" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" value="&amp;lt;&amp;lt;library&amp;gt;&amp;gt;&lt;br&gt;persistencia.jar&lt;br&gt;(entidades e repositórios JPA)" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=11;fillColor=#D5E8D4;strokeColor=#0E7A54;" vertex="1" parent="1">
+          <mxGeometry x="610" y="290" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" value="&amp;lt;&amp;lt;library&amp;gt;&amp;gt;&lt;br&gt;core.jar&lt;br&gt;(domínio de POO, Java puro)" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=11;fillColor=#D5E8D4;strokeColor=#0E7A54;" vertex="1" parent="1">
+          <mxGeometry x="610" y="460" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" value="&amp;lt;&amp;lt;​table&amp;gt;&amp;gt;&lt;br&gt;chave" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
+          <mxGeometry x="960" y="110" width="190" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="c11" value="&amp;lt;&amp;lt;​table&amp;gt;&amp;gt;&lt;br&gt;partida" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
+          <mxGeometry x="960" y="190" width="190" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="c12" value="&amp;lt;&amp;lt;​table&amp;gt;&amp;gt;&lt;br&gt;evento_resultado" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
+          <mxGeometry x="960" y="270" width="190" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" value="&amp;lt;&amp;lt;​table&amp;gt;&amp;gt;&lt;br&gt;posicao" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
+          <mxGeometry x="960" y="350" width="190" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="c14" value="&amp;lt;&amp;lt;file&amp;gt;&amp;gt;&lt;br&gt;k8s/*.yaml&lt;br&gt;(manifestos do k3s)" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="40" y="290" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c15" value="&amp;lt;&amp;lt;file&amp;gt;&amp;gt;&lt;br&gt;carga/*.js&lt;br&gt;(roteiros do k6)" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="40" y="460" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c16" value="&amp;lt;&amp;lt;file&amp;gt;&amp;gt;&lt;br&gt;chaos/*.yaml&lt;br&gt;(Chaos Mesh)" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="40" y="600" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" value="REST" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;" edge="1" parent="1" source="c3" target="c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;" edge="1" parent="1" source="c4" target="c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;" edge="1" parent="1" source="c4" target="c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;" edge="1" parent="1" source="c4" target="c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;" edge="1" parent="1" source="c6" target="c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;" edge="1" parent="1" source="c6" target="c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;" edge="1" parent="1" source="c6" target="c9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;" edge="1" parent="1" source="c7" target="c9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e25" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;exitX=1;exitY=0.85;entryX=0;entryY=0.2;" edge="1" parent="1" source="c4" target="c9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e26" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;exitX=1;exitY=0.15;entryX=0;entryY=0.85;" edge="1" parent="1" source="c6" target="c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e27" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;" edge="1" parent="1" source="c8" target="c10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e28" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;" edge="1" parent="1" source="c8" target="c11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e29" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;" edge="1" parent="1" source="c8" target="c12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e30" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;" edge="1" parent="1" source="c8" target="c13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e31" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;exitX=1;exitY=0.25;entryX=0;entryY=0.85;" edge="1" parent="1" source="c14" target="c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e32" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;exitX=1;exitY=0.75;entryX=0;entryY=0.15;" edge="1" parent="1" source="c14" target="c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e33" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;exitX=0.9;exitY=0;entryX=0.1;entryY=1;" edge="1" parent="1" source="c15" target="c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e34" value="" style="endArrow=open;endSize=10;dashed=1;html=1;fontSize=11;" edge="1" parent="1" source="c16" target="c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c35" value="Código do grupo" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;arcSize=12;fillColor=#D5E8D4;strokeColor=#0E7A54;" vertex="1" parent="1">
+          <mxGeometry x="320" y="640" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c36" value="Software de terceiros" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;arcSize=12;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="490" y="640" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c37" value="Tabelas no PostgreSQL" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;arcSize=12;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
+          <mxGeometry x="670" y="640" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c38" value="Seta tracejada: dependência. Os dois algoritmos obrigatórios (balanceamento e tolerância a falhas) ficam em cluster.jar, em Java puro." style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="320" y="680" width="620" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

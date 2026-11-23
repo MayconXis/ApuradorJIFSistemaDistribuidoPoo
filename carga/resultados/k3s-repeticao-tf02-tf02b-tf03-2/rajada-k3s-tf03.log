@@ -1,0 +1,557 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: carga/rajada-resultados.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 300 max VUs, 1m30s max duration (incl. graceful stop):
+              * rajada: 40.00 iterations/s for 1m0s (maxVUs: 50-300, gracefulStop: 30s)
+
+
+running (0m01.0s), 001/050 VUs, 25 complete and 0 interrupted iterations
+rajada   [   1% ] 001/050 VUs  0m00.6s/1m0s  40.00 iters/s
+
+running (0m02.0s), 001/050 VUs, 65 complete and 0 interrupted iterations
+rajada   [   3% ] 001/050 VUs  0m01.6s/1m0s  40.00 iters/s
+
+running (0m03.0s), 001/050 VUs, 105 complete and 0 interrupted iterations
+rajada   [   4% ] 001/050 VUs  0m02.6s/1m0s  40.00 iters/s
+
+running (0m04.0s), 002/050 VUs, 144 complete and 0 interrupted iterations
+rajada   [   6% ] 002/050 VUs  0m03.6s/1m0s  40.00 iters/s
+
+running (0m05.0s), 001/050 VUs, 185 complete and 0 interrupted iterations
+rajada   [   8% ] 001/050 VUs  0m04.6s/1m0s  40.00 iters/s
+
+running (0m06.0s), 001/050 VUs, 225 complete and 0 interrupted iterations
+rajada   [   9% ] 001/050 VUs  0m05.6s/1m0s  40.00 iters/s
+
+running (0m07.0s), 000/050 VUs, 265 complete and 0 interrupted iterations
+rajada   [  11% ] 000/050 VUs  0m06.6s/1m0s  40.00 iters/s
+
+running (0m08.0s), 001/050 VUs, 305 complete and 0 interrupted iterations
+rajada   [  13% ] 001/050 VUs  0m07.6s/1m0s  40.00 iters/s
+
+running (0m09.0s), 001/050 VUs, 345 complete and 0 interrupted iterations
+rajada   [  14% ] 001/050 VUs  0m08.6s/1m0s  40.00 iters/s
+
+running (0m10.0s), 001/050 VUs, 385 complete and 0 interrupted iterations
+rajada   [  16% ] 001/050 VUs  0m09.6s/1m0s  40.00 iters/s
+
+running (0m11.0s), 001/050 VUs, 425 complete and 0 interrupted iterations
+rajada   [  18% ] 001/050 VUs  0m10.6s/1m0s  40.00 iters/s
+
+running (0m12.0s), 001/050 VUs, 465 complete and 0 interrupted iterations
+rajada   [  19% ] 001/050 VUs  0m11.6s/1m0s  40.00 iters/s
+
+running (0m13.0s), 001/050 VUs, 505 complete and 0 interrupted iterations
+rajada   [  21% ] 001/050 VUs  0m12.6s/1m0s  40.00 iters/s
+
+running (0m14.0s), 001/050 VUs, 545 complete and 0 interrupted iterations
+rajada   [  23% ] 001/050 VUs  0m13.6s/1m0s  40.00 iters/s
+
+running (0m15.0s), 001/050 VUs, 585 complete and 0 interrupted iterations
+rajada   [  24% ] 001/050 VUs  0m14.6s/1m0s  40.00 iters/s
+
+running (0m16.0s), 001/050 VUs, 625 complete and 0 interrupted iterations
+rajada   [  26% ] 001/050 VUs  0m15.6s/1m0s  40.00 iters/s
+
+running (0m17.0s), 002/050 VUs, 665 complete and 0 interrupted iterations
+rajada   [  28% ] 002/050 VUs  0m16.7s/1m0s  40.00 iters/s
+
+running (0m18.0s), 001/050 VUs, 705 complete and 0 interrupted iterations
+rajada   [  29% ] 001/050 VUs  0m17.6s/1m0s  40.00 iters/s
+
+running (0m19.0s), 001/050 VUs, 745 complete and 0 interrupted iterations
+rajada   [  31% ] 001/050 VUs  0m18.6s/1m0s  40.00 iters/s
+
+running (0m20.0s), 001/050 VUs, 785 complete and 0 interrupted iterations
+rajada   [  33% ] 001/050 VUs  0m19.6s/1m0s  40.00 iters/s
+
+running (0m21.0s), 015/050 VUs, 811 complete and 0 interrupted iterations
+rajada   [  34% ] 015/050 VUs  0m20.6s/1m0s  40.00 iters/s
+
+running (0m22.0s), 052/052 VUs, 811 complete and 0 interrupted iterations
+rajada   [  36% ] 052/052 VUs  0m21.6s/1m0s  40.00 iters/s
+
+running (0m23.0s), 072/073 VUs, 811 complete and 0 interrupted iterations
+rajada   [  38% ] 072/073 VUs  0m22.6s/1m0s  40.00 iters/s
+
+running (0m24.0s), 092/093 VUs, 811 complete and 0 interrupted iterations
+rajada   [  39% ] 092/093 VUs  0m23.6s/1m0s  40.00 iters/s
+
+running (0m25.0s), 112/113 VUs, 811 complete and 0 interrupted iterations
+rajada   [  41% ] 112/113 VUs  0m24.6s/1m0s  40.00 iters/s
+
+running (0m26.0s), 132/133 VUs, 811 complete and 0 interrupted iterations
+rajada   [  43% ] 132/133 VUs  0m25.6s/1m0s  40.00 iters/s
+
+running (0m27.0s), 152/153 VUs, 811 complete and 0 interrupted iterations
+rajada   [  44% ] 152/153 VUs  0m26.6s/1m0s  40.00 iters/s
+
+running (0m28.0s), 172/172 VUs, 811 complete and 0 interrupted iterations
+rajada   [  46% ] 172/172 VUs  0m27.6s/1m0s  40.00 iters/s
+
+running (0m29.0s), 192/193 VUs, 811 complete and 0 interrupted iterations
+rajada   [  48% ] 192/193 VUs  0m28.6s/1m0s  40.00 iters/s
+
+running (0m30.0s), 210/210 VUs, 816 complete and 0 interrupted iterations
+rajada   [  49% ] 210/210 VUs  0m29.6s/1m0s  40.00 iters/s
+
+running (0m31.0s), 207/215 VUs, 854 complete and 0 interrupted iterations
+rajada   [  51% ] 207/215 VUs  0m30.6s/1m0s  40.00 iters/s
+
+running (0m32.0s), 207/215 VUs, 894 complete and 0 interrupted iterations
+rajada   [  53% ] 207/215 VUs  0m31.6s/1m0s  40.00 iters/s
+
+running (0m33.0s), 207/215 VUs, 934 complete and 0 interrupted iterations
+rajada   [  54% ] 207/215 VUs  0m32.6s/1m0s  40.00 iters/s
+
+running (0m34.0s), 207/215 VUs, 974 complete and 0 interrupted iterations
+rajada   [  56% ] 207/215 VUs  0m33.6s/1m0s  40.00 iters/s
+
+running (0m35.0s), 207/215 VUs, 1014 complete and 0 interrupted iterations
+rajada   [  58% ] 207/215 VUs  0m34.6s/1m0s  40.00 iters/s
+
+running (0m36.0s), 207/215 VUs, 1054 complete and 0 interrupted iterations
+rajada   [  59% ] 207/215 VUs  0m35.6s/1m0s  40.00 iters/s
+
+running (0m37.0s), 206/215 VUs, 1094 complete and 0 interrupted iterations
+rajada   [  61% ] 206/215 VUs  0m36.6s/1m0s  40.00 iters/s
+
+running (0m38.0s), 207/215 VUs, 1134 complete and 0 interrupted iterations
+rajada   [  63% ] 207/215 VUs  0m37.6s/1m0s  40.00 iters/s
+
+running (0m39.0s), 206/215 VUs, 1174 complete and 0 interrupted iterations
+rajada   [  64% ] 206/215 VUs  0m38.6s/1m0s  40.00 iters/s
+
+running (0m40.0s), 206/215 VUs, 1214 complete and 0 interrupted iterations
+rajada   [  66% ] 207/215 VUs  0m39.6s/1m0s  40.00 iters/s
+
+running (0m41.0s), 208/215 VUs, 1251 complete and 0 interrupted iterations
+rajada   [  68% ] 208/215 VUs  0m40.7s/1m0s  40.00 iters/s
+
+running (0m42.0s), 207/215 VUs, 1294 complete and 0 interrupted iterations
+rajada   [  69% ] 207/215 VUs  0m41.6s/1m0s  40.00 iters/s
+
+running (0m43.0s), 207/215 VUs, 1334 complete and 0 interrupted iterations
+rajada   [  71% ] 207/215 VUs  0m42.6s/1m0s  40.00 iters/s
+
+running (0m44.0s), 206/215 VUs, 1374 complete and 0 interrupted iterations
+rajada   [  73% ] 206/215 VUs  0m43.6s/1m0s  40.00 iters/s
+
+running (0m45.0s), 207/215 VUs, 1414 complete and 0 interrupted iterations
+rajada   [  74% ] 207/215 VUs  0m44.6s/1m0s  40.00 iters/s
+
+running (0m46.0s), 206/215 VUs, 1454 complete and 0 interrupted iterations
+rajada   [  76% ] 206/215 VUs  0m45.6s/1m0s  40.00 iters/s
+
+running (0m47.0s), 207/215 VUs, 1494 complete and 0 interrupted iterations
+rajada   [  78% ] 207/215 VUs  0m46.6s/1m0s  40.00 iters/s
+
+running (0m48.0s), 207/215 VUs, 1534 complete and 0 interrupted iterations
+rajada   [  79% ] 207/215 VUs  0m47.6s/1m0s  40.00 iters/s
+
+running (0m49.0s), 208/215 VUs, 1573 complete and 0 interrupted iterations
+rajada   [  81% ] 208/215 VUs  0m48.6s/1m0s  40.00 iters/s
+
+running (0m50.0s), 207/215 VUs, 1614 complete and 0 interrupted iterations
+rajada   [  83% ] 207/215 VUs  0m49.6s/1m0s  40.00 iters/s
+
+running (0m51.0s), 207/215 VUs, 1654 complete and 0 interrupted iterations
+rajada   [  84% ] 207/215 VUs  0m50.6s/1m0s  40.00 iters/s
+
+running (0m52.0s), 207/215 VUs, 1694 complete and 0 interrupted iterations
+rajada   [  86% ] 207/215 VUs  0m51.6s/1m0s  40.00 iters/s
+
+running (0m53.0s), 208/215 VUs, 1733 complete and 0 interrupted iterations
+rajada   [  88% ] 208/215 VUs  0m52.6s/1m0s  40.00 iters/s
+
+running (0m54.0s), 207/215 VUs, 1774 complete and 0 interrupted iterations
+rajada   [  89% ] 207/215 VUs  0m53.6s/1m0s  40.00 iters/s
+
+running (0m55.0s), 207/215 VUs, 1814 complete and 0 interrupted iterations
+rajada   [  91% ] 207/215 VUs  0m54.6s/1m0s  40.00 iters/s
+
+running (0m56.0s), 207/215 VUs, 1854 complete and 0 interrupted iterations
+rajada   [  93% ] 207/215 VUs  0m55.6s/1m0s  40.00 iters/s
+
+running (0m57.0s), 207/215 VUs, 1894 complete and 0 interrupted iterations
+rajada   [  94% ] 207/215 VUs  0m56.6s/1m0s  40.00 iters/s
+
+running (0m58.0s), 207/215 VUs, 1934 complete and 0 interrupted iterations
+rajada   [  96% ] 207/215 VUs  0m57.6s/1m0s  40.00 iters/s
+
+running (0m59.0s), 207/215 VUs, 1974 complete and 0 interrupted iterations
+rajada   [  98% ] 207/215 VUs  0m58.6s/1m0s  40.00 iters/s
+
+running (1m00.0s), 200/215 VUs, 2020 complete and 0 interrupted iterations
+rajada   [  99% ] 200/215 VUs  0m59.6s/1m0s  40.00 iters/s
+
+running (1m01.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m02.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m03.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m04.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m05.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m06.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m07.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m08.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m09.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m10.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m11.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m12.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m13.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m14.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m15.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m16.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m17.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m18.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m19.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+
+running (1m20.0s), 200/215 VUs, 2035 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+
+running (1m21.0s), 192/215 VUs, 2043 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:11-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+
+running (1m22.0s), 154/215 VUs, 2081 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:12-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+
+running (1m23.0s), 134/215 VUs, 2101 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:13-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+
+running (1m24.0s), 114/215 VUs, 2121 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:14-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+
+running (1m25.0s), 094/215 VUs, 2141 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:15-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+
+running (1m26.0s), 074/215 VUs, 2161 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:16-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+
+running (1m27.0s), 054/215 VUs, 2181 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:17-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+
+running (1m28.0s), 034/215 VUs, 2201 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:18-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+
+running (1m29.0s), 014/215 VUs, 2221 complete and 0 interrupted iterations
+rajada ↓ [ 100% ] 200/215 VUs  1m0s  40.00 iters/s
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:19-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:20-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:20-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:20-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:20-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:20-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+time="2026-11-18T19:07:20-03:00" level=warning msg="Request Failed" error="Post \"http://192.168.252.2/api/resultados\": request timeout"
+
+running (1m30.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m31.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m32.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m33.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m34.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m35.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m36.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m37.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m38.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m39.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m40.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m41.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m42.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m43.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m44.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+time="2026-11-18T19:07:35-03:00" level=warning msg="Request Failed" error="Get \"http://192.168.252.2/api/eventos/k6-k3s-tf03-18190331-e1728\": request timeout"
+
+running (1m45.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m46.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m47.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+
+running (1m48.0s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+time="2026-11-18T19:07:39-03:00" level=info msg="consistencia antes: {\"chavesInconsistentes\":0,\"eventos\":19685,\"pendentes\":0,\"rejeitados\":0,\"superados\":0,\"aplicados\":19685,\"aplicadosMaisDeUmaVez\":0,\"chaves\":276}" source=console
+time="2026-11-18T19:07:39-03:00" level=info msg="consistencia depois: {\"aplicadosMaisDeUmaVez\":0,\"chaves\":306,\"chavesInconsistentes\":0,\"eventos\":21524,\"pendentes\":0,\"aplicados\":21524,\"rejeitados\":0,\"superados\":0}" source=console
+TC-01 rajada de resultados
+rodada: k3s-tf03  base: http://192.168.252.2  taxa: 40/s  duração: 60s  chaves: 30
+identificadores: k6-k3s-tf03-18190331-e*
+registros enviados: 2235
+eventos novos aceitos (202): 1839
+registros que não eram reenvio e voltaram como já existentes (deve ser 0): 0
+eventos encontrados no banco: 1839
+perdidos (aceitos e não encontrados): 0
+conferências sem resposta, mesmo com 3 novas tentativas (entram em perdidos): 0
+pendentes no fim: 0
+reenvios enviados: 208, reconhecidos como repetidos: 170
+latência do registro p95: 60000.9 ms
+tempo até a fila esvaziar depois da rajada: 653 ms
+checks de consistência: 100%
+
+running (1m48.6s), 000/215 VUs, 2235 complete and 0 interrupted iterations
+rajada ✓ [ 100% ] 000/215 VUs  1m0s  40.00 iters/s
+time="2026-11-18T19:07:39-03:00" level=error msg="thresholds on metrics 'http_req_duration{tipo:registro}, http_req_failed{tipo:registro}' have been crossed"

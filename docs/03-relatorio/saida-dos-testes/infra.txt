@@ -1,0 +1,11 @@
+Saída real de scripts/verificar-infra/verificar_infra.py
+Ambiente: workspace de nuvem do Claude (Linux x86_64), RabbitMQ 3.12.1, psql (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)
+O que isto verifica: garantias da infraestrutura que o código Java assume. Não executa o código Java.
+
+Verificação da infraestrutura do Apurador JIF
+2026-11-17 08:17:06 -03
+[PASSOU] V1 reentrega sem ack: 1a entrega redelivered=False, 2a entrega redelivered=True, corpo=b'chave-A'
+[PASSOU] V2 limite de entregas e DLQ: x-delivery-limit=2, entregas antes de sair=3, na fila=0, na DLQ=1
+[PASSOU] V3 trava da chave: a segunda transação esperou 1492 ms pela primeira (que segurou a trava por 1500 ms)
+[PASSOU] V4 evento repetido: segundo INSERT recusado=True, linhas com o mesmo evento_id=1
+4 de 4 verificações passaram

@@ -1,0 +1,13 @@
+<h1>Cluster</h1>
+
+@if (erro()) {
+  <app-alerta tipo="bad">{{ erro() }}</app-alerta>
+}
+
+@if (cluster(); as c) {
+  <app-resumo-do-anel [cluster]="c" />
+  <app-lista-de-workers [cluster]="c" />
+  <app-mudancas-do-anel [mudancas]="c.mudancas" />
+}
+
+<app-conferencia-de-consistencia (falhou)="erro.set($event)" />

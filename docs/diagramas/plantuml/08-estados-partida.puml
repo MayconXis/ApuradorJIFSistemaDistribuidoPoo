@@ -1,0 +1,32 @@
+@startuml
+!include estilo.iuml
+title Estados da partida (modelo da equipe)
+hide empty description
+
+[*] --> Agendada : chave cadastrada\n(rodízio simples)
+Agendada --> EmAndamento : início do jogo
+EmAndamento --> Homologada : resultado registrado\ne aplicado
+Agendada --> Homologada : resultado ou WO\nregistrado e aplicado
+Homologada --> Contestada : protesto registrado\n(até 2 h, Art. 135)
+Contestada --> Homologada : protesto negado
+Contestada --> Recalculada : protesto aceito,\nresultado retificado
+Homologada --> Recalculada : retificação\nregistrada
+Recalculada --> Recalculada : nova retificação
+Recalculada --> [*]
+Homologada --> [*]
+
+state "Em andamento" as EmAndamento #FFFFFF
+state Contestada #FFFFFF
+
+note right of Homologada
+  No MVP: Agendada, Homologada e Recalculada
+  (no código: AGENDADA, HOMOLOGADA, RETIFICADA).
+end note
+
+note bottom of Contestada
+  Em branco: estados fora do MVP.
+  O regulamento não define estados de partida
+  nem o efeito de um protesto aceito.
+  Tudo aqui é modelo nosso (SUP-07, SUP-08).
+end note
+@enduml

@@ -1,0 +1,55 @@
+@startuml
+!include estilo.iuml
+title Sequência: queda de um worker e reatribuição
+autonumber
+
+participant "worker-1" as W1
+participant "Detector\nde falhas" as DET
+participant "Coordenador\n(Dispatcher)" as CO
+participant "Anel" as AN
+database "PostgreSQL" as DB
+queue "Fila do\nworker-2" as Q2
+participant "worker-2\n(novo dono)" as W2
+participant "k3s" as K3S
+
+W1 -> DET : heartbeat (a cada 1 s)
+W1 -> DB : trava a chave A\ne começa a aplicar
+W1 -[#C8432B]x W1 : cai antes do commit
+note over W1
+  A transação é desfeita pelo banco.
+  Os eventos seguem PENDENTES.
+  A mensagem sem ack volta
+  para a fila do worker-1.
+end note
+
+... sem heartbeat por 3 s ...
+DET -> DET : worker-1 passa a SUSPEITO
+... sem heartbeat por 5 s (tempo limite) ...
+DET -> CO : worker-1 está MORTO
+CO -> AN : remover(worker-1)
+AN --> CO : chaves órfãs e novos donos\n(chave A vai ao worker-2)
+note right of AN
+  Só as chaves do worker-1 mudam.
+  Cada uma vai ao próximo worker
+  do anel com carga abaixo do teto.
+end note
+CO -> DB : quais chaves órfãs têm\neventos PENDENTES?
+CO -> Q2 : publica tarefa {chave A, reatribuição}
+
+Q2 -> W2 : entrega
+W2 -> DB : trava a chave A
+W2 -> DB : lê PENDENTES e as partidas\n(reconstrói a chave pelo histórico)
+W2 -> DB : aplica, classifica pelo core,\ngrava posições, commit
+W2 -> Q2 : ack
+
+K3S -> W1 : recria o pod (complemento nativo)
+W1 -> DET : heartbeat
+DET -> CO : worker-1 está VIVO
+CO -> AN : adicionar(worker-1)
+AN --> CO : chaves que voltam ao worker-1
+W1 -> DB : recebe a mensagem antiga da fila,\nnão acha pendentes
+note over W1
+  Mensagem repetida não muda a tabela:
+  o evento já está APLICADO (RNF-03).
+end note
+@enduml

@@ -1,0 +1,74 @@
+LAST SEEN   TYPE      REASON                  OBJECT                                   MESSAGE
+37m         Normal    Scheduled               pod/worker-0                             Successfully assigned apurador/worker-0 to apurador
+38m         Normal    Scheduled               pod/dispatcher-5d6c9d4c4b-ltntf          Successfully assigned apurador/dispatcher-5d6c9d4c4b-ltntf to apurador
+38m         Normal    Scheduled               pod/rabbitmq-0                           Successfully assigned apurador/rabbitmq-0 to apurador
+38m         Normal    Scheduled               pod/postgres-0                           Successfully assigned apurador/postgres-0 to apurador
+32m         Normal    Scheduled               pod/worker-1                             Successfully assigned apurador/worker-1 to apurador
+37m         Normal    Scheduled               pod/worker-1                             Successfully assigned apurador/worker-1 to apurador
+37m         Normal    Scheduled               pod/worker-2                             Successfully assigned apurador/worker-2 to apurador
+37m         Normal    Scheduled               pod/frontend-5fdf4f8447-qvm4j            Successfully assigned apurador/frontend-5fdf4f8447-qvm4j to apurador
+38m         Normal    SuccessfulCreate        statefulset/postgres                     Create Claim dados-postgres-0 Pod postgres-0 in StatefulSet postgres success
+38m         Normal    WaitForFirstConsumer    persistentvolumeclaim/dados-postgres-0   waiting for first consumer to be created before binding
+38m         Normal    SuccessfulCreate        statefulset/rabbitmq                     Create Pod rabbitmq-0 in StatefulSet rabbitmq successful
+38m         Normal    Provisioning            persistentvolumeclaim/dados-postgres-0   External provisioner is provisioning volume for claim "apurador/dados-postgres-0"
+38m         Normal    SuccessfulCreate        statefulset/postgres                     Create Pod postgres-0 in StatefulSet postgres successful
+38m         Normal    SuccessfulCreate        statefulset/rabbitmq                     Create Claim dados-rabbitmq-0 Pod rabbitmq-0 in StatefulSet rabbitmq success
+38m         Normal    WaitForFirstConsumer    persistentvolumeclaim/dados-rabbitmq-0   waiting for first consumer to be created before binding
+38m         Normal    ExternalProvisioning    persistentvolumeclaim/dados-rabbitmq-0   Waiting for a volume to be created either by the external provisioner 'rancher.io/local-path' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.
+38m         Normal    ExternalProvisioning    persistentvolumeclaim/dados-postgres-0   Waiting for a volume to be created either by the external provisioner 'rancher.io/local-path' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.
+38m         Normal    Provisioning            persistentvolumeclaim/dados-rabbitmq-0   External provisioner is provisioning volume for claim "apurador/dados-rabbitmq-0"
+38m         Normal    ProvisioningSucceeded   persistentvolumeclaim/dados-rabbitmq-0   Successfully provisioned volume pvc-492dcb15-e160-4115-8dc8-a2234a1eaf2e
+38m         Normal    ProvisioningSucceeded   persistentvolumeclaim/dados-postgres-0   Successfully provisioned volume pvc-83e7527e-b247-4223-b8c6-832102fd3835
+38m         Normal    Pulling                 pod/rabbitmq-0                           Pulling image "rabbitmq:3.13-management"
+38m         Normal    Pulling                 pod/postgres-0                           Pulling image "postgres:16"
+38m         Normal    Pulled                  pod/rabbitmq-0                           Successfully pulled image "rabbitmq:3.13-management" in 10.397s (10.397s including waiting). Image size: 111104793 bytes.
+38m         Normal    Created                 pod/postgres-0                           Container created
+38m         Warning   Unhealthy               pod/postgres-0                           Readiness probe failed: /var/run/postgresql:5432 - no response
+38m         Normal    Started                 pod/postgres-0                           Container started
+38m         Normal    Pulled                  pod/postgres-0                           Successfully pulled image "postgres:16" in 12.212s (12.212s including waiting). Image size: 164730155 bytes.
+38m         Normal    Created                 pod/rabbitmq-0                           Container created
+38m         Normal    Pulled                  pod/rabbitmq-0                           Container image "rabbitmq:3.13-management" already present on machine and can be accessed by the pod
+38m         Warning   Unhealthy               pod/rabbitmq-0                           Readiness probe failed: Error:...
+38m         Normal    Started                 pod/rabbitmq-0                           Container started
+38m         Normal    ScalingReplicaSet       deployment/dispatcher                    Scaled up replica set dispatcher-5d6c9d4c4b from 0 to 1
+38m         Normal    SuccessfulCreate        replicaset/dispatcher-5d6c9d4c4b         Created pod: dispatcher-5d6c9d4c4b-ltntf
+38m         Normal    Pulled                  pod/dispatcher-5d6c9d4c4b-ltntf          Container image "apurador/dispatcher:1.0.0" already present on machine and can be accessed by the pod
+38m         Normal    Started                 pod/dispatcher-5d6c9d4c4b-ltntf          Container started
+38m         Normal    Created                 pod/dispatcher-5d6c9d4c4b-ltntf          Container created
+37m         Warning   Unhealthy               pod/dispatcher-5d6c9d4c4b-ltntf          Startup probe failed: Get "http://10.42.0.14:8080/actuator/health/liveness": dial tcp 10.42.0.14:8080: connect: connection refused
+37m         Normal    SuccessfulCreate        statefulset/worker                       Create Pod worker-0 in StatefulSet worker successful
+37m         Normal    SuccessfulCreate        statefulset/worker                       Create Pod worker-2 in StatefulSet worker successful
+37m         Normal    SuccessfulCreate        replicaset/frontend-5fdf4f8447           Created pod: frontend-5fdf4f8447-qvm4j
+37m         Normal    ScalingReplicaSet       deployment/frontend                      Scaled up replica set frontend-5fdf4f8447 from 0 to 1
+37m         Normal    Pulled                  pod/frontend-5fdf4f8447-qvm4j            Container image "apurador/frontend:1.0.0" already present on machine and can be accessed by the pod
+37m         Normal    Created                 pod/worker-2                             Container created
+37m         Normal    Started                 pod/frontend-5fdf4f8447-qvm4j            Container started
+37m         Normal    Pulled                  pod/worker-0                             Container image "apurador/worker:1.0.0" already present on machine and can be accessed by the pod
+37m         Normal    Created                 pod/worker-0                             Container created
+37m         Normal    Started                 pod/worker-0                             Container started
+37m         Normal    Pulled                  pod/worker-2                             Container image "apurador/worker:1.0.0" already present on machine and can be accessed by the pod
+37m         Normal    Started                 pod/worker-1                             Container started
+37m         Normal    Started                 pod/worker-2                             Container started
+37m         Normal    Created                 pod/frontend-5fdf4f8447-qvm4j            Container created
+37m         Warning   Unhealthy               pod/frontend-5fdf4f8447-qvm4j            Readiness probe failed: Get "http://10.42.0.17:80/": dial tcp 10.42.0.17:80: connect: connection refused
+37m         Normal    Pulled                  pod/worker-1                             Container image "apurador/worker:1.0.0" already present on machine and can be accessed by the pod
+37m         Normal    Created                 pod/worker-1                             Container created
+37m         Warning   Unhealthy               pod/worker-0                             Startup probe failed: Get "http://10.42.0.16:8081/actuator/health/liveness": dial tcp 10.42.0.16:8081: connect: connection refused
+37m         Warning   Unhealthy               pod/worker-1                             Startup probe failed: Get "http://10.42.0.15:8081/actuator/health/liveness": dial tcp 10.42.0.15:8081: connect: connection refused
+37m         Warning   Unhealthy               pod/worker-2                             Startup probe failed: Get "http://10.42.0.18:8081/actuator/health/liveness": dial tcp 10.42.0.18:8081: connect: connection refused
+37m         Warning   Unhealthy               pod/worker-0                             Startup probe failed: HTTP probe failed with statuscode: 503
+32m         Normal    Killing                 pod/worker-1                             Stopping container worker
+32m         Normal    SuccessfulCreate        statefulset/worker                       Create Pod worker-1 in StatefulSet worker successful
+32m         Normal    Started                 pod/worker-1                             Container started
+32m         Normal    Created                 pod/worker-1                             Container created
+32m         Normal    Pulled                  pod/worker-1                             Container image "apurador/worker:1.0.0" already present on machine and can be accessed by the pod
+32m         Warning   Unhealthy               pod/worker-1                             Startup probe failed: Get "http://10.42.0.24:8081/actuator/health/liveness": dial tcp 10.42.0.24:8081: connect: connection refused
+8m18s       Warning   Unhealthy               pod/worker-2                             Readiness probe failed: Get "http://10.42.0.18:8081/actuator/health/readiness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+104s        Warning   Unhealthy               pod/worker-1                             Readiness probe failed: Get "http://10.42.0.24:8081/actuator/health/readiness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+103s        Warning   Unhealthy               pod/worker-0                             Readiness probe failed: Get "http://10.42.0.16:8081/actuator/health/readiness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+103s        Warning   Unhealthy               pod/postgres-0                           Readiness probe failed: command timed out: "pg_isready -U apurador -d apurador" timed out after 1s
+101s        Warning   Unhealthy               pod/worker-0                             Liveness probe failed: Get "http://10.42.0.16:8081/actuator/health/liveness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+101s        Warning   Unhealthy               pod/worker-2                             Liveness probe failed: Get "http://10.42.0.18:8081/actuator/health/liveness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+101s        Warning   Unhealthy               pod/dispatcher-5d6c9d4c4b-ltntf          Liveness probe failed: Get "http://10.42.0.14:8080/actuator/health/liveness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+101s        Warning   Unhealthy               pod/dispatcher-5d6c9d4c4b-ltntf          Readiness probe failed: Get "http://10.42.0.14:8080/actuator/health/readiness": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+99s         Warning   Unhealthy               pod/rabbitmq-0                           Readiness probe failed: command timed out: "rabbitmq-diagnostics -q ping" timed out after 8s

@@ -1,0 +1,75 @@
+[TA-01] 1 ponto(s) por worker: maior carga = 1274 de 3000 (média 1000)
+[TA-01] 64 ponto(s) por worker: maior carga = 1136 de 3000 (média 1000)
+[TA-01] entrada do worker-3: 17 de 60 chaves mudaram de dono, carga do novo = 17, teto = 19
+[TA-01] saída do worker-1: 8 de 30 chaves mudaram de dono (as 8 que eram dele)
+[TI-01] envios ao Gateway: 84 (eventos distintos: 80, envios repetidos: 4)
+[TI-01] aplicados: 80 | perdidos: 0 | aplicados mais de uma vez: 0
+[TI-01] mensagens repetidas ou atrasadas ignoradas pelos workers: 33
+[TI-01] chaves do worker-1 na queda: 5 | tarefas presas na fila dele: 2
+[TI-01] da queda à reatribuição: 5400 ms de tempo SIMULADO (tempo limite de 5000 ms mais o intervalo de verificação)
+[TI-01] maior carga vista em um worker: 8 chaves, com 2 workers vivos (teto de 8) | teto no fim, com 3 workers: 5
+.
++-- JUnit Platform Suite [OK]
++-- JUnit Jupiter [OK]
+| +-- TA-01 Balanceamento: hash consistente com carga limitada [OK]
+| | +-- Pontos virtuais: com 64 pontos por worker a divisão natural fica mais uniforme d... [OK]
+| | +-- Invariantes valem em 500 operações aleatórias de entrada, saída e chave nova [OK]
+| | +-- O último worker sai: as chaves ficam sem dono e voltam quando alguém entra [OK]
+| | +-- RNF-07: a entrada de um worker move só uma parte das chaves [OK]
+| | +-- RNF-05: com folga zero, a chave pula o worker cheio e a divisão fica exata [OK]
+| | +-- Parâmetros inválidos são recusados [OK]
+| | +-- RNF-04: a mesma chave cai sempre no mesmo worker [OK]
+| | +-- RNF-04: o round-robin espalharia os eventos da mesma chave, o anel não [OK]
+| | +-- RNF-07: a saída de um worker move só as chaves dele [OK]
+| | +-- RNF-05: com folga de 25%, nenhum worker passa do teto [OK]
+| | '-- Sem nenhum worker, a chave espera. Quando um worker entra, ela ganha dono [OK]
+| +-- TI-01 Integração simulada: rajada com queda de worker (RNF-01, RNF-02, RNF-03, R... [OK]
+| | +-- O cenário usa as três modalidades e chaves de 3, 4 e 5 equipes [OK]
+| | '-- Zero eventos perdidos, zero duplicatas e tabela igual à calculada direto pelo co... [OK]
+| +-- TA-03 Dispatcher: despacho, reatribuição na queda e varredura de pendentes [OK]
+| | +-- RNF-06: worker SUSPEITO continua no anel. Só o MORTO sai [OK]
+| | +-- RF-02, RNF-04: todo resultado da mesma chave vai para a fila do mesmo worker [OK]
+| | +-- RF-12: o painel mostra estado, heartbeat, chaves e teto [OK]
+| | +-- RF-03: resultado inválido é recusado e nada é gravado nem publicado [OK]
+| | +-- Sem worker vivo, o resultado é aceito e espera. Quando um worker entra, ele rece... [OK]
+| | +-- RNF-14: Dispatcher reiniciado reconstrói o anel pelos heartbeats e pelo históric... [OK]
+| | +-- RNF-01, RNF-06: worker sem heartbeat é declarado morto, sai do anel e as chaves ... [OK]
+| | +-- O worker que volta a mandar heartbeat entra de novo no anel [OK]
+| | +-- RNF-03: o mesmo eventoId enviado duas vezes é gravado uma vez só [OK]
+| | '-- RNF-02: o evento é gravado antes de publicar. Se a publicação falha, a varredura... [OK]
+| +-- TA-04 Tolerância a falhas: reprocessamento idempotente e em ordem [OK]
+| | +-- WO pelo fluxo de eventos: o placar segue o maior da chave [OK]
+| | +-- RNF-04: dois eventos da mesma partida na mesma leva são aplicados em ordem de se... [OK]
+| | +-- RNF-03: dois workers processando a mesma chave ao mesmo tempo não duplicam nada [OK]
+| | +-- Evento mais antigo que o resultado já aplicado é marcado SUPERADO e não muda a t... [OK]
+| | +-- RNF-02: se o worker cai antes de confirmar, nada é gravado e o próximo worker ap... [OK]
+| | +-- RNF-03: mensagem repetida não aplica nada de novo e não muda a tabela [OK]
+| | +-- Evento inválido é REJEITADO com o motivo e não trava os outros [OK]
+| | +-- RNF-03: mesmos eventos em outra ordem de chegada dão as mesmas posições [OK]
+| | +-- RF-10, RNF-04: a retificação vale sobre o resultado anterior e a partida fica RE... [OK]
+| | '-- Aplica os pendentes e grava a tabela do empate triplo com o critério decisivo [OK]
+| '-- TA-02 Tolerância a falhas: detector por heartbeat com tempo limite [OK]
+|   +-- Cada worker é avaliado em separado [OK]
+|   +-- Primeiro heartbeat: o worker aparece como VIVO [OK]
+|   +-- Falso positivo: worker vivo com a rede atrasada é declarado morto e depois volta [OK]
+|   +-- Parâmetros inválidos são recusados [OK]
+|   +-- Silêncio: SUSPEITO depois de 3 s e MORTO depois de 5 s [OK]
+|   +-- Sem verificação intermediária, passa direto de VIVO a MORTO [OK]
+|   +-- Heartbeat novo traz de volta o SUSPEITO e o MORTO [OK]
+|   '-- Heartbeat em dia: continua VIVO e não gera transição [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 709 ms
+[         8 containers found      ]
+[         0 containers skipped    ]
+[         8 containers started    ]
+[         0 containers aborted    ]
+[         8 containers successful ]
+[         0 containers failed     ]
+[        41 tests found           ]
+[         0 tests skipped         ]
+[        41 tests started         ]
+[         0 tests aborted         ]
+[        41 tests successful      ]
+[         0 tests failed          ]
+

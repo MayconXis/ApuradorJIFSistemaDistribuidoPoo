@@ -1,0 +1,49 @@
+server:
+  port: 8080
+  shutdown: graceful
+
+spring:
+  application:
+    name: dispatcher
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/apurador}
+    username: ${DB_USER:apurador}
+    password: ${DB_PASSWORD:apurador}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  rabbitmq:
+    host: ${RABBIT_HOST:localhost}
+    port: ${RABBIT_PORT:5672}
+    username: ${RABBIT_USER:guest}
+    password: ${RABBIT_PASSWORD:guest}
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    template:
+      mandatory: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+
+apurador:
+  anel:
+    pontos-por-worker: ${ANEL_PONTOS:64}
+    folga: ${ANEL_FOLGA:0.25}
+  heartbeat:
+    limite-de-suspeita-ms: ${HEARTBEAT_SUSPEITA_MS:3000}
+    tempo-limite-ms: ${HEARTBEAT_LIMITE_MS:5000}
+    verificacao-ms: 1000
+  varredura:
+    intervalo-ms: 5000
+    idade-minima-ms: 10000
+  publicacao:
+    espera-ms: 2000

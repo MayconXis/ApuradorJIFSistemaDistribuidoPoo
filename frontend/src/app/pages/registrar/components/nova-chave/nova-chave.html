@@ -1,0 +1,29 @@
+<details class="card dobravel">
+  <summary>Criar uma chave</summary>
+  <div class="campos nova-chave">
+    <div><label for="nova-nome">Nome</label><input id="nova-nome" type="text" [(ngModel)]="nome" placeholder="Chave B" /></div>
+    <div>
+      <label for="nova-modalidade">Modalidade</label>
+      <select id="nova-modalidade" [(ngModel)]="modalidade">
+        @for (m of modalidades(); track m) {
+          <option [value]="m">{{ m }}</option>
+        }
+      </select>
+    </div>
+    <div class="largo">
+      <label for="nova-equipes">Equipes, de 3 a 5, separadas por vírgula</label>
+      <input id="nova-equipes" type="text" [(ngModel)]="equipes" placeholder="IFCE, IFG, IFSP" />
+    </div>
+  </div>
+  <div class="acoes">
+    <button type="button" class="sec" (click)="criar()">Criar chave</button>
+  </div>
+</details>
+
+<p class="atalho">
+  Para a demonstração:
+  <button type="button" class="link" (click)="carregarExemplo()">Carregar exemplo do empate triplo</button>
+</p>
+@if (aviso()) {
+  <app-alerta>{{ aviso() }}</app-alerta>
+}

@@ -1,0 +1,10 @@
+Repetição válida de TF-02, TF-02b e TF-03 (18/11/2026, comando: bash scripts/k3s-repetir.sh tf02 tf02b tf03).
+
+- Os atrasos miram o IP do Service. A prova de que o atraso pegou está em tf02-prova-do-atraso.txt e
+  tf02b-prova-do-atraso.txt (milissegundos de conexão TCP a partir de cada worker, durante o atraso).
+- Os identificadores dos eventos levam o sufixo desta execução (linha "identificadores" de cada rajada-*.txt),
+  e a linha "registros que não eram reenvio e voltaram como já existentes" dá 0 nas três rodadas.
+- O banco subiu exatamente o número de "eventos novos aceitos" de cada rodada (2158, 2196 e 1839).
+- observador-*.txt: o que o detector de falhas viu. Só registra mudanças. Em observador-tf03.txt, "gateway sem resposta"
+  é uma leitura de /api/cluster que falhou.
+- tf03-tempo-de-volta.txt: tempo até um pod NOVO do Gateway ficar pronto e responder.

@@ -1,0 +1,83 @@
+Medições reais do sistema inteiro, FORA DO K3S
+Data: 17/11/2026, das 11:33 às 11:41 (horário de Brasília)
+
+Ambiente: workspace de nuvem do Claude, Linux x86_64, 2 vCPU, 7 GB de memória.
+Processos locais, sem containers e sem k3s: 1 Dispatcher e 3 workers (jars gerados pelo
+Maven a partir deste repositório), RabbitMQ 3.12.1 com 1 nó, PostgreSQL 16.15.
+O k6 rodou na mesma máquina. Parâmetros padrão do application.yaml: heartbeat a cada 1 s,
+suspeita com 3 s, tempo limite de 5 s, 64 pontos por worker, folga de 25%.
+Estes números NÃO substituem as medições no k3s, que continuam A MEDIR.
+(Atualização de 18/11/2026: as medições no k3s foram feitas. Estão em carga/resultados/k3s*/ e no relatório técnico, seções 6.4 e 8.3. As linhas abaixo são o registro da execução de 17/11 e não foram alteradas.)
+
+Tempo de subida de cada JVM (Spring Boot) com as 4 subindo juntas: cerca de 32 s.
+
+== TC-01 rajada de resultados, sem falha (carga/resultados/rajada-tc01.txt) ==
+TC-01 rajada de resultados
+rodada: tc01  base: http://localhost:8080  taxa: 40/s  duração: 60s  chaves: 30
+registros enviados: 2401
+eventos novos aceitos (202): 2159
+eventos encontrados no banco: 2159
+perdidos (aceitos e não encontrados): 0
+pendentes no fim: 0
+reenvios enviados: 260, reconhecidos como repetidos: 242
+latência do registro p95: 15.0 ms
+tempo até a fila esvaziar depois da rajada: 101 ms
+checks de consistência: 100%
+latência do registro p50: 6.5 ms, máxima: 47.2 ms; requisições com erro: 0
+
+== TC-02 consultas simultâneas (carga/resultados/consultas-tc02.txt) ==
+TC-02 consultas simultâneas
+base: http://localhost:8080  usuários virtuais no pico: 200
+consultas: 7585  (com corpo: 3826, 304: 3758)
+latência p50: 2.4 ms
+latência p95: 5.9 ms
+falhas: 0.00%
+
+== TF-01 equivalente: kill -9 no worker com mais chaves durante a rajada (carga/resultados/rajada-tf01.txt) ==
+Worker morto: worker-0, com 38 chaves, aos 25 s da rajada. Reiniciado 2 s depois, como o StatefulSet faria.
+Linha do tempo medida a partir do kill -9 (observador chaos/observar_cluster.py lendo o painel a cada 200 ms):
+  SUSPEITO:                 3684 ms depois do kill
+  MORTO e chaves com novo dono: 6026 ms depois do kill (as 38 chaves mudaram de dono na mesma leitura)
+  worker de volta ao anel:  17513 ms depois do kill
+Saída do observador (ele estima a queda pelo último heartbeat, que veio até 1 s antes do kill; por isso marca 6276 ms):
+1794926339.781; worker-0; saiu de VIVO; estado=SUSPEITO, silencio=3934 ms, chaves=38
+1794926342.123; worker-0; declarado MORTO; 6276 ms depois da queda
+1794926342.123; worker-0; chaves reatribuídas; recuperação = 6276 ms (±200 ms), 38 chaves mudaram de dono
+1794926353.610; worker-0; voltou; com 38 chaves
+Resultado do k6 nesta rodada:
+TC-01 rajada de resultados
+rodada: tf01  base: http://localhost:8080  taxa: 40/s  duração: 60s  chaves: 30
+registros enviados: 2401
+eventos novos aceitos (202): 2174
+eventos encontrados no banco: 2174
+perdidos (aceitos e não encontrados): 0
+pendentes no fim: 0
+reenvios enviados: 255, reconhecidos como repetidos: 227
+latência do registro p95: 36.4 ms
+tempo até a fila esvaziar depois da rajada: 69 ms
+checks de consistência: 100%
+latência do registro p50: 6.0 ms, máxima: 364.5 ms; requisições com erro: 0
+
+== TF-03 equivalente: kill -9 no Gateway/Dispatcher durante a rajada (carga/resultados/rajada-tf03.txt) ==
+Dispatcher morto aos 20 s da rajada e reiniciado em seguida.
+  Gateway respondendo de novo: 9296 ms depois do kill
+  3 workers de volta ao anel:  11398 ms depois do kill
+  Requisições recusadas enquanto o Gateway estava fora: 14,7% das 2387 da rodada (esperado: ponto único de falha)
+Resultado do k6 nesta rodada:
+TC-01 rajada de resultados
+rodada: tf03  base: http://localhost:8080  taxa: 40/s  duração: 60s  chaves: 30
+registros enviados: 2387
+eventos novos aceitos (202): 1879
+eventos encontrados no banco: 1879
+perdidos (aceitos e não encontrados): 0
+pendentes no fim: 0
+reenvios enviados: 189, reconhecidos como repetidos: 158
+latência do registro p95: 47.7 ms
+tempo até a fila esvaziar depois da rajada: 345 ms
+checks de consistência: 100%
+
+== Consistência acumulada no fim das quatro rodadas (GET /api/consistencia) ==
+{"eventos":8399,"pendentes":0,"aplicados":8399,"rejeitados":0,"superados":0,"aplicadosMaisDeUmaVez":0,"chaves":120,"chavesInconsistentes":0}
+
+== Não medido ==
+TF-02 (atrasar mensagens): precisa do Chaos Mesh ou de tc/netem, indisponíveis neste ambiente. A MEDIR.

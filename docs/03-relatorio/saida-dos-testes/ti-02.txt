@@ -1,0 +1,11 @@
+Saída real do TI-02 (integracao/.../FluxoCompletoIT), 7 testes, todos passando.
+Execução: 23/11/2026, modo APURADOR_IT_EXTERNO=1, no workspace de nuvem do Claude (Linux x86_64, 2 vCPU, 7 GB), RabbitMQ 3.12.1 e PostgreSQL 16.15 reais, com o código já organizado em camadas (controller, service, validator, mapper, repository).
+Dispatcher e dois workers na mesma JVM, cada um no seu contexto Spring. Detector com tempo limite encurtado para 1500 ms e heartbeat a cada 200 ms.
+
+TI-02 empate triplo: 3 resultados aplicados em 395 ms (do primeiro POST ao último APLICADO)
+TI-02 DLQ: a mensagem com chave inexistente foi para a apuracao.dlq depois do limite de 3 devoluções
+TI-02 antes da queda: it-a-f1e0eb com 4 chaves, it-b-f1e0eb com 3
+TI-02 queda do worker A: 1651 ms até as 4 chaves dele terem novo dono (tempo limite do detector configurado em 1500 ms)
+TI-02 consistência final: {"eventos":6,"pendentes":0,"aplicados":6,"rejeitados":0,"superados":0,"aplicadosMaisDeUmaVez":0,"chaves":7,"chavesInconsistentes":0}
+
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0

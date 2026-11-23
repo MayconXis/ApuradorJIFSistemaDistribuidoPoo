@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="Apurador JIF" version="24.7.17" type="device">
+  <diagram id="d-sequenciaregistro" name="Sequencia registro">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c2" value="Diagrama de sequência: Registrar Resultado (UC02 e UC05)" style="text;html=1;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#0B3B2C;" vertex="1" parent="1">
+          <mxGeometry x="20" y="10" width="900" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="Operador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="35" y="60" width="30" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="endArrow=none;dashed=1;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="50" y="145" as="sourcePoint" />
+            <mxPoint x="50" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c5" value="&amp;lt;&amp;lt;CIH&amp;gt;&amp;gt;&lt;br&gt;telaResultado: CIHResultado" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=44;fontSize=11;fillColor=#DAE8FC;" vertex="1" parent="1">
+          <mxGeometry x="117" y="60" width="136" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" value="&amp;lt;&amp;lt;CTRL&amp;gt;&amp;gt;&lt;br&gt;api: ResultadoController" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=44;fontSize=11;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="265" y="60" width="136" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" value="&amp;lt;&amp;lt;PER&amp;gt;&amp;gt;&lt;br&gt;evento: EventoEntidade" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=44;fontSize=11;fillColor=#FFF2CC;" vertex="1" parent="1">
+          <mxGeometry x="413" y="60" width="136" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" value="&amp;lt;&amp;lt;CTRL&amp;gt;&amp;gt;&lt;br&gt;coord: Coordenador" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=44;fontSize=11;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="561" y="60" width="136" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" value="&amp;lt;&amp;lt;CTRL&amp;gt;&amp;gt;&lt;br&gt;anel: AnelDeHashLimitado" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=44;fontSize=11;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="709" y="60" width="136" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" value="&amp;lt;&amp;lt;SERVER&amp;gt;&amp;gt;&lt;br&gt;fila: RabbitMQ" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=44;fontSize=11;fillColor=#F5F5F5;" vertex="1" parent="1">
+          <mxGeometry x="857" y="60" width="136" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="c11" value="&amp;lt;&amp;lt;CTRL&amp;gt;&amp;gt;&lt;br&gt;aplicador: AplicadorDeEventos" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=44;fontSize=11;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1005" y="60" width="136" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="c12" value="&amp;lt;&amp;lt;CTRL&amp;gt;&amp;gt;&lt;br&gt;classificador: Classificador" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=44;fontSize=11;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1153" y="60" width="136" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" value="&amp;lt;&amp;lt;PER&amp;gt;&amp;gt;&lt;br&gt;posicao: PosicaoEntidade" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=44;fontSize=11;fillColor=#FFF2CC;" vertex="1" parent="1">
+          <mxGeometry x="1301" y="60" width="136" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="c14" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#E1E8E4;strokeColor=#0B3B2C;" vertex="1" parent="1">
+          <mxGeometry x="328" y="184" width="10" height="238" as="geometry" />
+        </mxCell>
+        <mxCell id="c15" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#E1E8E4;strokeColor=#0B3B2C;" vertex="1" parent="1">
+          <mxGeometry x="624" y="286" width="10" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="c16" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#E1E8E4;strokeColor=#0B3B2C;" vertex="1" parent="1">
+          <mxGeometry x="1068" y="466" width="10" height="228" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" value="1: informaResultado" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="50" y="150" as="sourcePoint" />
+            <mxPoint x="185" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" value="2: registrar( )" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="185" y="184" as="sourcePoint" />
+            <mxPoint x="328" y="184" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" value="3: validar( )" style="html=1;align=left;spacingLeft=4;verticalAlign=middle;endArrow=block;endFill=1;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="338" y="210" as="sourcePoint" />
+            <mxPoint x="338" y="228" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="374" y="210" />
+              <mxPoint x="374" y="228" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20" value="4: Novo( )" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="338" y="258" as="sourcePoint" />
+            <mxPoint x="481" y="258" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e21" value="5: despachar(chave)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="338" y="292" as="sourcePoint" />
+            <mxPoint x="624" y="292" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e22" value="6: donoDe(chave)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="634" y="320" as="sourcePoint" />
+            <mxPoint x="777" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e23" value="7: worker dono" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="777" y="354" as="sourcePoint" />
+            <mxPoint x="634" y="354" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e24" value="8: publicar(tarefa)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="634" y="388" as="sourcePoint" />
+            <mxPoint x="925" y="388" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e25" value="9: Resultado aceito" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="328" y="422" as="sourcePoint" />
+            <mxPoint x="185" y="422" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e26" value="10: entregar(tarefa)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="925" y="466" as="sourcePoint" />
+            <mxPoint x="1068" y="466" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e27" value="11: pendentesDa(chave)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1068" y="500" as="sourcePoint" />
+            <mxPoint x="481" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e28" value="12 [há pendentes]: aplicar( )" style="html=1;align=left;spacingLeft=4;verticalAlign=middle;endArrow=block;endFill=1;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1078" y="526" as="sourcePoint" />
+            <mxPoint x="1078" y="544" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1114" y="526" />
+              <mxPoint x="1114" y="544" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e29" value="13: classificar(chave, modalidade)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1078" y="572" as="sourcePoint" />
+            <mxPoint x="1221" y="572" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e30" value="14: List&amp;lt;Posicao&amp;gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1221" y="606" as="sourcePoint" />
+            <mxPoint x="1078" y="606" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e31" value="15: gravar( )" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1078" y="640" as="sourcePoint" />
+            <mxPoint x="1369" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e32" value="16: ack" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1068" y="680" as="sourcePoint" />
+            <mxPoint x="925" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c33" value="4: o evento é gravado como PENDENTE antes de publicar. A partir daí ele não se perde (RnF-002)." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=12;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=6;fontSize=11;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
+          <mxGeometry x="395" y="110" width="250" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="c34" value="11 e 12: o aplicador trava a chave, aplica os pendentes em ordem de sequência e marca cada um como APLICADO. Mensagem repetida não acha pendentes e só confirma (RnF-003)." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=12;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;spacingRight=6;fontSize=11;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
+          <mxGeometry x="590" y="560" width="300" height="74" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,51 @@
+@startuml
+!include estilo.iuml
+title Casos de uso do Apurador JIF
+left to right direction
+
+actor "Operador da\napuração" as OP
+actor "Consumidor\nda tabela" as CT
+actor "Administrador\ndo cluster" as AD
+actor "k6 e\nChaos Mesh" as FT
+
+rectangle "Apurador JIF" {
+  usecase "UC01 Cadastrar chave\n(RF-01)" as UC01
+  usecase "UC02 Registrar resultado\n(RF-02, RF-03)" as UC02
+  usecase "UC03 Registrar WO\n(RF-04)" as UC03
+  usecase "UC04 Retificar resultado\n(RF-10, hipótese de uso)" as UC04
+  usecase "UC05 Consultar classificação\n(RF-09)" as UC05
+  usecase "UC06 Ver o critério decisivo\n(RF-07, RF-08)" as UC06
+  usecase "UC07 Acompanhar um evento\n(RF-11)" as UC07
+  usecase "UC08 Listar chaves e partidas\n(RF-13)" as UC08
+  usecase "UC09 Acompanhar o cluster\n(RF-12)" as UC09
+  usecase "UC10 Auditar a chave\n(RF-15)" as UC10
+  usecase "UC11 Derrubar um worker\n(demonstração)" as UC11
+  usecase "UC12 Gerar carga\n(TC-01, TC-02)" as UC12
+  usecase "UC13 Injetar falha\n(TF-01, TF-02)" as UC13
+}
+
+OP --> UC01
+OP --> UC02
+OP --> UC04
+OP --> UC07
+OP --> UC08
+CT --> UC05
+CT --> UC08
+AD --> UC09
+AD --> UC10
+AD --> UC11
+FT --> UC12
+FT --> UC13
+
+UC03 .> UC02 : <<extend>>
+UC04 .> UC02 : <<extend>>
+UC05 .> UC06 : <<include>>
+UC11 .> UC09 : <<include>>
+UC12 .> UC10 : <<include>>
+
+note bottom of UC04
+  O regulamento não define o efeito
+  de um protesto aceito (Art. 135).
+  Retificar e recalcular é hipótese nossa.
+end note
+@enduml

@@ -1,0 +1,69 @@
+# PostgreSQL com uma réplica. O esquema vem do ConfigMap "postgres-esquema",
+# criado pelo implantar.sh a partir de persistencia/src/main/resources/db/schema.sql.
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  namespace: apurador
+spec:
+  selector:
+    app: postgres
+  ports:
+    - port: 5432
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+  namespace: apurador
+spec:
+  serviceName: postgres
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:16
+          env:
+            - name: POSTGRES_DB
+              value: apurador
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef: { name: apurador-segredos, key: DB_USER }
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef: { name: apurador-segredos, key: DB_PASSWORD }
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+          ports:
+            - containerPort: 5432
+          readinessProbe:
+            exec:
+              command: ["pg_isready", "-U", "apurador", "-d", "apurador"]
+            periodSeconds: 5
+          resources:
+            requests: { cpu: 100m, memory: 256Mi }
+            limits: { memory: 512Mi }
+          volumeMounts:
+            - name: dados
+              mountPath: /var/lib/postgresql/data
+            - name: esquema
+              mountPath: /docker-entrypoint-initdb.d
+      volumes:
+        - name: esquema
+          configMap:
+            name: postgres-esquema
+  volumeClaimTemplates:
+    - metadata:
+        name: dados
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 1Gi

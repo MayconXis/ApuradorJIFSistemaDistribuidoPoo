@@ -1,0 +1,59 @@
+# TF-02: atrasa o tráfego entre os workers e o RabbitMQ por 60 segundos.
+# Mede se o atraso causa perda, duplicata ou falso positivo do detector de falhas.
+# O heartbeat vai do worker ao Dispatcher, não ao RabbitMQ: com este alvo, o detector
+# não deveria declarar ninguém morto. A variante abaixo (TF-02b) atrasa o heartbeat.
+#
+# ALVO: o IP do SERVICE, não o IP do pod. Os workers falam com o RabbitMQ e com o Dispatcher pelo nome
+# do Service (rabbitmq, dispatcher), e o Chaos Mesh instala o atraso no pod de origem antes de o
+# kube-proxy trocar o IP do Service pelo IP do pod. Com `target` apontando para os pods, o atraso só
+# pegava quem conectava direto no IP do pod. Medido em carga/resultados/k3s-verificacao/atraso-medicao.txt:
+# 221 a 390 ms pelo IP do pod, 5 a 7 ms pelo Service.
+#
+# Este arquivo é um modelo: __IP_SERVICE_RABBITMQ__ e __IP_SERVICE_DISPATCHER__ são trocados pelo IP de
+# cada Service. O scripts/vm/medir-no-k3s.sh faz isso sozinho. À mão, uma das partes (a primeira, por exemplo):
+#   sed -e "s/__IP_SERVICE_RABBITMQ__/$(kubectl -n apurador get svc rabbitmq -o jsonpath='{.spec.clusterIP}')/" \
+#       -e "s/__IP_SERVICE_DISPATCHER__/$(kubectl -n apurador get svc dispatcher -o jsonpath='{.spec.clusterIP}')/" \
+#       chaos/atrasar-mensagens.yaml | awk 'BEGIN{n=0} /^---/ {n++; next} n==0' | kubectl apply -f -
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: atrasar-mensagens
+  namespace: apurador
+spec:
+  action: delay
+  mode: all
+  selector:
+    namespaces: [apurador]
+    labelSelectors:
+      app: worker
+  direction: to
+  externalTargets: ["__IP_SERVICE_RABBITMQ__"]
+  delay:
+    latency: 300ms
+    jitter: 100ms
+    correlation: "25"
+  duration: 60s
+---
+# TF-02b: atrasa o tráfego de UM worker (escolhido ao acaso) até o Dispatcher, que é o caminho do heartbeat.
+# Aplicar separado do anterior. O cliente de heartbeat espera no máximo 800 ms por resposta
+# (apurador.heartbeat.espera-ms), então com 2,5 s de atraso o heartbeat não chega: na prática o worker
+# fica isolado do Dispatcher enquanto continua ligado ao RabbitMQ e ao PostgreSQL. Serve para contar
+# falsos positivos do detector e conferir que a correção não depende dele (trava por chave e idempotência).
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: atrasar-heartbeat
+  namespace: apurador
+spec:
+  action: delay
+  mode: one
+  selector:
+    namespaces: [apurador]
+    labelSelectors:
+      app: worker
+  direction: to
+  externalTargets: ["__IP_SERVICE_DISPATCHER__"]
+  delay:
+    latency: 2500ms
+    jitter: 1000ms
+  duration: 60s

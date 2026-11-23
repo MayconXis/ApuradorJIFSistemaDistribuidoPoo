@@ -1,0 +1,18 @@
+# TF-01: mata um worker escolhido ao acaso, no meio do processamento.
+# Aplicar enquanto o TC-01 (carga/rajada-resultados.js) está rodando:
+#   kubectl apply -f chaos/matar-worker.yaml
+# Para repetir, apague e aplique de novo:
+#   kubectl delete -f chaos/matar-worker.yaml && kubectl apply -f chaos/matar-worker.yaml
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata:
+  name: matar-worker
+  namespace: apurador
+spec:
+  action: pod-kill
+  mode: one
+  gracePeriod: 0            # sem desligamento educado: o processo some, como numa queda real
+  selector:
+    namespaces: [apurador]
+    labelSelectors:
+      app: worker

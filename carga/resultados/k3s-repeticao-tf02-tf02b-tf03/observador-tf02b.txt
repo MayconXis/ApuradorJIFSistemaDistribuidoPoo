@@ -1,0 +1,5 @@
+instante; worker; evento; detalhe
+1795037908.793; worker-1; saiu de VIVO; estado=SUSPEITO, silencio=3204 ms, chaves=63
+1795037910.647; worker-1; declarado MORTO; 5059 ms depois da queda
+1795037910.647; worker-1; chaves reatribuídas; recuperação = 5059 ms (±200 ms), 63 chaves mudaram de dono
+1795037963.516; worker-1; voltou; com 61 chaves

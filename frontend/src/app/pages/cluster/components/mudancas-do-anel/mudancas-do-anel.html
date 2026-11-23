@@ -1,0 +1,12 @@
+<section class="card">
+  <h2>Últimas mudanças no anel</h2>
+  @if (mudancas().length === 0) {
+    <p class="vazio">Nenhuma mudança registrada. Entradas e saídas de workers aparecem aqui.</p>
+  } @else {
+    <ul class="registro">
+      @for (m of mudancas(); track $index) {
+        <li [title]="m">{{ m.length > 180 ? (m | slice: 0 : 180) + '…' : m }}</li>
+      }
+    </ul>
+  }
+</section>

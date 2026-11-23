@@ -1,0 +1,30 @@
+# Parâmetros comuns. Os valores dos algoritmos são SUPOSIÇÃO e devem ser calibrados nos testes.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: apurador-config
+  namespace: apurador
+data:
+  DB_URL: jdbc:postgresql://postgres:5432/apurador
+  RABBIT_HOST: rabbitmq
+  DISPATCHER_URL: http://dispatcher:8080
+  ANEL_PONTOS: "64"
+  ANEL_FOLGA: "0.25"
+  HEARTBEAT_SUSPEITA_MS: "3000"
+  HEARTBEAT_LIMITE_MS: "5000"
+  HEARTBEAT_INTERVALO_MS: "1000"
+  FILA_LIMITE_ENTREGAS: "5"
+  WORKER_ATRASO_MS: "0"
+---
+# Senhas de laboratório. Em produção viriam de um cofre, não do repositório.
+apiVersion: v1
+kind: Secret
+metadata:
+  name: apurador-segredos
+  namespace: apurador
+type: Opaque
+stringData:
+  DB_USER: apurador
+  DB_PASSWORD: apurador
+  RABBIT_USER: apurador
+  RABBIT_PASSWORD: apurador

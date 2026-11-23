@@ -1,0 +1,53 @@
+@startuml
+!include estilo.iuml
+title Sequência: registro de um resultado
+autonumber
+
+actor "Operador" as OP
+participant "Angular" as FE
+participant "API REST\n(Gateway)" as API
+database "PostgreSQL" as DB
+participant "Coordenador\n(Dispatcher)" as CO
+participant "Anel" as AN
+queue "Fila do\nworker dono" as Q
+participant "Worker dono\n(Aplicador)" as WK
+participant "Core\n(Classificador)" as CORE
+
+OP -> FE : preenche placar e envia
+FE -> API : POST /api/resultados\n(eventoId gerado na tela)
+API -> API : valida pela Modalidade (core)
+alt resultado inválido
+  API --> FE : 422 com o motivo
+else resultado válido
+  API -> DB : grava evento PENDENTE\n(eventoId único, seq)
+  note right of DB
+    A partir daqui o evento
+    não se perde (RNF-02).
+  end note
+  API -> CO : despachar(chave)
+  CO -> AN : donoDe(chave)
+  AN --> CO : worker-1\n(primeiro adiante com carga abaixo do teto)
+  CO -> Q : publica tarefa {chave, seq}
+  API --> FE : 202 Aceito {eventoId, worker}
+end
+
+Q -> WK : entrega (confirmação manual)
+WK -> DB : inicia transação\ne trava a linha da chave
+WK -> DB : lê eventos PENDENTES da chave,\nem ordem de seq
+alt nenhum pendente (mensagem repetida)
+  WK -> Q : ack
+else há pendentes
+  WK -> DB : aplica cada evento à partida\ne marca APLICADO
+  WK -> DB : lê as partidas da chave
+  WK -> CORE : classificar(chave, modalidade)
+  CORE --> WK : List<Posicao>\ncom critério decisivo
+  WK -> DB : grava as posições\ne a versão da chave
+  WK -> DB : commit
+  WK -> Q : ack
+end
+
+FE -> API : GET /api/chaves/{id}/classificacao\n(polling)
+API -> DB : lê posições
+API --> FE : tabela com critério decisivo
+FE --> OP : mostra a classificação
+@enduml

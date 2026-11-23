@@ -1,0 +1,4 @@
+ms de conexão TCP até dispatcher:8080 (pelo Service), a partir de cada worker, com o atraso aplicado
+worker-0:  3160 3131 3487
+worker-1:  6 5 7
+worker-2:  6 6 5

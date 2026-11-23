@@ -1,0 +1,9 @@
+<div
+  class="aviso"
+  [class.ok]="tipo() === 'ok'"
+  [class.bad]="tipo() === 'bad'"
+  [class.warn]="tipo() === 'warn'"
+  [attr.role]="tipo() === 'bad' ? 'alert' : 'status'"
+>
+  <ng-content />
+</div>

@@ -1,0 +1,13 @@
+<h1>Registrar resultado</h1>
+
+<app-resultado-form
+  [chaves]="chaves()"
+  [partidas]="partidas()"
+  [chaveId]="chaveId()"
+  [(partidaId)]="partidaId"
+  [(erro)]="erro"
+  (chaveEscolhida)="escolherChave($event)"
+  (resultadoAplicado)="escolherChave(chaveId())"
+/>
+
+<app-nova-chave [modalidades]="modalidades()" (chaveCriada)="carregarChaves($event)" />

@@ -1,0 +1,13 @@
+<section class="card">
+  <h2>Partidas</h2>
+  <table>
+    <tr><th>Partida</th><th class="n">Placar</th><th>Situação</th></tr>
+    @for (p of partidas(); track p.id) {
+      <tr>
+        <td>{{ p.mandante }} x {{ p.visitante }}</td>
+        <td class="n">{{ placar(p) }}</td>
+        <td><span class="tag" [class.ok]="p.estado !== 'AGENDADA'" [class.warn]="p.estado === 'AGENDADA'">{{ p.estado }}</span></td>
+      </tr>
+    }
+  </table>
+</section>

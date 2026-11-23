@@ -1,0 +1,102 @@
+Name:         atrasar-mensagens
+Namespace:    apurador
+Labels:       <none>
+Annotations:  <none>
+API Version:  chaos-mesh.org/v1alpha1
+Kind:         NetworkChaos
+Metadata:
+  Creation Timestamp:  2026-11-18T20:47:37Z
+  Finalizers:
+    chaos-mesh/records
+  Generation:        9
+  Resource Version:  3532
+  UID:               d43b7330-feaa-40bf-a0b4-1ea5f8edc522
+Spec:
+  Action:  delay
+  Delay:
+    Correlation:  25
+    Jitter:       100ms
+    Latency:      300ms
+  Direction:      to
+  Duration:       60s
+  Mode:           all
+  Selector:
+    Label Selectors:
+      App:  worker
+    Namespaces:
+      apurador
+  Target:
+    Mode:  all
+    Selector:
+      Label Selectors:
+        App:  rabbitmq
+      Namespaces:
+        apurador
+Status:
+  Conditions:
+    Status:  False
+    Type:    Paused
+    Status:  True
+    Type:    Selected
+    Status:  True
+    Type:    AllInjected
+    Status:  False
+    Type:    AllRecovered
+  Experiment:
+    Container Records:
+      Events:
+        Operation:      Apply
+        Timestamp:      2026-11-18T20:47:38Z
+        Type:           Succeeded
+      Id:               apurador/worker-1
+      Injected Count:   1
+      Phase:            Injected
+      Recovered Count:  0
+      Selector Key:     .
+      Events:
+        Operation:      Apply
+        Timestamp:      2026-11-18T20:47:38Z
+        Type:           Succeeded
+      Id:               apurador/worker-2
+      Injected Count:   1
+      Phase:            Injected
+      Recovered Count:  0
+      Selector Key:     .
+      Events:
+        Operation:      Apply
+        Timestamp:      2026-11-18T20:47:38Z
+        Type:           Succeeded
+      Id:               apurador/worker-0
+      Injected Count:   1
+      Phase:            Injected
+      Recovered Count:  0
+      Selector Key:     .
+      Events:
+        Operation:      Apply
+        Timestamp:      2026-11-18T20:47:37Z
+        Type:           Succeeded
+      Id:               apurador/rabbitmq-0
+      Injected Count:   1
+      Phase:            Injected
+      Recovered Count:  0
+      Selector Key:     .Target
+    Desired Phase:      Run
+  Instances:
+    apurador/worker-0:  1
+    apurador/worker-1:  1
+    apurador/worker-2:  1
+Events:
+  Type    Reason           Age   From            Message
+  ----    ------           ----  ----            -------
+  Normal  FinalizerInited  5s    initFinalizers  Finalizer has been inited
+  Normal  Updated          5s    initFinalizers  Successfully update finalizer of resource
+  Normal  Started          5s    desiredphase    Experiment has started
+  Normal  Updated          5s    desiredphase    Successfully update desiredPhase of resource
+  Normal  Applied          5s    records         Successfully apply chaos for apurador/rabbitmq-0
+  Normal  Updated          5s    records         Successfully update records of resource
+  Normal  Applied          4s    records         Successfully apply chaos for apurador/worker-1
+  Normal  Updated          4s    records         Successfully update records of resource
+  Normal  Applied          4s    records         Successfully apply chaos for apurador/worker-2
+  Normal  Updated          4s    records         Successfully update records of resource
+  Normal  Applied          4s    records         Successfully apply chaos for apurador/worker-0
+  Normal  Updated          4s    records         Successfully update records of resource

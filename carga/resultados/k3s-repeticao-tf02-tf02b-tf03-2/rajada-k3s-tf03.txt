@@ -1,0 +1,14 @@
+TC-01 rajada de resultados
+rodada: k3s-tf03  base: http://192.168.252.2  taxa: 40/s  duração: 60s  chaves: 30
+identificadores: k6-k3s-tf03-18190331-e*
+registros enviados: 2235
+eventos novos aceitos (202): 1839
+registros que não eram reenvio e voltaram como já existentes (deve ser 0): 0
+eventos encontrados no banco: 1839
+perdidos (aceitos e não encontrados): 0
+conferências sem resposta, mesmo com 3 novas tentativas (entram em perdidos): 0
+pendentes no fim: 0
+reenvios enviados: 208, reconhecidos como repetidos: 170
+latência do registro p95: 60000.9 ms
+tempo até a fila esvaziar depois da rajada: 653 ms
+checks de consistência: 100%

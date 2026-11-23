@@ -1,0 +1,208 @@
+--- 18:12:18
+dispatcher-5d6c9d4c4b-pgwt2   12m   388Mi   
+frontend-5fdf4f8447-qvm4j     2m    4Mi     
+postgres-0                    7m    92Mi    
+rabbitmq-0                    72m   162Mi   
+worker-0                      3m    375Mi   
+worker-1                      5m    367Mi   
+worker-2                      6m    375Mi   
+--- 18:12:23
+dispatcher-5d6c9d4c4b-pgwt2   12m   388Mi   
+frontend-5fdf4f8447-qvm4j     2m    4Mi     
+postgres-0                    7m    92Mi    
+rabbitmq-0                    72m   162Mi   
+worker-0                      3m    375Mi   
+worker-1                      5m    367Mi   
+worker-2                      6m    375Mi   
+--- 18:12:28
+dispatcher-5d6c9d4c4b-pgwt2   12m   388Mi   
+frontend-5fdf4f8447-qvm4j     2m    4Mi     
+postgres-0                    7m    92Mi    
+rabbitmq-0                    72m   162Mi   
+worker-0                      3m    375Mi   
+worker-1                      5m    367Mi   
+worker-2                      6m    375Mi   
+--- 18:12:34
+dispatcher-5d6c9d4c4b-pgwt2   244m   391Mi   
+frontend-5fdf4f8447-qvm4j     8m     4Mi     
+postgres-0                    56m    96Mi    
+rabbitmq-0                    64m    161Mi   
+worker-0                      42m    375Mi   
+worker-1                      41m    367Mi   
+worker-2                      83m    376Mi   
+--- 18:12:39
+dispatcher-5d6c9d4c4b-pgwt2   244m   391Mi   
+frontend-5fdf4f8447-qvm4j     8m     4Mi     
+postgres-0                    56m    96Mi    
+rabbitmq-0                    64m    161Mi   
+worker-0                      42m    375Mi   
+worker-1                      41m    367Mi   
+worker-2                      83m    376Mi   
+--- 18:12:44
+dispatcher-5d6c9d4c4b-pgwt2   244m   391Mi   
+frontend-5fdf4f8447-qvm4j     8m     4Mi     
+postgres-0                    56m    96Mi    
+rabbitmq-0                    64m    161Mi   
+worker-0                      42m    375Mi   
+worker-1                      41m    367Mi   
+worker-2                      83m    376Mi   
+--- 18:12:49
+dispatcher-5d6c9d4c4b-pgwt2   198m   391Mi   
+frontend-5fdf4f8447-qvm4j     13m    4Mi     
+postgres-0                    80m    96Mi    
+rabbitmq-0                    111m   162Mi   
+worker-0                      38m    375Mi   
+worker-1                      42m    367Mi   
+worker-2                      77m    377Mi   
+--- 18:12:54
+dispatcher-5d6c9d4c4b-pgwt2   198m   391Mi   
+frontend-5fdf4f8447-qvm4j     13m    4Mi     
+postgres-0                    80m    96Mi    
+rabbitmq-0                    111m   162Mi   
+worker-0                      38m    375Mi   
+worker-1                      42m    367Mi   
+worker-2                      77m    377Mi   
+--- 18:12:59
+dispatcher-5d6c9d4c4b-pgwt2   198m   391Mi   
+frontend-5fdf4f8447-qvm4j     13m    4Mi     
+postgres-0                    80m    96Mi    
+rabbitmq-0                    111m   162Mi   
+worker-0                      38m    375Mi   
+worker-1                      42m    367Mi   
+worker-2                      77m    377Mi   
+--- 18:13:04
+dispatcher-5d6c9d4c4b-pgwt2   156m   392Mi   
+frontend-5fdf4f8447-qvm4j     14m    4Mi     
+postgres-0                    77m    95Mi    
+rabbitmq-0                    82m    162Mi   
+worker-0                      40m    375Mi   
+worker-1                      32m    367Mi   
+worker-2                      51m    377Mi   
+--- 18:13:09
+dispatcher-5d6c9d4c4b-pgwt2   156m   392Mi   
+frontend-5fdf4f8447-qvm4j     14m    4Mi     
+postgres-0                    77m    95Mi    
+rabbitmq-0                    82m    162Mi   
+worker-0                      40m    375Mi   
+worker-1                      32m    367Mi   
+worker-2                      51m    377Mi   
+--- 18:13:14
+dispatcher-5d6c9d4c4b-pgwt2   156m   392Mi   
+frontend-5fdf4f8447-qvm4j     14m    4Mi     
+postgres-0                    77m    95Mi    
+rabbitmq-0                    82m    162Mi   
+worker-0                      40m    375Mi   
+worker-1                      32m    367Mi   
+worker-2                      51m    377Mi   
+--- 18:13:20
+dispatcher-5d6c9d4c4b-pgwt2   173m   395Mi   
+frontend-5fdf4f8447-qvm4j     13m    4Mi     
+postgres-0                    77m    95Mi    
+rabbitmq-0                    103m   164Mi   
+worker-0                      29m    375Mi   
+worker-1                      26m    367Mi   
+worker-2                      51m    377Mi   
+--- 18:13:25
+dispatcher-5d6c9d4c4b-pgwt2   173m   395Mi   
+frontend-5fdf4f8447-qvm4j     13m    4Mi     
+postgres-0                    77m    95Mi    
+rabbitmq-0                    103m   164Mi   
+worker-0                      29m    375Mi   
+worker-1                      26m    367Mi   
+worker-2                      51m    377Mi   
+--- 18:13:30
+dispatcher-5d6c9d4c4b-pgwt2   173m   395Mi   
+frontend-5fdf4f8447-qvm4j     13m    4Mi     
+postgres-0                    77m    95Mi    
+rabbitmq-0                    103m   164Mi   
+worker-0                      29m    375Mi   
+worker-1                      26m    367Mi   
+worker-2                      51m    377Mi   
+--- 18:13:35
+dispatcher-5d6c9d4c4b-pgwt2   205m   396Mi   
+frontend-5fdf4f8447-qvm4j     36m    4Mi     
+postgres-0                    85m    96Mi    
+rabbitmq-0                    112m   165Mi   
+worker-0                      52m    376Mi   
+worker-1                      29m    367Mi   
+worker-2                      40m    377Mi   
+--- 18:13:40
+dispatcher-5d6c9d4c4b-pgwt2   205m   396Mi   
+frontend-5fdf4f8447-qvm4j     36m    4Mi     
+postgres-0                    85m    96Mi    
+rabbitmq-0                    112m   165Mi   
+worker-0                      52m    376Mi   
+worker-1                      29m    367Mi   
+worker-2                      40m    377Mi   
+--- 18:13:45
+dispatcher-5d6c9d4c4b-pgwt2   205m   396Mi   
+frontend-5fdf4f8447-qvm4j     36m    4Mi     
+postgres-0                    85m    96Mi    
+rabbitmq-0                    112m   165Mi   
+worker-0                      52m    376Mi   
+worker-1                      29m    367Mi   
+worker-2                      40m    377Mi   
+--- 18:13:50
+dispatcher-5d6c9d4c4b-pgwt2   92m    396Mi   
+frontend-5fdf4f8447-qvm4j     13m    4Mi     
+postgres-0                    85m    97Mi    
+rabbitmq-0                    112m   165Mi   
+worker-0                      69m    376Mi   
+worker-1                      29m    367Mi   
+worker-2                      25m    377Mi   
+--- 18:13:55
+dispatcher-5d6c9d4c4b-pgwt2   92m    396Mi   
+frontend-5fdf4f8447-qvm4j     13m    4Mi     
+postgres-0                    85m    97Mi    
+rabbitmq-0                    112m   165Mi   
+worker-0                      69m    376Mi   
+worker-1                      29m    367Mi   
+worker-2                      25m    377Mi   
+--- 18:14:00
+dispatcher-5d6c9d4c4b-pgwt2   92m    396Mi   
+frontend-5fdf4f8447-qvm4j     13m    4Mi     
+postgres-0                    85m    97Mi    
+rabbitmq-0                    112m   165Mi   
+worker-0                      69m    376Mi   
+worker-1                      29m    367Mi   
+worker-2                      25m    377Mi   
+--- 18:14:06
+dispatcher-5d6c9d4c4b-pgwt2   122m   396Mi   
+frontend-5fdf4f8447-qvm4j     13m    4Mi     
+postgres-0                    79m    97Mi    
+rabbitmq-0                    103m   166Mi   
+worker-0                      44m    376Mi   
+worker-1                      38m    367Mi   
+worker-2                      25m    377Mi   
+--- 18:14:11
+dispatcher-5d6c9d4c4b-pgwt2   122m   396Mi   
+frontend-5fdf4f8447-qvm4j     13m    4Mi     
+postgres-0                    79m    97Mi    
+rabbitmq-0                    103m   166Mi   
+worker-0                      44m    376Mi   
+worker-1                      38m    367Mi   
+worker-2                      25m    377Mi   
+--- 18:14:16
+dispatcher-5d6c9d4c4b-pgwt2   122m   396Mi   
+frontend-5fdf4f8447-qvm4j     13m    4Mi     
+postgres-0                    79m    97Mi    
+rabbitmq-0                    103m   166Mi   
+worker-0                      44m    376Mi   
+worker-1                      38m    367Mi   
+worker-2                      25m    377Mi   
+--- 18:14:21
+dispatcher-5d6c9d4c4b-pgwt2   190m   393Mi   
+frontend-5fdf4f8447-qvm4j     14m    4Mi     
+postgres-0                    98m    97Mi    
+rabbitmq-0                    106m   167Mi   
+worker-0                      43m    376Mi   
+worker-1                      39m    367Mi   
+worker-2                      35m    377Mi   
+--- 18:14:26
+dispatcher-5d6c9d4c4b-pgwt2   190m   393Mi   
+frontend-5fdf4f8447-qvm4j     14m    4Mi     
+postgres-0                    98m    97Mi    
+rabbitmq-0                    106m   167Mi   
+worker-0                      43m    376Mi   
+worker-1                      39m    367Mi   
+worker-2                      35m    377Mi   

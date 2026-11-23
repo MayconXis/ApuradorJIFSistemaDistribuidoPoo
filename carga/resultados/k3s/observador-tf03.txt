@@ -1,0 +1,7 @@
+instante; worker; evento; detalhe
+1795035005.216; -; gateway sem resposta; timed out
+1795035007.419; -; gateway sem resposta; timed out
+1795035009.621; -; gateway sem resposta; timed out
+1795035072.305; -; gateway sem resposta; timed out
+1795035074.510; -; gateway sem resposta; timed out
+1795035077.120; -; gateway sem resposta; timed out

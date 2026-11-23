@@ -1,0 +1,5 @@
+Anfitrião: macOS 27.2.1, arm64
+Memória do Mac (bytes): 17179869184
+Núcleos do Mac: 10
+Multipass: multipass   1.17.1+mac
+VM: apurador, 4 CPUs, 8G de memória

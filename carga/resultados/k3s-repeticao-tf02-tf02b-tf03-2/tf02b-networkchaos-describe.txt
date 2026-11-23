@@ -1,0 +1,63 @@
+Name:         atrasar-heartbeat
+Namespace:    apurador
+Labels:       <none>
+Annotations:  <none>
+API Version:  chaos-mesh.org/v1alpha1
+Kind:         NetworkChaos
+Metadata:
+  Creation Timestamp:  2026-11-18T22:04:48Z
+  Finalizers:
+    chaos-mesh/records
+  Generation:        7
+  Resource Version:  8515
+  UID:               1f33de70-c632-478f-9701-37f2379b003f
+Spec:
+  Action:  delay
+  Delay:
+    Correlation:  0
+    Jitter:       1000ms
+    Latency:      2500ms
+  Direction:      to
+  Duration:       60s
+  External Targets:
+    10.43.10.81
+  Mode:  one
+  Selector:
+    Label Selectors:
+      App:  worker
+    Namespaces:
+      apurador
+Status:
+  Conditions:
+    Status:  True
+    Type:    Selected
+    Status:  True
+    Type:    AllInjected
+    Status:  False
+    Type:    AllRecovered
+    Status:  False
+    Type:    Paused
+  Experiment:
+    Container Records:
+      Events:
+        Operation:      Apply
+        Timestamp:      2026-11-18T22:04:48Z
+        Type:           Succeeded
+      Id:               apurador/worker-0
+      Injected Count:   1
+      Phase:            Injected
+      Recovered Count:  0
+      Selector Key:     .
+    Desired Phase:      Run
+  Instances:
+    apurador/worker-0:  13
+Events:
+  Type    Reason           Age   From            Message
+  ----    ------           ----  ----            -------
+  Normal  FinalizerInited  5s    initFinalizers  Finalizer has been inited
+  Normal  Updated          5s    initFinalizers  Successfully update finalizer of resource
+  Normal  Started          5s    desiredphase    Experiment has started
+  Normal  Updated          5s    desiredphase    Successfully update desiredPhase of resource
+  Normal  Updated          5s    records         Successfully update records of resource
+  Normal  Applied          5s    records         Successfully apply chaos for apurador/worker-0
+  Normal  Updated          5s    records         Successfully update records of resource

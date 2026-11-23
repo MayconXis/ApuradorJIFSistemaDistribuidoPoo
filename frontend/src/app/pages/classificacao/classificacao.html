@@ -1,0 +1,22 @@
+<div class="cabecalho">
+  <h1>Classificação</h1>
+  <div class="escolha">
+    <label for="chave">Chave</label>
+    <select id="chave" [ngModel]="chaveId()" (ngModelChange)="escolherChave($event)">
+      @for (c of chaves(); track c.id) {
+        <option [value]="c.id">{{ c.nome }} · {{ c.modalidade }}</option>
+      }
+    </select>
+  </div>
+</div>
+
+@if (erro()) {
+  <app-alerta tipo="bad">{{ erro() }}</app-alerta>
+}
+
+<app-tabela-classificacao [tabela]="tabela()" />
+
+<div class="duas">
+  <app-lista-partidas [partidas]="partidas()" />
+  <app-auditoria-chave [auditoria]="auditoria()" (auditar)="auditar()" />
+</div>

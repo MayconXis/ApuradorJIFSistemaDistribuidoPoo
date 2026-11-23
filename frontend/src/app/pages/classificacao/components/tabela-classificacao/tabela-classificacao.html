@@ -1,0 +1,38 @@
+<section class="card" aria-label="Tabela da chave">
+  @if (tabela(); as t) {
+    @if (t.posicoes.length === 0) {
+      <p class="vazio">Esta chave ainda não tem resultado aplicado. Registre um resultado para a tabela aparecer aqui.</p>
+    } @else {
+      <table class="tabela">
+        <tr>
+          <th class="n">#</th><th>Equipe</th><th class="n">P</th><th class="n">J</th><th class="n">V</th><th class="n">E</th>
+          <th class="n">D</th><th class="n">Pró</th><th class="n">Contra</th><th class="n">Saldo</th><th>Decidido por</th>
+        </tr>
+        @for (l of t.posicoes; track l.equipe) {
+          <tr>
+            <td class="n posicao">{{ l.colocacao }}º</td>
+            <td><b>{{ l.equipe }}</b></td>
+            <td class="n"><b>{{ l.pontos }}</b></td>
+            <td class="n">{{ l.jogos }}</td>
+            <td class="n">{{ l.vitorias }}</td>
+            <td class="n">{{ l.empates }}</td>
+            <td class="n">{{ l.derrotas }}</td>
+            <td class="n">{{ l.pro }}</td>
+            <td class="n">{{ l.contra }}</td>
+            <td class="n">{{ l.saldo | saldo }}</td>
+            <td>
+              @if (l.pendenteDeSorteio) {
+                <span class="tag warn">Sorteio pendente</span>
+              } @else {
+                <span class="criterio">{{ l.criterioDecisivo }}</span>
+              }
+            </td>
+          </tr>
+        }
+      </table>
+    }
+    <p class="nota">
+      Versão {{ t.versao }}, atualizada a cada {{ intervaloSegundos }} s. Pró e contra são gols no futsal e no handebol, e sets no voleibol.
+    </p>
+  }
+</section>

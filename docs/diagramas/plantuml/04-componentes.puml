@@ -1,0 +1,63 @@
+@startuml
+!include estilo.iuml
+title Componentes e comunicação
+left to right direction
+skinparam component {
+  BackgroundColor<<nosso>> #0E7A54
+  FontColor<<nosso>> #FFFFFF
+  BorderColor<<nosso>> #0B3B2C
+  BackgroundColor<<terceiros>> #EDF3F0
+}
+
+actor "Operador e\nconsumidor" as U
+
+component "Interface Angular\n(nginx)" <<nosso>> as FE
+
+package "Gateway / Dispatcher (Spring Boot, 1 réplica)" {
+  component "API REST" <<nosso>> as API
+  component "Coordenador" <<nosso>> as COORD
+  component "Anel de hash com\ncarga limitada" <<nosso>> as ANEL
+  component "Detector de falhas\npor heartbeat" <<nosso>> as DET
+}
+
+package "RabbitMQ" {
+  queue "apuracao.tarefas\n(exchange direct)" <<terceiros>> as EX
+  queue "fila do worker-0\n(quórum)" <<terceiros>> as Q0
+  queue "fila do worker-1\n(quórum)" <<terceiros>> as Q1
+  queue "fila do worker-2\n(quórum)" <<terceiros>> as Q2
+  queue "apuracao.dlq" <<terceiros>> as DLQ
+}
+
+package "Workers (Spring Boot, 3 réplicas)" {
+  component "Consumidor da fila" <<nosso>> as CONS
+  component "Aplicador idempotente" <<nosso>> as APLIC
+  component "Core: Classificador\ne modalidades" <<nosso>> as CORE
+  component "Emissor de heartbeat" <<nosso>> as HB
+}
+
+database "PostgreSQL\neventos, partidas,\nposições" <<terceiros>> as DB
+
+U --> FE : HTTP
+FE --> API : REST e JSON\n(polling de 2 s)
+API --> COORD
+COORD --> ANEL : dono da chave
+COORD --> DET : quem está vivo
+API --> DB : grava o evento\n(antes de publicar)\ne lê a tabela
+COORD --> EX : publica a tarefa\n(rota = worker)
+EX --> Q0
+EX --> Q1
+EX --> Q2
+Q0 --> CONS : entrega com\nconfirmação manual
+Q1 --> CONS
+Q2 --> CONS
+Q0 ..> DLQ : limite de entregas
+CONS --> APLIC
+APLIC --> CORE : classificar(chave, modalidade)
+APLIC --> DB : trava a chave,\naplica pendentes,\ngrava posições
+HB --> API : POST /interno/heartbeats\n(a cada 1 s)
+
+legend bottom
+  Verde: código do grupo. Claro: software de terceiros.
+  Os dois algoritmos obrigatórios estão no Coordenador (anel e detector) e no Aplicador (idempotência).
+endlegend
+@enduml

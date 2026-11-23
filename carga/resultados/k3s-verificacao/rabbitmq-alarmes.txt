@@ -1,0 +1,6 @@
+--- depois da repetição 1 (18:13:23)
+Asking node rabbit@rabbitmq-0 to report any local resource alarms ...
+Node rabbit@rabbitmq-0 reported no local alarms
+--- depois da repetição 2 (18:14:27)
+Asking node rabbit@rabbitmq-0 to report any local resource alarms ...
+Node rabbit@rabbitmq-0 reported no local alarms
