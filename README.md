@@ -50,12 +50,12 @@ O Lombok (1.18.48) entra só em `persistencia`, `dispatcher` e `worker`, como pr
 
 | Pacote | Módulo | Papel |
 |---|---|---|
-| `controller` | `dispatcher` | Recebe o HTTP, devolve o status e chama um serviço. Não tem regra de negócio |
-| `service` | `dispatcher` | Um serviço por caso de uso (`ResultadoRegistrarService`, `ClassificacaoDetalharService`, `ChaveIncluirService`...). Abre a transação quando precisa |
-| `validator` | `dispatcher` | Valida o pedido antes de gravar e lança `ResponseStatusException` com o status e a mensagem |
+| `controller` | `dispatcher` | 4 controllers (`ChaveController`, `ResultadoController`, `ClusterController`, `ModalidadeController`): recebem o HTTP, validam com `@Valid`, devolvem o status e delegam ao serviço |
+| `service` | `dispatcher` | 4 serviços coesos por domínio (`ChaveService`, `ResultadoService`, `ClusterService`, `ModalidadeService`). Abrem a transação quando precisam |
+| `validator` | `dispatcher` | Regras de validação complementares ao Bean Validation (`ChaveValidator`, `ResultadoValidator`), lançando `ResponseStatusException` |
 | `mapper` | `dispatcher`, `persistencia` | Converte entre entidade, objeto do `core` e DTO, com métodos estáticos |
-| `dto/request`, `dto/response` | `dispatcher` | O formato do JSON de entrada e de saída |
-| `handler` | `dispatcher` | `GlobalExceptionHandler`: transforma as exceções em `{"erro": "..."}` com o status certo |
+| `dto/request`, `dto/response` | `dispatcher` | O formato do JSON de entrada (com anotações Bean Validation) e de saída |
+| `handler` | `dispatcher` | `GlobalExceptionHandler`: transforma exceções de validação e negócio em `ErroResponse` (`status`, `erro`, `timestamp`, `camposInvalidos`) |
 | `config`, `scheduler`, `messaging` | `dispatcher`, `worker` | Beans do anel e do RabbitMQ, tarefas periódicas e a publicação das tarefas |
 | `domain`, `repository`, `adapter` | `persistencia` | Entidades JPA, repositórios Spring Data e os adaptadores `HistoricoJpa` e `RegistroJpa` |
 | `listener` | `worker` | `TarefaListener`, o consumidor da fila do worker, com ack manual |
@@ -233,7 +233,7 @@ Medido no RabbitMQ 3.12: com limite N, a mensagem é entregue N + 1 vezes antes 
 
 ## 7. Decisões de implementação que valem explicar
 
-**Por que polling e não SSE na interface.** A tela consulta o Gateway a cada 2 segundos e manda a versão que já tem no cabeçalho `If-None-Match`. Se nada mudou, a resposta é 304, sem corpo. Com SSE, cada tela aberta seguraria uma conexão no Dispatcher, que é uma réplica só, e o nginx e o Traefik precisariam de configuração para não guardar o fluxo em buffer. Um atraso de até 2 segundos não pesa diante do prazo de 2 horas para protesto (Art. 135, parágrafo único). Polling foi o mais simples que resolve.
+**Por que polling e não SSE na interface.** A tela consulta o Gateway a cada 2 segundos e compara o número de `versao` retornado para decidir se precisa recarregar a lista de partidas. Com SSE, cada tela aberta seguraria uma conexão no Dispatcher, que é uma réplica só, e o nginx e o Traefik precisariam de configuração para não guardar o fluxo em buffer. Um atraso de até 2 segundos não pesa diante do prazo de 2 horas para protesto (Art. 135, parágrafo único). Polling simples foi o suficiente para resolver o problema sem complexidade extra.
 
 **Por que o evento vai para o banco antes da fila.** O Gateway grava o resultado como PENDENTE no PostgreSQL e só depois publica a tarefa. A mensagem diz apenas "esta chave tem eventos pendentes". Se a publicação falhar, a varredura do Dispatcher reenvia. Se o worker cair antes de confirmar, o RabbitMQ entrega de novo e o novo dono não encontra nada pendente que já tenha sido aplicado. É isso que sustenta a meta de zero perdidos e zero duplicatas.
 

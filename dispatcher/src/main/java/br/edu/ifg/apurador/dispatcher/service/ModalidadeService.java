@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ModalidadeListarService {
+public class ModalidadeService {
 
     private final CatalogoDeModalidades catalogoDeModalidades;
 

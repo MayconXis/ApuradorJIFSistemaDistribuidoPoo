@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -28,15 +28,8 @@ export class ChavesService {
     return this.http.get<PartidaResponse[]>(`${this.apiUrl}/${encodeURIComponent(chaveId)}/partidas`);
   }
 
-  detalharClassificacao(chaveId: string, versaoAtual: number | null): Observable<HttpResponse<ClassificacaoResponse>> {
-    let headers = new HttpHeaders();
-    if (versaoAtual !== null) {
-      headers = headers.set('If-None-Match', `"${versaoAtual}"`);
-    }
-    return this.http.get<ClassificacaoResponse>(`${this.apiUrl}/${encodeURIComponent(chaveId)}/classificacao`, {
-      headers,
-      observe: 'response',
-    });
+  detalharClassificacao(chaveId: string): Observable<ClassificacaoResponse> {
+    return this.http.get<ClassificacaoResponse>(`${this.apiUrl}/${encodeURIComponent(chaveId)}/classificacao`);
   }
 
   auditar(chaveId: string): Observable<AuditoriaResponse> {

@@ -63,23 +63,23 @@ export class Classificacao {
     if (!id) {
       return;
     }
-    const atual = this.tabela();
-    this.chavesService.detalharClassificacao(id, atual && atual.chaveId === id ? atual.versao : null).subscribe({
-      next: (resposta) => {
-        if (resposta.body && this.chaveId() === id) {
-          this.tabela.set(resposta.body);
-          this.erro.set('');
+    const anterior = this.tabela();
+    this.chavesService.detalharClassificacao(id).subscribe({
+      next: (classificacao) => {
+        if (this.chaveId() !== id) {
+          return;
+        }
+        const mudou = !anterior || anterior.chaveId !== id || anterior.versao !== classificacao.versao;
+        this.tabela.set(classificacao);
+        this.erro.set('');
+        if (mudou) {
           this.chavesService.listarPartidas(id).subscribe({
             next: (lista) => this.partidas.set(lista),
             error: () => {},
           });
         }
       },
-      error: (erro) => {
-        if (erro?.status !== 304) {
-          this.erro.set(mensagemErroApi(erro));
-        }
-      },
+      error: (erro) => this.erro.set(mensagemErroApi(erro)),
     });
   }
 }
