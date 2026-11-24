@@ -2,7 +2,6 @@ package br.edu.ifg.apurador.dispatcher.validator;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
-import br.edu.ifg.apurador.dispatcher.dto.request.ChaveIncluirRequest;
 import br.edu.ifg.apurador.persistencia.repository.ChaveRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -17,12 +16,6 @@ public class ChaveIncluirValidator {
     private static final int MAXIMO_DE_EQUIPES = 5;
 
     private final ChaveRepository chaveRepository;
-
-    public void validarNome(ChaveIncluirRequest request) {
-        if (request == null || request.nome() == null || request.nome().isBlank()) {
-            throw new ResponseStatusException(BAD_REQUEST, "Informe o nome da chave.");
-        }
-    }
 
     public void validarEquipes(List<String> equipes) {
         if (equipes.size() < MINIMO_DE_EQUIPES || equipes.size() > MAXIMO_DE_EQUIPES) {

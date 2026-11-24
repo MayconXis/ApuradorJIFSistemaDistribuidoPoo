@@ -32,7 +32,6 @@ public class ChaveIncluirService {
 
     @Transactional
     public ChaveResponse incluir(ChaveIncluirRequest request) {
-        chaveIncluirValidator.validarNome(request);
         Modalidade modalidade = catalogoDeModalidades.buscar(request.modalidade());
 
         List<String> equipes = normalizarEquipes(request.equipes());

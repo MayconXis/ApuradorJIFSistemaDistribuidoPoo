@@ -50,12 +50,12 @@ O Lombok (1.18.48) entra só em `persistencia`, `dispatcher` e `worker`, como pr
 
 | Pacote | Módulo | Papel |
 |---|---|---|
-| `controller` | `dispatcher` | Recebe o HTTP, devolve o status e chama um serviço. Não tem regra de negócio |
+| `controller` | `dispatcher` | Recebe o HTTP com `@Valid` no corpo, devolve o status e chama um serviço. Não tem regra de negócio |
 | `service` | `dispatcher` | Um serviço por caso de uso (`ResultadoRegistrarService`, `ClassificacaoDetalharService`, `ChaveIncluirService`...). Abre a transação quando precisa |
-| `validator` | `dispatcher` | Valida o pedido antes de gravar e lança `ResponseStatusException` com o status e a mensagem |
+| `validator` | `dispatcher` | Regras que dependem de mais que o formato do campo (número de equipes depois de limpar a lista, identificador já usado, pares de cada set). Lança `ResponseStatusException` com o status e a mensagem |
 | `mapper` | `dispatcher`, `persistencia` | Converte entre entidade, objeto do `core` e DTO, com métodos estáticos |
-| `dto/request`, `dto/response` | `dispatcher` | O formato do JSON de entrada e de saída |
-| `handler` | `dispatcher` | `GlobalExceptionHandler`: transforma as exceções em `{"erro": "..."}` com o status certo |
+| `dto/request`, `dto/response` | `dispatcher` | O formato do JSON de entrada e de saída. Os campos obrigatórios do `request` levam `@NotBlank` ou `@NotEmpty` (Bean Validation) com a mensagem em português |
+| `handler` | `dispatcher` | `GlobalExceptionHandler`: transforma as exceções, inclusive a `MethodArgumentNotValidException` do Bean Validation, em `{"erro": "..."}` com o status certo |
 | `config`, `scheduler`, `messaging` | `dispatcher`, `worker` | Beans do anel e do RabbitMQ, tarefas periódicas e a publicação das tarefas |
 | `domain`, `repository`, `adapter` | `persistencia` | Entidades JPA, repositórios Spring Data e os adaptadores `HistoricoJpa` e `RegistroJpa` |
 | `listener` | `worker` | `TarefaListener`, o consumidor da fila do worker, com ack manual |

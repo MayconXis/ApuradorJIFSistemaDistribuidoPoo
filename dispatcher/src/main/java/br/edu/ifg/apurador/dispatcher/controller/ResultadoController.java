@@ -5,6 +5,7 @@ import static org.springframework.http.HttpStatus.ACCEPTED;
 import br.edu.ifg.apurador.dispatcher.dto.request.ResultadoRegistrarRequest;
 import br.edu.ifg.apurador.dispatcher.dto.response.ReciboResponse;
 import br.edu.ifg.apurador.dispatcher.service.ResultadoRegistrarService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +22,7 @@ public class ResultadoController {
 
     @PostMapping
     @ResponseStatus(ACCEPTED)
-    public ReciboResponse registrar(@RequestBody ResultadoRegistrarRequest request) {
+    public ReciboResponse registrar(@Valid @RequestBody ResultadoRegistrarRequest request) {
         return resultadoRegistrarService.registrar(request);
     }
 }

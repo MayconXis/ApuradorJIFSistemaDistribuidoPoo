@@ -4,6 +4,7 @@ import static org.springframework.http.HttpStatus.NO_CONTENT;
 
 import br.edu.ifg.apurador.dispatcher.dto.request.HeartbeatReceberRequest;
 import br.edu.ifg.apurador.dispatcher.service.HeartbeatReceberService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +21,7 @@ public class HeartbeatController {
 
     @PostMapping
     @ResponseStatus(NO_CONTENT)
-    public void receber(@RequestBody HeartbeatReceberRequest request) {
+    public void receber(@Valid @RequestBody HeartbeatReceberRequest request) {
         heartbeatReceberService.receber(request);
     }
 }

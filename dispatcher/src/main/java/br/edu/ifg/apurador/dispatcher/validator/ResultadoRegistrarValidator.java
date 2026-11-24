@@ -11,9 +11,6 @@ import org.springframework.web.server.ResponseStatusException;
 public class ResultadoRegistrarValidator {
 
     public void validar(ResultadoRegistrarRequest request) {
-        if (request == null || request.partidaId() == null || request.partidaId().isBlank()) {
-            throw new ResponseStatusException(BAD_REQUEST, "Informe a partida.");
-        }
         if (request.parciais() != null) {
             for (List<Integer> set : request.parciais()) {
                 if (set == null || set.size() != 2 || set.get(0) == null || set.get(1) == null) {

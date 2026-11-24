@@ -13,6 +13,7 @@ import br.edu.ifg.apurador.dispatcher.service.ChaveIncluirService;
 import br.edu.ifg.apurador.dispatcher.service.ChaveListarService;
 import br.edu.ifg.apurador.dispatcher.service.ClassificacaoDetalharService;
 import br.edu.ifg.apurador.dispatcher.service.PartidaListarService;
+import jakarta.validation.Valid;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -38,7 +39,7 @@ public class ChaveController {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public ChaveResponse incluir(@RequestBody ChaveIncluirRequest request) {
+    public ChaveResponse incluir(@Valid @RequestBody ChaveIncluirRequest request) {
         return chaveIncluirService.incluir(request);
     }
 
